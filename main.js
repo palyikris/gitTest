@@ -1,14 +1,9 @@
-const Discord= require('discord.js');
+const Discord=require('discord.js');
 
-const client= new Discord.Client();
+const client=new Discord.Client();
 
+const prefix='-',
 
-
-client.once('ready', ()=>{
-    console.log("Mazsi is online");
-}
-);
-
-
-
-client.login('ODMwOTU4ODA3MTU2NjU0MTAy.YHOQsg.02Bbq6GYtlKv4qhWACFv6Ka8JCc');
+client.on('message', message =>{
+      if(!message.content.startWith(prefix) || message.athor.bot)
+}); 
