@@ -1,0 +1,151 @@
+#jobbhirdetés, #balhirdetés{
+    display: none;
+}
+.header p{
+    color: white;   
+    padding: 8% 0% 10% 2%;
+    text-align: center;
+    font-size: 400%;
+    animation-name: zoom;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    margin: 0;
+}
+.header{
+    background: rgb(8,219,142);
+    background: radial-gradient(circle, rgba(8,219,142,1) 26%, rgba(26,237,138,1) 46%, rgba(70,252,185,1) 69%, rgba(71,243,174,1) 95%);
+    padding: 10% 0 5% 0;
+}
+.tali{
+    display: none;
+}
+#elvalaszto{
+    width: 100%;
+    font-size: 15px;
+    margin: 0;
+}
+.topnav{
+    display: flex;
+    margin-top:0px;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    z-index: 10;
+    top:0;
+    background: transparent;
+    margin-bottom: 8%px;
+    overflow: hidden;
+}
+.topnav a{
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    transition: background-color 0.5s;
+    text-align: center;
+    padding: 2% 3%;
+    text-transform: uppercase;;
+}
+.topnav a:hover{
+    background-color: cyan;
+}
+@keyframes zoom {
+    0%{transform: scale(0.9);}
+    50%{transform: scale(1);}
+    100%{transform: scale(0.9);}
+}
+body, html{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    src:url(C:\htmlgyaki\Nunito\Nunito-Regular.ttf);
+}
+.nyeroszam{
+    text-align: center;
+}
+#nyeroszamok{
+    color: rgb(8,219,142);
+    color: rgb(8,219,142);
+    font-size: 150%;
+    margin-top: 5%;
+    text-align: center;
+}
+#beadbtn{
+    background-color: white;
+    border: 5px solid rgb(8,219,142);
+    color: rgb(8,219,142);
+    padding: 1% 3%;
+    margin-top: 7%;
+    transition: all 0.6s;
+}
+#beadbtn:hover{
+    transform: scale(1.1);
+}
+#apaszamai{
+    background: rgb(8,219,142);
+    background: radial-gradient(circle, rgba(8,219,142,1) 26%, rgba(26,237,138,1) 46%, rgba(70,252,185,1) 69%, rgba(71,243,174,1) 95%);
+    margin-top:5%;
+    border: 1px solid gray;
+    box-shadow: 0px 1px 3px 0px gray;
+}
+#apaszamai td{
+    padding: 15px 50px;
+    font-size: 110%;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+}
+footer{
+    width: 100%;
+    height: 10%;
+    padding: 50px 0 40px 0;
+    text-align: center;
+    font-size: 16pxpx;
+    font-weight: 600;
+    background: rgb(8,219,142);
+    background: radial-gradient(circle, rgba(8,219,142,1) 26%, rgba(26,237,138,1) 46%, rgba(70,252,185,1) 69%, rgba(71,243,174,1) 95%);
+    margin:12% 0 0 0;
+    color: white;
+    bottom: 0;
+}
+i{
+    margin: 0 1%;
+}
+#talalat1, #talalat2, #talalat3, #talalat4, #talalat5, #talalat6, #talalat7{
+    font-size: 90%;
+}
+#content{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    width:100%;
+}
+@media only screen and (max-width:601px){
+    #apaszamai td{
+        padding: 5px 10px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    input{
+        width: 80%;
+    }
+    .inputok{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        width:100%;
+    }
+    input{
+        margin-top: 6%;
+    }
+}
+#apaszamai{
+    text-align: center;
+}
+input{
+    border: none;
+    border-left: 2px solid rgb(8,219,142);
+    border-bottom: 2px solid rgb(8,219,142);
+}

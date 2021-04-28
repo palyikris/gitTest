@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<label style="color:red"><strong>Alma vagy Ananász?<strong></label><br>
+	 <input id="melyikavan" placeholder="Alma vagy Ananász?"><br><br>
+	 <button onclick="almavananasz()">Bead</button><br>
+	 <p id="valasz"></p>
+	 <script> 
+	 function almavananasz(){
+		var alvagyan, valasz;
+		alvagyan=document.getElementById("melyikavan").value
+		if (alvagyan=="Alma"){
+			valasz="Yeeey, király vagy!";
+			}
+		else if (alvagyan=="Ananász"){
+			valasz="Fúúúj csicsak vagy";
+			}
+		else{
+			valasz="Ananászt vagy almát kell beírj";
+			}
+		document.getElementById("valasz").innerHTML=valasz;
+		}
+	</script>
+	<p>Click the button to get a time-based greeting:</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var greeting;
+  var time = new Date().getHours();
+  if (time < 10) {
+    greeting = "Good morning";
+  } else if (time < 20) {
+    greeting = "Good day";
+  } else {
+    greeting = "Good evening";
+  }
+  document.getElementById("demo").innerHTML = greeting;
+}
+</script>
+
+</body>
+</html>

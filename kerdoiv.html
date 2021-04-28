@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heni teszt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="heni.jpg">
+    <style>
+        body{
+            margin:0;
+            padding: 0 25px 0 25px;
+            background-color:beige;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        html{
+            margin: 0;
+            padding: 0;
+        }
+        .kerdes{
+            background-color: cadetblue;
+            padding: 40px 20px 40px 20px;
+            margin-bottom: 20px;
+            border: 3px gray;
+            box-shadow: 0 1px 4px 0 gray;
+            border-radius: 10px;
+            margin: 70px auto 0 auto;
+            color: white;
+            width: 30%;
+            height: 30%;
+            text-align: center;
+        }
+        img{
+            max-width: 100%;
+            border-radius: 5%;
+        }
+        #kerdes1 img{
+            border-radius: 5%;
+            height: 120px;
+            margin-bottom: 20px;
+        }
+        #kerdes1 select{
+            border-radius: 5%;
+            background-color:azure;
+            color:blueviolet;
+            font-weight: 500;
+            border: 1px transparent;
+        }
+        main{
+            background-color: whitesmoke;
+            border: 1px solid whitesmoke;
+            box-shadow: 0 1px 4px 0 gray;
+            text-align: center;
+            width: 60%;
+            margin: 20px auto 20px auto;
+            padding-bottom: 40px;
+        }
+        #kerdes1{
+            padding: 60px 40px 60px 40px;
+        }
+        #kerdes2{
+            padding: 30px 40px;
+        }
+        #henispan{
+            color: bisque;
+            font-weight: 700;
+        }
+        #kerdes3{
+            padding: 30px 40px;
+        }
+        #kerdes4{
+            padding: 30px 40px;
+        }
+        #kerdes5{
+            padding: 60px 40px;
+        }
+        #kerdes6{
+            padding: 30px 40px;
+        }
+        #kerdes7{
+            padding: 40px 40px;
+        }
+        #kerdes8 label{
+            font-size: 11px;
+
+        }
+        #kerdes8{
+            padding: 50px 40px;
+        }
+        #kerdes9{
+            padding: 60px 40px;
+        }
+        #kerdes10{
+            padding: 70px 40px;
+        }
+        .header{
+            width: 100%;
+            margin: 0;
+            top: 0;
+            z-index: 10;
+            text-align: center;
+            padding-top: 20px;
+            margin-bottom: 100px;
+        }
+        .cim{
+            color: darkcyan;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        p{
+            margin: 0;
+        }
+        button{
+            padding: 20px 40px;
+            background-color: darkcyan;
+            color: white;
+            margin-top: 80px;
+            border: 1px transparent;
+            box-shadow: 0 1px 4px 0 gray;
+        }
+        button:hover{
+            opacity: .6;
+        }
+        .result{
+            background-color: cadetblue;
+            border-radius: 2%;
+            border: 1px transparent;
+            box-shadow: 0 1px 4px 0 gray;
+            padding: 30px 70px;
+            margin-left: 24%;
+            margin-right: auto;
+            bottom:200px;
+            color: white;
+            display: none;
+            position:fixed;
+            z-index: 10;
+            text-align: center;
+            max-width: 40%;
+            transition: display 1s;
+        }
+        .result h1{
+            margin-bottom: 50px;
+        }
+        .result h3{
+            margin-bottom: 20px;
+        }
+        .result img{
+            margin-bottom: 60px;
+        }
+        i{
+            font-size: 15px;
+            margin-left: 10px;
+            display: none;
+        }
+        .bezaro{
+            color: white;
+            font-size: 30px;
+            font-weight: 700;
+            
+            right: 20px;
+            top: 10px;
+            position: absolute;
+        }
+        .bezaro:hover{
+            opacity: .6;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <p class="cim" style="font-size: 55px;">Mennyire vagy Heni?</p> 
+        <p class="cim">Kiderül az igazság!</p>
+    </div>
+    <main>
+    <div class="kerdes" id="kerdes1">
+        <img src="heniszomi.jpg" alt="heniszomi" width="120px"><br>
+        Napi hányszor nyomsz egy <span id="henispan" title="Random hiszti bármi ok nélkül. Szeretlek Heni!">Henit</span>?
+        <select id="kerdes1s">
+            <option></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">Több</option>
+        </select><i class="fa fa-check" style="color:green; display:none" id="pipa1"></i><i class="fa fa-times" style="color:red; display:none" id="cross1"></i>
+    </div>
+    <div class="kerdes" id="kerdes2">
+        <img src="kicsiheni.jpg" alt="kicsiheni" width="120px" height="120px"> <br><br>
+        Az osztozkodás jó, kivétel ha neked kell osztozkodni.<br><br>
+        <input type="checkbox" id="cbox2"><label>Így igaz!</label><i class="fa fa-check" style="color:green; display:none" id="pipa2"></i><br><br>
+        <input type="checkbox"><label>Nem nem, mindig kell!</label><i class="fa fa-times" style="color:red; display:none" id="cross2"></i>
+    </div>
+    <div class="kerdes" id="kerdes3">
+        <img src="mergesheni.jpg" alt="henihulyennez" width="120px" height="120px"><br><br>
+        Cuki vagy mindenki szerint magadon kívül?<br><br>
+        <input type="checkbox"><label>Ja, de nemvágom miért</label><i class="fa fa-times" style="color:red; display:none" id="cross3"></i><br><br>
+        <input type="checkbox" id="cbox3" ><label>Meh, csak nézz rám...</label><i class="fa fa-check" style="color:green; display:none" id="pipa3"></i>
+    </div>
+    <div class="kerdes" id="kerdes4">
+        <img src="henihulyennez.jpg" alt="henihulyennez" width="120px" height="120px"><br><br>
+        Egy 1-től 10-es skálán mennyire vagy seggmániás?<br><br>
+        <input type="range" min="1" max="10" id="inprange" value="1"><i class="fa fa-check" style="color:green; display:none" id="pipa4"></i><i id="cross4" class="fa fa-times" style="color:red; display:none"></i><br>
+        <label style="margin-left:8px">1 </label><label>2 </label><label>3 </label><label>4 </label><label>5 </label><label>6 </label><label>7 </label><label>8 </label><label>9 </label><label>10</label>
+    </div>
+    <div class="kerdes" id="kerdes5">
+        <img src="henirandom.jpg" alt="henirandom" width="120px" height="120px"><br><br>
+        A tánc az egy sport?<br>
+        <input type="text" placeholder="Saját válasz" id="inptxt1"><i class="fa fa-check" style="color:green; display:none" id="pipa5"></i><i id="cross5" class="fa fa-times" style="color:red; display:none"></i><br>
+    </div>
+    <div class="kerdes" id="kerdes6">
+        <img src="heninez.jpg" alt="heninez" width="120px" height="120px"><br><br>
+        Folytasd a szöveget!<br>
+        <p contenteditable="true" style="font-family:'Courier New', Courier, monospace;margin-bottom: 0;" id="mulantxt">Úgy küzdj a harcban mint</p><i class="fa fa-check" style="color:green; display:none" id="pipa6"></i><i id="cross6" class="fa fa-times" style="color:red; display:none"></i>
+        <span style="font-size: 13px;margin-top: 0;">~Mulan</span>
+        <p style="font-size:12px; font-weight:500">(Nyomj rá a szövegre)</p>
+    </div>
+    <div class="kerdes" id="kerdes7">
+        <img src="arcmaszkosheni.jpg" alt="arcmaszkosheni" width="120px" height="120px"><br><br>
+        A romantikus filmek a legjobbak!<br><br>
+        <input type="checkbox" id="cbox4"><label>Nyilván, milyen kérdés ez??</label><i class="fa fa-check" style="color:green; display:none" id="pipa7"></i><br>
+        <input type="checkbox"><label>Bleh</label><i class="fa fa-times" style="color:red; display:none" id="cross7"></i>
+    </div>
+    <div class="kerdes" id="kerdes8">
+        <img src="henieskapi.jpg" alt="henieskapi" width="120px" height="120px"><br><br>
+        Mennyire szereted a sushit<br> egy -5-től 5-ös skálán?<br><br>
+        <input type="range" min="1" max="11" id="inprange2"><i class="fa fa-check" style="color:green; display:none" id="pipa8"></i><i class="fa fa-times" style="color:red; display:none" id="cross8"></i><br>
+        <div style="left: 695px; position: absolute;"><label>-5 </label><label>-4 </label><label>-3 </label><label>-2 </label><label>-1 </label><label>0  </label><label>1 </label><label style="margin-left: 3px;">2 </label><label>3 </label><label>4 </label><label>5</label></div>
+    </div>
+    <div class="kerdes" id="kerdes9">
+        <img src="heniszoke.jpg" alt="heniszoke" width="120px" height="120px"><br><br>
+        Mit gondolsz a balettról?<br>
+        <input type="text" placeholder="Saját válasz" style="margin-top: 10px;" id="inptxt2"><i class="fa fa-check" style="color:green; display:none" id="pipa9"></i><i id="cross9" class="fa fa-times" style="color:red; display:none"></i><br>
+    </div>
+    <div class="kerdes" id="kerdes10">
+        <img src="henireszeg.jpg" alt="henireszeg" width="120px" height="120px"><br><br>
+        Mi az a pomelo?
+        <select id="kerdes2s">
+            <option value="1">Egy autómárka</option>
+            <option value="2">Gyorsétterem</option>
+            <option value="3">Egy gyümölcs</option>
+        </select><i style="display: none;color:green;margin-left: 3px;" class="fa fa-check" id="pipa10"></i><i style="display: none;color: red;" id="cross10" class="fa fa-times" style="color:red;margin-left: 0;"></i><br>
+    </div>
+    <button class="bead" type="button" onclick="bead()" id="bead">Beadás</button>
+    </main>
+    <div class="result" id="result">
+        <span class="bezaro" onclick="bezar()">&times;</span>
+        <h1 id="resulth1">Valami</h1>
+        <h3 id="resulth3">Valami</h3>
+        <img src="heniszexi.jpg" width="120px" height="120px" style="border-radius: 4%;" id="resultimg">
+        <p id="resultp">Valami</p>
+    </div>
+    <script>
+            function bezar(){
+                 document.getElementById("result").style.display="none";
+            }
+            var cb2=document.getElementById("cbox2");
+            var cb3=document.getElementById("cbox3");
+            var cb2c=cb2.checked;
+            var cb3c=cb3.checked;
+            var cb4=document.getElementById("cbox4");
+            var ownans2=document.getElementById('inptxt2').textContent;
+            var ownans22=ownans2.toLowerCase();
+            var ownanssc2=ownans22.replace(/ /g, "");
+        function bead(){
+            var pontok=0;
+            var kerdes1=document.getElementById("kerdes1s");
+            var kerdes1v=kerdes1s.value;
+            var kerdes2=document.getElementById("kerdes2s");
+            var kerdes2v=kerdes2.value;
+            if (kerdes1v=='1' || kerdes1v=='2' || (kerdes1v=='3')){
+                pontok+=1;
+                //pontok+='a'
+                document.getElementById("cross1").style.display="block";
+            }
+            if(kerdes1v=='4' || (kerdes1v=='5')){
+                pontok+=2;
+                //pontok+='b'
+                document.getElementById("cross1").style.display="block";
+            }
+            if(kerdes1v=='6'){
+                pontok+=3;
+                //pontok+='c'
+                document.getElementById("pipa1").style.display="block";
+            }
+            if(kerdes1v==""){
+                document.getElementById("cross1").style.display="block";
+            }
+            if(cb2.checked==true){
+                pontok+=1;
+                //pontok+='d'
+                document.getElementById("pipa2").style.display="block";
+                document.getElementById("cross2").style.display="block";
+            }
+            if(cb2.checked==false){
+                document.getElementById("pipa2").style.display="block";
+                document.getElementById("cross2").style.display="block";
+            }
+            if(cb3.checked==true){
+                pontok+=1;
+                //pontok+='e'
+                document.getElementById("pipa3").style.display="block";
+                document.getElementById("cross3").style.display="block";
+            }
+            if(cb3.checked==false){
+                document.getElementById("pipa3").style.display="block";
+                document.getElementById("cross3").style.display="block";
+            }
+            if(document.getElementById("inprange").value<=3){
+                pontok+=0;
+                //pontok+='f'
+                document.getElementById("cross4").style.display="block";
+            }
+            if(document.getElementById("inprange").value>3 && document.getElementById("inprange").value<=7){
+                pontok+=1
+                //pontok+='g'
+                document.getElementById("cross4").style.display="block";
+            }
+            if(document.getElementById("inprange").value>7){
+                pontok+=2;
+                //pontok+='j'
+                document.getElementById("pipa4").style.display="block";
+            }
+            var ownans1=document.getElementById('inptxt1').value;
+            var ownans11=ownans1.toLowerCase();
+            var ownanssc1=ownans1.replace(/ /g, "");
+            if(ownanssc1.indexOf("igen") >= 0 || ownanssc1.indexOf("persze") >= 0 || ownanssc1.indexOf("természetesen") >= 0 || ownanssc1.indexOf("hogyne") >= 0 || ownanssc1.indexOf("naná") >= 0 || ownanssc1.indexOf("ahha") >= 0 || ownanssc1.indexOf("aha") >= 0 || ownanssc1.indexOf("yes") >= 0 || ownanssc1.indexOf("ja") >= 0){
+                pontok+=3;
+                //pontok+='h'
+                document.getElementById("pipa5").style.display="block";
+            }
+            if(!ownanssc1.includes("igen") || !ownanssc1.includes("persze") || !ownanssc1.includes("természetesen") || !ownanssc1.includes("hogyne") || !ownanssc1.includes("naná") || !ownanssc1.includes("ahha") || !ownanssc1.includes("aha") || !ownanssc1.includes("yes") || !ownanssc1.includes("ja")){
+                document.getElementById("cross5").style.display="block";
+            }
+            if(ownanssc1.indexOf("nem") >= 0 || ownanssc1.indexOf("dehogy") >= 0 || ownanssc1.indexOf("fuj") >= 0 || ownanssc1.indexOf("hogy lenne") >=0){
+                document.getElementById("cross5").style.display="block";
+            }
+            var mtxt=document.getElementById("mulantxt").innerHTML;
+            var mtxt1=mtxt.replace(/ /g,"");
+            var mtxtlc=mtxt1.toLowerCase();
+            if(mtxtlc.indexOf("úgyküzdjaharcbanmintzúgóorkán")>=0){
+                pontok+=3;
+                document.getElementById("pipa6").style.display="block";
+            }
+            if(mtxtlc.indexOf("úgyküzdjaharcbanmintzúgóorkán")<0){
+                document.getElementById("cross6").style.display="block";
+            }
+            if(cb4.checked==true){
+                pontok+=1;
+                //pontok+='i';
+                document.getElementById("pipa7").style.display="block";
+                document.getElementById("cross7").style.display="block";
+            }
+            if(cb4.checked==false){
+                document.getElementById("pipa7").style.display="block";
+                document.getElementById("cross7").style.display="block";
+            }
+            if(document.getElementById("inprange2").value<3){
+                pontok+=2;
+                //pontok+='j'
+                document.getElementById("pipa8").style.display="block";
+            }
+            if(document.getElementById("inprange2").value<=7 && document.getElementById("inprange2").value>3){
+                pontok+=1;
+                //pontok+='k'
+                document.getElementById("cross8").style.display="block";
+            }
+            if(document.getElementById("inprange2").value>7){
+                pontok+=0;
+                //pontok+='l'
+                document.getElementById("cross8").style.display="block";
+            }
+            var ownans2=document.getElementById('inptxt2').value;
+            var ownans22=ownans2.toLowerCase();
+            var ownanssc2=ownans22.replace(/ /g, "");
+
+            if(ownanssc2.indexOf("szar") >= 0 || ownanssc2.indexOf("rossz") >= 0 || ownanssc2.indexOf("utálom") >= 0 || ownanssc2.indexOf("fúj") >= 0 || ownanssc2.indexOf("bleh")>=0){
+                pontok+=3;
+                //pontok+='m'
+                document.getElementById("pipa9").style.display="block";
+            }
+            if(!ownanssc2.includes("szar") || !ownanssc2.includes("rossz") || !ownanssc2.includes("utálom") || !ownanssc2.includes("fúj") || !ownanssc2.includes("bleh")){
+                document.getElementById("cross5").style.display="block";
+            }
+            if(ownanssc2.indexOf("imádom") >= 0 || ownanssc2.indexOf("szeretem") >= 0 || ownanssc2.indexOf("legjobb") >= 0 || ownanssc2.indexOf("meghalnékneélküle") >= 0 || ownanssc2.indexOf("életemértelme")>=0){
+                document.getElementById("cross9").style.display="block";
+            }
+            if(kerdes2v=="3"){
+                pontok+=1;
+                document.getElementById("pipa10").style.display="block";
+            }
+            if(kerdes2v!="3"){
+                document.getElementById("cross10").style.display="block";
+            }
+            var h1=document.getElementById("resulth1");
+            var h3=document.getElementById("resulth3");
+            var img=document.getElementById("resultimg");
+            var p=document.getElementById("resultp");
+            var maxpontok=17;
+            var szazalek=Math.round(pontok/maxpontok*100)+"%";
+            if (pontok>=13){
+                h1.innerHTML="Gratulálunk, az Ön eredménye "+szazalek+" lett! A pontjai: "+pontok+"/"+maxpontok;
+                h3.innerHTML="Ön akár Heni ikre is lehetne!";
+                p.innerHTML="Adja meg a telefonszámát;)";
+            }
+            if (pontok<13 && pontok>=9){
+                h1.innerHTML="Gratulálunk, az Ön eredménye "+szazalek+" lett! A pontjai: "+pontok+"/"+maxpontok;
+                h3.innerHTML="Önnek még kicsit több romantikus filmet kell nézni!";
+                img.src="henirandom.jpg";
+                p.innerHTML="Így is jöhet a telefonszáma;)";
+            }
+            if(pontok<9 && pontok>=4){
+                h1.innerHTML="Nem a legjobb, de gatula, az Ön eredménye "+szazalek+" lett! A pontjai: "+pontok+"/"+maxpontok;
+                h3.innerHTML="Jó sok gyakorlás kell, de még Ön is lehet Heni!"
+                img.src="heniszomi.jpg";
+                p.innerHTML="Sose adja fel!";
+            }
+            if(pontok<4){
+                h1.innerHTML="Hűha ez gyászos, az Ön eredménye "+szazalek+" lett A pontjai: "+pontok+"/"+maxpontok;
+                h3.innerHTML="Nagyon gyorsan változtasson az életmódján!!";
+                img.src="mergesheni.jpg";
+                p.innerHTML="Semmi sem lehetetlen!";
+            }
+            function szovegnezo(){
+
+            }
+            document.getElementById("result").style.display="block";
+            
+            
+           
+    }
+    </script>
+</body>
+</html>

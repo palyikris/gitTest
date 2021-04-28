@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="hu">
+<meta charset="utf-8">
+<head>
+    <script src="https://kit.fontawesome.com/b16ad4ba5f.js" crossorigin="anonymous"></script>
+	<link rel="icon" href="heni.jpg">
+	<meta name="viewport" content="width=device-with", initial scale=1.0>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="henifpcss1.css">
+    <title>Heni Fan Page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+
+
+    <style>
+        
+    </style>
+</head>
+<body>
+<div id="header" style="margin-top: 0;">
+    <h1 id="headerh1" onclick="sziv()">Heni Fan Page</h1>
+    <h2 id="headerh2">Megújultunk!! Gyere nézd meg!</h2>
+</div>
+<h1 onmouseout="heniszexioff()" onmouseover="heniszexi()" id="headerh1lenti">Soha nem látott <br><span id="késv">KÉPEK</span> és <span id="késv1">VIDEÓK</span></h1>
+<script>
+    function heniszexi(){
+        document.getElementById("headerh1lenti").style.fontSize="57px";
+        document.getElementById("késv").style.color="#ff4da6";
+        document.getElementById("késv1").style.color="#ff4da6";
+    }
+    function heniszexioff(){
+        document.getElementById("headerh1lenti").style.fontSize="50px";
+        document.getElementById("késv").style.color="rgb(86,230,143)";
+        document.getElementById("késv1").style.color="rgb(86,230,143)";
+    }
+</script>
+
+<div class="topnav">
+    <a href="#flexbox1st">Képek</a><a href="naplok.html">Naplók</a><a href="videok.html">Videotéka</a><a href="kerdokezdo.html">Kérdőív</a><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Támogatás</a><a href="lottozo.html">Lottózó</a><a href="indexregi.html">RÉGI FANPAGE</a><a href="#" id="righta" style="position: absolute;z-index: 10;right: 0;" onclick="bejel()">Bejelentkezés</a>
+</div>
+<div class="maincontent">
+    <div class="maincontentszoveg">
+    <h1 title="csicsak">Kerekes Henrietta</h1><br><br>
+		<p>Ez az oldal <span class="oldalneve" title="csicsak">Kerekes Henriettáról</span> fog szólni,</p>
+		<p>melyen kiteregetem <span class="oldalneve"title="csicsak">Kerekes Henrietta </span>gyönyörű</p>
+		<p>fényképeit, ezzel is megpróbálva éreztetni vele, </p><br>
+		<p>hogy az iránta való <b><italics>Szeretetemnél</italics></b> már csak egy nagyobb dolog van...</p>
+    </div>
+</div>
+<script>
+    var szamolo=0;
+    var szivek=document.getElementsByClassName("heart");
+    function szivmod(){
+        if (szamolo==0){
+            document.getElementById("heart1").style.animationPlayState="running";
+            document.getElementById("heart2").style.animationPlayState="running";
+            document.getElementById("heart3").style.animationPlayState="running";
+            document.getElementById("heart4").style.animationPlayState="running";
+            document.getElementById("heart5").style.animationPlayState="running";
+            document.getElementById("heart6").style.animationPlayState="running";
+            document.getElementById("heart7").style.animationPlayState="running";
+            document.getElementById("heart8").style.animationPlayState="running";
+            document.getElementById("heart9").style.animationPlayState="running";
+            document.getElementById("heart10").style.animationPlayState="running";
+            szamolo+=1;
+            szivek.style.opacity="1";
+        }
+        if(szamolo==1){
+            document.getElementById("heart1").style.animationPlayState="paused";
+            document.getElementById("heart2").style.animationPlayState="paused";
+            document.getElementById("heart3").style.animationPlayState="paused";
+            document.getElementById("heart4").style.animationPlayState="paused";
+            document.getElementById("heart5").style.animationPlayState="paused";
+            document.getElementById("heart6").style.animationPlayState="paused";
+            document.getElementById("heart7").style.animationPlayState="paused";
+            document.getElementById("heart8").style.animationPlayState="paused";
+            document.getElementById("heart9").style.animationPlayState="paused";
+            document.getElementById("heart10").style.animationPlayState="paused";
+            szamolo=0;
+            szivek.style.opacity="0";
+        }
+    }
+</script>
+<h1 id="stilus"><span class="csillogh1">Vadiúj </span> <span class="csillog">TERVEZÉS</span> <span class="csillogh1">és</span> <span class="csillog">STÍLUS</span></h1>
+<div id="henikepei">
+<div class="flexboxok" id="flexbox1st">
+<div class="henifc">
+    <div class="henifcbelso" >
+        <div class="henifcfelso">
+            <img src="kicsiheni.jpg" alt="kicsiheni" width="100%" height="100%">
+        </div>
+        <div class="henifcalso">
+            <p>Ez egy kisebb kori kép <span class="oldalneve" title="csicsak">Heniről</span>, amit <span class="oldalneve" title="csicsak">Heni</span> nagyon nem szeret, úgyhogy természetesen itt van.</p>
+        </div>
+    </div>
+</div>
+<div class="henifc" >
+    <div class="henifcbelso">
+        <div class="henifcfelso">
+            <img src="mergesheni.jpg" alt="mergesheni" width="100%" height="100%">
+        </div>
+        <div class="henifcalso">
+            <p><span class="oldalneve" title="csicsak">Heni</span> ezen a képen nem tudom pontosan milyen fejet vág, de cukker szóval itthagyom.</p>
+        </div>
+    </div>
+</div>
+<div class="henifc" >
+    <div class="henifcbelso">
+        <div class="henifcfelso">
+            <img src="befonotthaj.jpg" alt="befonotthaj" width="100%" height="100%">
+        </div>
+        <div class="henifcalso">
+            <p><span class="oldalneve" title="csicsak">Heni</span> ezt nemrég küldte és ritkán van
+            ilyen haja, ezért mindenképp meg kell őrizni.</p>
+        </div>
+    </div>
+</div>
+</div>
+<br><br>
+<h1 id="utsoh1">#ELDOBODAZAGYAD</h1>
+<div class="flexboxok" id="flexbox2nd" >
+<div class="henifc">
+    <div class="henifcbelso">
+        <div class="henifcfelso">
+            <img src="henirandom.jpg" alt="randomheni" width="100%" height="100%">
+        </div>
+        <div class="henifcalso">
+            <p><span class="oldalneve" title="csicsak">Heni</span> itt valamit érez, nemtom mit, de szemüvegben cuki, szóval tessék-lássék.</p>
+    
+        </div>
+    </div>
+</div>
+<div class="henifc">
+    <div class="henifcbelso">
+        <div class="henifcfelso">
+            <img src="heniszomi.jpg" alt="szomiheni" width="100%" height="100%">
+        </div>
+        <div class="henifcalso">
+            <p><span class="oldalneve" title="csicsak">Heni</span> szegény szomorú, valószínűleg épp videochatelt velem. Valaki vidítsa fel.</p>
+        </div>
+    </div>
+</div>
+<div class="henifc">
+    <div class="henifcbelso">
+        <div class="henifcfelso">
+            <img src="henihappy.jpg" alt="happyheni" width="100%" height="100%">
+        </div>
+        <div class="henifcalso">
+            <p><span class="oldalneve" title="csicsak">Heni</span> itt boldog, annak ellenére, hogy még mindig az én barátnőm. Csodák igenis léteznek!!</p>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div>
+    <div class="heart" id="heart1">
+        &#10084
+    </div>
+    <div class="heart" id="heart2">
+        &#10084
+    </div>
+    <div class="heart" id="heart3">
+        &#10084
+    </div>
+    <div class="heart" id="heart4">
+        &#10084
+    </div>
+    <div class="heart" id="heart5">
+        &#10084
+    </div>
+    <div class="heart" id="heart6">
+        &#10084
+    </div>
+    <div class="heart" id="heart7">
+        &#10084
+    </div>
+    <div class="heart" id="heart8">
+        &#10084
+    </div>
+    <div class="heart" id="heart9">
+        &#10084
+    </div>
+    <div class="heart" id="heart10">
+        &#10084
+    </div>
+</div>
+
+<h1 id="tamogass">Kérünk, támogass minket!</h1><br><br><br><br>
+<script>
+function bejel(){
+    document.getElementById("bejeldiv").style.opacity="1 ";
+}
+</script>
+<script>
+    var jelszo=document.getElementById("jelszo");
+    function lathatocheck(){
+    if(document.getElementById("lathato").checked==true){
+    document.getElementById("jelszo").type="text";
+}
+else{
+    document.getElementById("jelszo").type="password";
+}
+    }
+function bejelbezar(){
+    document.getElementById("bejeldiv").style.opacity="0";
+}
+</script>
+<br>
+<footer>
+    <p>Ezt az oldalt a <span class="oldalneve" style="font-size: 25px">WeLoveHeni</span> támogatta</p><br>
+    <p>Copyright: <strong>Pályi Kristóf</strong>, professzionális webdesigner, zenész, videós, producer, direktor, színész, isten</p>
+    <i class="fa fa-btc"></i> <p>Donét-link: </p><a style="text-decoration: none;" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Kattints ide, hogy adományozhass</a>
+    <p><b><italics>Támogatóink</italics></b></p><br><i style="margin: 0 10px 0 10px" class="fa fa-edge"></i><i style="margin: 0 10px 0 10px" class="fa fa-facebook-official"></i><i style="margin: 0 10px 0 10px" class="fa fa-reddit"></i><i style="margin: 0 10px 0 10px" class="fa fa-youtube"></i>
+</footer>
+<div class="bejelform" id="bejeldiv">
+    <span class="bejelbezar" onclick="bejelbezar()">&times;</span>
+    <form action="sender.php" method="POST" id="bejelform">
+        <h2 style="margin-bottom: 5%;">Jelentkezz be! </h2>
+        <img src="azenlogom.png" alt="azenlogom" width="60%" style="border-radius:20px">
+        <div class="adat">
+            <label for="">FELHASZNÁLÓNÉV</label><input placeholder="Felhasználónév..." name="uname" required>
+        </div>
+        <div class="adat">
+            <label for="">JELSZÓ</label><input placeholder="Jelszó..." name="psw" type="password" id="jelszo" required>
+        </div>
+        <div class="cbok">
+            <label for="">EMLÉKEZZ RÁM</label><input type="checkbox" checked="checked">
+        </div>
+        <div class="cbok">
+            <label for="">JELSZÓ LÁTHATÓ</label><input type="checkbox" id="lathato" onclick="lathatocheck()">
+        </div>
+        <button id="beadasbejelben">BEJELENTKEZÉS</button>
+    </form>
+</div>
+</body>

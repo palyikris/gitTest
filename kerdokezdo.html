@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Kezdés</title>
+    <link rel="icon" href="heni.jpg">
+    <style>
+        main{
+            border: 5px gray;
+            box-shadow: 0 2px 6px 0 gray;
+            padding: 20px 20px 50px 20px;
+            text-align: center;
+            text-decoration: none;
+            background-color: cadetblue;
+            color: white;
+            font-weight: 600;
+            font-size: 15px;
+            margin: 13% 30% 15% 30%
+        }
+        main a{
+            text-decoration: none;
+            padding: 20px 40px 20px 40px;
+            background-color: burlywood;
+            border: 1px transparent;
+            border-radius: 5px;
+            color: white;
+            transition: border 0.2s;
+        }
+        img{
+            max-width: 100%;
+            margin-bottom: 30px;
+            border-radius: 20px;
+        }
+        #topnav a{
+            padding: 20px 30px 20px 30px;
+            margin: 0;
+            transition: background-color 0.5s;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+        }
+        #topnav{
+            background-color: cadetblue;
+            top: 0;
+            margin: 0;
+            position: absolute;
+            z-index: 10;
+            font-weight: 600;
+            font-size: 16px;
+            width: 100%;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            background-image: url(bgimg);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        html{
+            padding: 0;
+        }
+        #topnav a:hover{
+            background-color: cyan;
+        }
+        main a:hover{
+            border: 1px solid rgb(78, 77, 77);
+        }
+        #topnav a i{
+            font-size: 30px;
+        }
+        h3{
+            font-size: 30px;
+        }
+        footer{
+            background-color: cadetblue;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            padding-top: 20px;
+        }
+        #anspan::before{
+            animation-name: txtvaltozo;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+            content: "";
+            animation-delay: 0.5s;
+        }
+        #anp{
+            animation-name: forgo;
+            padding: 60px;
+            border-radius: 5%;
+            position:absolute;
+            margin-top: 3.2%;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+            animation-delay: 0.5s;
+        }
+        @keyframes forgo{
+            0% {top:3.2%; left: 15%; content:"Heni csicsak?"; background-color: blueviolet; }
+            25% {top:3.2%; left: 71%; content:"Te mennyire vagy Heni?"; background-color: black; }
+            50% {top:80%; left: 71%; content:"Csicsak vagy?"; background-color:aquamarine; }
+            75% {top:80%; left: 15%; content:"Tudd meg itt!!"; background-color:crimson; }
+            100% {top:3.2%; left: 15%; content:"Heni a csicsak?"; background-color: blueviolet; color: white;}
+        }
+        @keyframes txtvaltozo{
+            0% {content: "Heni csicsak?";color: white;}
+            25% {content: "Lehet hogy nem?";color: red;}
+            50% {content: "Te csicsak vagy?";color:blueviolet;}
+            75% {content: "Tudd meg itt!!";color: burlywood;}
+            100% {content: "Heni a csicsak?"; color: white;}
+        }
+    </style>
+</head>
+<body>
+    <div id="topnav">
+        <a href="index.html" style="float: left;"><i class="fa fa-home"></i></a>
+        <a href="videok.html" style="float: left;"><i class="fa fa-video-camera"></i></a>
+        <a href="naplok.html" style="float: right;"><i class="fa fa-book"></i></a>
+    </div><br>
+    <span id="anp"><span id="anspan"></span></span>
+    <main>
+        <h3>Ideje megtudni mennyire vagy Heni!</h3>
+        <p>Készen állsz?</p>
+        <img src="heniszexi.jpg" alt="heni" width="220px"><br>
+        <a href="kerdoiv.html">Start</a><br>
+    </main>
+    <footer>
+        <p>Ezt az oldalt a <span class="oldalneve" style="font-size: 25px">WeLoveHeni</span> támogatta</p><br>
+        <p>Copyright: <strong>Pályi Kristóf</strong>, professzionális webdesigner, zenész, videós, producer, direktor, színész, isten</p>
+        <i class="fa fa-btc"></i> <p>Donét-link: </p><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Kattints ide, hogy adományozhass</a>
+        <p><b><italics>Támogatóink</italics></b></p><br><i style="margin: 0 10px 0 10px" class="fa fa-edge"></i><i style="margin: 0 10px 0 10px" class="fa fa-facebook-official"></i><i style="margin: 0 10px 0 10px" class="fa fa-reddit"></i><i style="margin: 0 10px 0 10px" class="fa fa-youtube"></i>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottózó a Faternak</title>
+    <link rel="icon" href="zlatko.jpg">
+    <link rel="stylesheet" href="lottozo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b16ad4ba5f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+        <p>Lottózó a Faternak</p>
+    </div>
+    <div class="topnav">
+        <a href="index.html">Főoldal</a><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Támogatás</a><a href="indexregi.html">RÉGI FANPAGE</a>
+    </div>
+
+    <br><br><br>
+    <div id="content">
+        <div id="balhirdetés">
+            <p>A szerencsejáték függőség</p>
+            <p>NAGYON VESZÉLYES!!! Ha ön</p>
+            <p>ezt az oldalt látogatja,</p>
+            <p>segítségre van szüksége!</p>
+            <img src="help.jpg">
+            <a href="#" style="text-decoration: none">Mi segítünk!</a>
+        </div>
+        <div id="jobbhirdetés">
+            <p>A szerencsejáték függőség</p>
+            <p>NAGYON VESZÉLYES!!! Ha ön</p>
+            <p>ezt az oldalt látogatja,</p>
+            <p>segítségre van szüksége!</p>
+            <img src="help.jpg">
+            <a href="#" style="text-decoration: none">Mi segítünk!</a>
+        </div>
+    <div id="ahetiszamok">
+        <div class="nyeroszam">
+        <label id="nyeroszamok">Ide írd a heti nyerő számokat!</label>
+        </div>
+            <div class="inputok">
+            <input type="text" name="lotto1" class="lotto1" id="lotto1"placeholder="Heti nyerő szám">
+            <input type="text" name="lotto1" class="lotto1" id="lotto2"placeholder="Heti nyerő szám">
+            <input type="text" name="lotto1" class="lotto1" id="lotto3"placeholder="Heti nyerő szám">
+            <input type="text" name="lotto1" class="lotto1" id="lotto4"placeholder="Heti nyerő szám">
+            <input type="text" name="lotto1" class="lotto1" id="lotto5" placeholder="Heti nyerő szám">
+            </div>
+    </div>
+    <button type="button" onclick="talszamolo()" id="beadbtn">Nézzük a találataim!</button>
+    <table id="apaszamai">
+        <tr>
+            <td>26</td>
+            <td>41</td>
+            <td>45</td>
+            <td>54</td>
+            <td>74</td>
+            <td id="talalat1"style="color:white" class="tali"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>17</td>
+            <td>35</td>
+            <td>52</td>
+            <td>79</td>
+            <td id="talalat2" style="color:white" class="tali"></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>12</td>
+            <td>21</td>
+            <td>27</td>
+            <td>68</td>
+            <td id="talalat3" style="color:white" class="tali"></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>43</td>
+            <td>77</td>
+            <td>80</td>
+            <td>82</td>
+            <td id="talalat4" style="color:white" class="tali"></td>
+        </tr>
+        <tr>
+            <td>50</td>
+            <td>52</td>
+            <td>60</td>
+            <td>67</td>
+            <td>85</td>
+            <td id="talalat5" style="color:white" class="tali"></td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>12</td>
+            <td>33</td>
+            <td>40</td>
+            <td>63</td>
+            <td id="talalat6"style="color:white" class="tali"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>6</td>
+            <td>10</td>
+            <td>14</td>
+            <td>26</td>
+            <td id="talalat7" style="color:white" class="tali"></td>
+        </tr>
+    </table>
+    </div>
+    <script>
+        var tali=document.getElementsByClassName("tali");
+        function talszamolo(){
+        var talalatok1=[26,41,45,54,74]
+        var talalatok2=[4,17,35,52,79]
+        var talalatok3=[7,12,21,27,68]
+        var talalatok4=[8,43,77,80,82]
+        var talalatok5=[50,52,60,67,85]
+        var talalatok6=[14,18,33,40,63]
+        var talalatok7=[4,6,10,14,26]
+        var talalat1=document.getElementById("lotto1").value
+        var talalat2=document.getElementById("lotto2").value
+        var talalat3=document.getElementById("lotto3").value
+        var talalat4=document.getElementById("lotto4").value
+        var talalat5=document.getElementById("lotto5").value
+        var telitalalatok1=[];
+        var telitalalatok2=[];
+        var telitalalatok3=[];
+        var telitalalatok4=[];
+        var telitalalatok5=[];
+        var telitalalatok6=[];
+        var telitalalatok7=[];
+        for(x of talalatok1){
+            if (x==talalat1){
+            telitalalatok1.push(x);
+            }
+            else if(x==talalat2){
+            telitalalatok1.push(x)
+            }
+            else if(x==talalat3){
+            telitalalatok1.push(x)
+            }
+            else if(x==talalat4){
+            telitalalatok1.push(x)
+            }
+            else if(x==talalat5){
+            telitalalatok1.push(x)
+            }
+            document.getElementById("talalat1").innerHTML="Találataid száma: "+telitalalatok1.length 
+        }
+        for(x of talalatok2){
+            if (x==talalat1){
+            telitalalatok2.push(x);
+            }
+            else if(x==talalat2){
+            telitalalatok2.push(x)
+            }
+            else if(x==talalat3){
+            telitalalatok2.push(x)
+            }
+            else if(x==talalat4){
+            telitalalatok2.push(x)
+            }
+            else if(x==talalat5){
+            telitalalatok2.push(x)
+            }
+            document.getElementById("talalat2").innerHTML="Találataid száma: "+telitalalatok2.length 
+        }
+        for(x of talalatok3){
+            if (x==talalat1){
+            telitalalatok3.push(x);
+            }
+            else if(x==talalat2){
+            telitalalatok3.push(x)
+            }
+            else if(x==talalat3){
+            telitalalatok3.push(x)
+            }
+            else if(x==talalat4){
+            telitalalatok3.push(x)
+            }
+            else if(x==talalat5){
+            telitalalatok3.push(x)
+            }
+            document.getElementById("talalat3").innerHTML="Találataid száma: "+telitalalatok3.length 
+        }
+        for(x of talalatok4){
+            if (x==talalat1){
+            telitalalatok4.push(x);
+            }
+            else if(x==talalat2){
+            telitalalatok4.push(x)
+            }
+            else if(x==talalat3){
+            telitalalatok4.push(x)
+            }
+            else if(x==talalat4){
+            telitalalatok4.push(x)
+            }
+            else if(x==talalat5){
+            telitalalatok4.push(x)
+            }
+            document.getElementById("talalat4").innerHTML="Találataid száma: "+telitalalatok4.length 
+        }
+        for(x of talalatok5){
+            if (x==talalat1){
+            telitalalatok5.push(x);
+            }
+            else if(x==talalat2){
+            telitalalatok5.push(x)
+            }
+            else if(x==talalat3){
+            telitalalatok5.push(x)
+            }
+            else if(x==talalat4){
+            telitalalatok5.push(x)
+            }
+            else if(x==talalat5){
+            telitalalatok5.push(x)
+            }
+            document.getElementById("talalat5").innerHTML="Találataid száma: "+telitalalatok5.length 
+        }
+        for(x of talalatok6){
+            if (x==talalat1){
+            telitalalatok6.push(x);
+            }
+            else if(x==talalat2){
+            telitalalatok6.push(x)
+            }
+            else if(x==talalat3){
+            telitalalatok6.push(x)
+            }
+            else if(x==talalat4){
+            telitalalatok6.push(x)
+            }
+            else if(x==talalat5){
+            telitalalatok6.push(x)
+            }
+            document.getElementById("talalat6").innerHTML="Találataid száma: "+telitalalatok6.length 
+        }
+        for(x of talalatok7){
+            if (x==talalat1){
+            telitalalatok7.push(x);
+            }
+            else if(x==talalat2){
+            telitalalatok7.push(x)
+            }
+            else if(x==talalat3){
+            telitalalatok7.push(x)
+            }
+            else if(x==talalat4){
+            telitalalatok7.push(x)
+            }
+            else if(x==talalat5){
+            telitalalatok7.push(x)
+            }
+            document.getElementById("talalat7").innerHTML="Találataid száma: "+telitalalatok7.length 
+        }
+        document.getElementById("talalat1").style.display="block";
+        document.getElementById("talalat2").style.display="block";
+        document.getElementById("talalat3").style.display="block";
+        document.getElementById("talalat4").style.display="block";
+        document.getElementById("talalat5").style.display="block";
+        document.getElementById("talalat6").style.display="block";
+        document.getElementById("talalat7").style.display="block";
+    }
+    </script>
+    <script>
+         document.getElementById("lotto5").addEventListener("keyup", function(event) {
+         // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) {
+         // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        document.getElementById("beadbtn").click();
+  }
+})
+    </script>
+    <footer>
+            <p>Ezt az oldalt a <span style="font-size: 25px;color:gray">Szerencsejatek.hu</span> támogatta</p> <br>
+            <p>Copyright: <strong>Pályi Kristóf</strong>, professzionális webdesigner</p><br>
+            <p>Donét-link: </p><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="text-decoration: none">Kattints ide, hogy adományozhass</a><br>
+            <br><p><b><italics>Támogatóink</italics></b></p><i class="fa fa-edge"></i><i class="fa fa-facebook-official"></i><i class="fa fa-reddit"></i><i class="fa fa-youtube"></i><br>
+    </footer>
+</body>
+</html>

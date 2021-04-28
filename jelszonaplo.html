@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="https://kit.fontawesome.com/b16ad4ba5f.js" crossorigin="anonymous"></script>
+		<link rel="icon" href="heni.jpg">
+		<meta name="viewport" content="width=device-with", initial scale=1.0>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="jelszonaplo.css">
+		<title>Bejelentkezés</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+		<meta charset="utf-8">
+	</head>
+<body>
+    <div id="idcont" class="classcont">
+        <form class="idcont-tartalom-animacio" id="frm" action='jelszovernaplo.php' method="POST">
+				<h2>Jelentkezz be!</h2>
+                <div class="adatok">
+					<div class="adat"><label for="uname"><b>Felhasználónév</b></label>
+						<input type="text" name="uname" placeholder="Ide írd a felhasználóneved" required>
+					</div>
+					<div class="adat" style="margin-left: 100px;">
+						<label for="psw"><b>Jelszó</b></label>
+						<input type="password" name="psw" id="jelszomezo" placeholder="Ide írd a jelszavad" required>
+					 </div>
+				</div>
+                <div class="cbok"><label><input type="checkbox" checked="checked" name="remember">Emlékezz rám!</label>
+					<label><input type="checkbox" value="FakePSW" id="jelszomutat" checked="checked" onclick="lathatojelszo()">Rejtsd el a jelszavad!</label><br>
+				</div>
+				<button id="beadasbejelben">BEJELENTKEZÉS</button>
+        </form>
+    </div>
+    <script>
+	var jelszo=document.getElementById('jelszomezo');
+        function lathatojelszo(){
+	if(document.getElementById("jelszomutat").checked==true){
+		jelszo.type="password";
+	} else{
+		jelszo.type="text";
+	}
+}
+    </script>
+</body>
+</html>

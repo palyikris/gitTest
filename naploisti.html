@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Napló</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    
+    <style>
+        
+        body { background-color: #efefef; color: #454545;}
+        
+        body > * {
+            width: 100%;
+            max-width: 50rem;
+            margin: 1.5rem auto;
+        }
+
+        main > div, h1, #sign {
+            box-sizing: border-box;
+            padding: 0.5rem;
+        }
+
+        h1,main {
+            font-family: cursive;
+        }
+
+        h1,#sign {
+            font-family: 'Caveat', cursive;
+            font-size: 2rem;
+        }
+
+        .date {
+            font-family: monospace;
+            color: #464646;
+        }
+
+        /* Placeholder a contenteditable típushoz */
+        [contenteditable=true]:empty:before {
+            content: attr(placeholder);
+            pointer-events: none;
+            opacity: 50%;
+            display: block;
+        }
+
+        [contenteditable=true]:focus {
+            outline: none;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kedves Naplóm!</h1>
+    </header>
+
+    <main id="uzenofal"></main>
+
+    <div id="sign" contenteditable="true" placeholder="Aláírás"></div>
+    
+    <form action="javascript:void(0);">
+        <label>Mire gondolsz most?</label>
+        <textarea id="uzeno" rows="5" placeholder="Ide írd a gondolataidat..."></textarea>
+        <button type="submit" id="bead" onclick="uzen()">Mentés</button>
+    </form>
+    
+    <script>
+        // Néhány alap változó, amit sokszor felhasználunk
+        tartalom = JSON.parse(localStorage.getItem("raktar")) || [];
+        uzenofal = document.getElementById("uzenofal");
+
+        // A felhasználó (szerző) nevét kikeressük, máskülönben Anonymous
+        szerzo = localStorage.getItem("szerzo");
+        document.title = (szerzo || "Anonymous") + " naplója";
+        
+        // Az "aláírás" ugyanaz, mint a felhasználó (szerző) neve
+        sign = document.getElementById("sign");
+        sign.innerHTML = szerzo
+
+        // Fókusz elvesztésekor mentse el az aláírás mező tartalmát
+        sign.addEventListener("blur", (event) => {
+            szerzo = sign.textContent;
+            localStorage.setItem("szerzo", szerzo);
+            document.title = (szerzo || "Anonymous") + " naplója";
+        });
+
+        // Enter vagy Escape megnyomásakor veszítse el az aláírás mező a fókuszt
+        sign.addEventListener("keydown", (event) => {
+            if(["Escape", "Enter"].includes(event.key)) {
+                event.preventDefault();
+                sign.blur();
+            }
+        });
+
+        // Hozzáadja a bejegyzest az oldalhoz
+        function addLogToHTML(bejegyzes) {
+            bejegyzesNode = document.createElement("div");
+                
+            datumNode = document.createElement("p")
+            datumNode.innerHTML = new Date(bejegyzes.date).toLocaleString();
+            datumNode.classList.add("date");
+            bejegyzesNode.appendChild(datumNode);
+
+            contentNode = document.createElement("p");
+            contentNode.innerHTML = bejegyzes.content.replace(/\n/g, "<br>");
+            bejegyzesNode.appendChild(contentNode);
+
+            uzenofal.appendChild(bejegyzesNode);
+        }
+
+        function addNewInput() {
+            newinput = document.createElement("div");
+            newinput.contentEditable = "true";
+            
+            placeholder = (tartalom.length == 0) ? "Itt kezdd el írni az első naplóbejegyzésed..." : "Írj még valamit..."
+            newinput.setAttribute("placeholder", placeholder);
+
+            uzenofal.appendChild(newinput);
+            return newinput;
+        }
+
+        // Új bejegyzés létrehozása és megjelenítése
+        function uzen() {
+            bejegyzes = {
+                date: new Date(),
+                content: document.getElementById("uzeno").value
+            };
+            // Elmentés
+            tartalom.push(bejegyzes);
+            localStorage.setItem("raktar", JSON.stringify(tartalom));
+            // Megjelenítés
+            document.getElementById("uzeno").value = "";
+            addLogToHTML(bejegyzes)
+        }
+        
+        // Megjelenítjük a korábban mentett bejegyzéseket
+        // és a végére odarakjuk, ahova lehet újat írni
+        window.onload = function() {
+            for (var i = 0; i < tartalom.length; i++) {
+                addLogToHTML(tartalom[i])
+            }
+            
+            newinput = addNewInput();
+        };
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="hu">
+<meta charset="utf-8">
+<head>
+	<link rel="icon" href="heni.jpg">
+	<meta name="viewport" content="width=device-with", initial scale=1.0>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+	html{
+		scroll-behavior: smooth;
+	}
+	body{
+		font-family:courier;
+		background-color:white;
+		padding:0;
+		margin:0;
+		transition: margin-left .5s;
+	}
+	#randomcuccok{
+		display:none;
+		}
+		
+	.trybutton{
+		background-color: blue;
+		padding: 15px;
+		margin-right: 20px;
+		font-weight: lighter;
+		font-size: 60%;
+		border:none;
+		border-radius: 10px;
+	}
+	.trybutton.other{
+		background-color: chocolate;
+		padding: 15px;
+		margin-right: 20px;
+		font-weight: lighter;
+		font-size: 60%;
+		border:none;
+		border-radius: 10px;
+	}
+	.trybutton:hover{
+		background-color: cyan;
+		cursor: pointer;
+	}
+	.trybuttonother:hover{
+		background-color: darkorange;
+		cursor: pointer;
+	}
+	#header{
+		background-color: lightgray;
+		width: 0;
+		height: 100%;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left:0;
+		overflow: hidden;
+		padding-top: 60px;
+		font-family: "Lato", sans-serif;
+		transition: 1.3s;
+	}
+	#logo{
+		margin-left: 80px;
+		margin-right: 20px;
+		text-align: center;
+		border-radius: 100%;
+		color:white;
+		/*szedjük le a linkről a kijelölést*/
+		text-decoration:none;
+		font-size: 25px;
+		display: "block";
+	}
+	#henilogo{
+		/* néhe böngészők standardbe raknak bordert, nekem nem kell*/
+		border:none;
+		height:100px;
+		width:100px;
+		border-radius: 100%;
+	}
+	
+		
+	
+	.menupontok{
+		margin:0;
+		height:100%;
+
+	}
+	.menupontok a{
+		width: 250px;
+		height: 80px;
+		text-decoration: none;
+		background-color:lightgray;
+		padding: 50px 50px 0 0;
+  		text-decoration: none;
+  		font-size: 25px;
+  		color: #818181;
+  		display: block;
+  		transition: 0.3s;
+		text-align: center;
+		color: white;
+	}
+	.menupontok a:hover{
+		background-color: tomato;
+	}
+	.header .closebtnforheader{
+		position: absolute;
+		top: 0;
+		right: 25px;
+		font-size:36px;
+		margin-left: 50px;
+	}
+	#main{
+		text-align: center;
+		margin-bottom: 150px;
+	}
+	.cikkesresz{
+		padding:0;
+		margin:0;
+		overflow: hidden;
+		float: top;
+		background-color: lightgrey;
+	}
+	.article1{
+		width:33.3%;
+		text-align: center;
+		background-color: lightgrey;
+		margin: 0;
+		display:block;
+		float: left;
+		margin:0;
+	}
+	.article2{
+		width:33.3%;
+		text-align: center;
+		background-color:lightgrey;
+		margin: 0;
+		display: inline-block;
+		overflow: hidden;
+		margin: 0;
+	}
+	.article3{
+		width:33.3%;
+		text-align: center;
+		background-color: lightgrey;
+		float:left;
+		margin:0;
+	}
+	p{
+		margin: 0;
+	}	
+	
+	#fentjobbmenu{
+		/*jobbra igazítom a jobb oldali menüpontot*/
+		float:center;
+		vertical-align: top;
+	}
+	.oldalneve{
+		color:dimgray;
+		font-weight: bold;
+		font-size: 14px;
+		border: 10px, solid black;
+	}
+	
+ 	
+	#szovegvalto button{
+		vertical-align: bottom;
+		border: none;
+		display: inline-block;
+		margin:10px;
+	}
+	#loginbtn{
+		height: 40px;
+		width: 50px;
+		border-radius: 15px;
+		color:white;
+		background-color: green;
+		float: right;
+		vertical-align: top;
+		
+	}
+	#loginbtn:hover{
+		opacity:0.8 ;
+		cursor: pointer;
+	}
+	#content{
+		align-content: center;
+		background-color: white;
+		margin-left: 15%;
+		margin-right: 15%;
+		padding:15%;
+		display: none;
+	}
+	#idcont input[type=text], input[type=password]{
+		width:100%;
+		padding:12px 20px;
+		margin: 8px 0px;
+		display:inline-block;
+		border:1px solid black;
+		box-sizing:border-box;
+	}
+	#idcont button{
+		background-color: seagreen;
+		padding:14px 20px;
+		margin:8px 0;
+		border:none;
+		display: inline-block;
+		cursor: pointer;
+		color:white;
+		width:100%;
+	}
+	#idcont button:hover{
+		opacity:0.8;
+	}
+	.bezaro{
+		background-color: red;
+		color:white;
+		width:auto;
+		padding: 10px 18px;
+	}
+	#avatarimg{
+		text-align: center;
+		position:relative;
+		background-color:wheat;
+		padding-top: 20px;
+
+	}
+	#heni{
+		width:20%;
+		height:30%;
+		border-radius: 50px;
+		padding:0;
+		margin-left: 40%;
+		border-radius: 100%;
+	}
+	.container{
+		padding:16px;
+	}
+	span.psw{
+		float:right;
+		padding-top: 16px;
+	}
+	.classcont{
+		display:none;
+		position:fixed;
+		z-index:1;
+		left:0;
+		top:0;
+		width:100%;
+		height:100%;
+		overflow:auto;
+		background-color: white;
+		background-color: rgba(0,0,0,0.4);
+		padding-top: 60px;
+		
+	}
+	.container{
+		background-color: wheat;
+		margin: 0 auto 0 auto;
+		border-left:1px solid gray;
+		border-right:1px solid gray;
+		width:40%;
+		
+	}
+	.idcontbecsuk{
+		position:absolute;
+		color:white;
+		font-size: 35px;
+		font-weight: bold;
+
+	}
+	.idcontbecsuk:hover
+	.idcontbecsuk:focus{
+		color:red;
+		cursor: pointer;
+	}
+	.animate{
+		animation: animatezoom 2s
+	}
+	@keyframes animatezoom{
+		from{transform: scale(0)}
+		to{transform: scale(1)}
+	}
+	@media screen and(max-width: 300px){
+		span.psw{
+			display:block;
+			float:none
+		}
+		.bezaro{
+			width: 100%;
+		}
+	}
+
+.kep {
+    vertical-align: middle;
+    width: 100px;
+    height: 200px;
+	display:inline-block;
+    }
+
+
+
+.search-container{
+	float:left;
+	background-color:black;
+	width: 100%;
+}
+.kereso{
+	padding:6px;
+	margin-top: 8px;
+	font-size: 17px;
+	border: none;
+	float: left;
+}
+.search-container button{
+	padding-right: 63px;
+	margin-right: 16px;
+	background: #ddd;
+	font-size: 17px;
+	border: none;
+	cursor: pointer;
+	width:40px;
+	height: 32.5px;
+	overflow:hidden;
+	margin-top: 7.7px;
+}
+.search-container button:hover{
+	background-color: #ccc;
+}
+.mySlides1{
+	height:700px;
+	vertical-align: top;
+	transition: display 1s;
+}
+.headerforpage{
+	background-color:black;
+}
+footer{
+	background-color: black;
+	text-align: center;
+	margin: 0;
+	text-decoration: none;
+	color:white;
+	padding: 50px 0 50px 0;
+}
+i{
+	margin-left: 20px;
+}
+#ujdonsag{
+            background-color: burlywood;
+            width: 40%;
+            top:10%;
+            margin-left: 450px;
+            text-align: center;
+            padding: 10px 0 30px 0;
+            display: none;
+			position: absolute;
+			z-index: 1;
+        }
+        #closeujdonsag{
+            margin-left: 550px;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 25px;
+            color:cornsilk
+        }
+        #closeujdonsag:hover{
+            font-size: 31px;
+            font-weight: bolder;
+
+        }
+        h1{
+            overflow: hidden;
+            margin: 0;
+        }
+        .exmarkbal{
+            font-size: 80px;
+            color: white;
+            font-weight: bolder;
+            float: left;
+        }
+        .exmarkjobb{
+            font-size: 80px;
+            color: white;
+            font-weight: bolder;
+            float: right;
+        }
+	</style>
+	<title>Heni fanpage</title>
+</head>
+<body>
+	<script>
+		window.onload=function(event){
+			document.getElementById("ujdonsag").style.display="block";
+		}
+	</script>
+	<div id="ujdonsag">
+        <span id="closeujdonsag" onclick="document.getElementById('ujdonsag').style.display='none'">&times</span>
+        <p class="exmarkjobb">!</p>
+        <p class="exmarkbal">!</p>
+        <h2>Tudtad???</h2>
+        <p>Újdonságok várnak rád a fanoldalon!</p>
+        <p><strong><italics>Videotéka</italics> nyílt!!</strong> És kérdőív is van!!</p>
+        <p>Szeretnéd meglátogatni?</p>
+        <p>Csapass ide egy <a href="videok.html">kattintást</a></p>
+		<p>Ha meg kíváncsi vagy, mennyire vagy Heni, kattints <a href="kerdokezdo.html">ide</a>!</p>
+        <img src="kriskacsint.jpg" width="300px">
+    </div>
+	<div class="headerforpage">
+	<button id="loginbtn" onclick="document.getElementById('idcont').style.display='block'" style="width:auto;">Jelentkezz be Itt!</button>
+	</div>
+	<div id="idcont" class="classcont">
+	<form class="idcont-tartalom-animacio" id="frm" action='jelszover.php' method="POST">
+		<div class="container">
+			<span onclick="document.getElementById('idcont').style.display='none'" class="idcontbecsuk" title="Idcont Becsukasa">&times;</span>
+			<img id="heni" src="heni.jpg" alt="heniavatar" name="avatar">
+		</div>
+		<div class="container">
+			<label for="uname"><b>Felhasználónév</b></label>
+			<input type="text" name="uname" placeholder="Ide írd a felhasználóneved" required>
+			<label for="psw"><b>Jelszó</b></label>
+			<input type="password" name="psw" id="jelszomezo" placeholder="Ide írd a jelszavad" required>
+			<button type="submit">Bejelentkezés</button>
+			<label><input type="checkbox" checked="checked" name="remember">Emlékezz rám!</label>
+			<label><input type="checkbox" value="FakePSW" checked="checked" id="jelszomutat" onclick="lathatojelszo()">Rejtsd el a jelszavad!</label><br>
+			<a href="regisztracio.php" style="text-decoration: none"><b>Nincs fiókod? Regisztrálj</b></a>
+		</div>
+		<div class="container" style="background-color:sandybrown;">
+			<button type="button" onclick="document.getElementById('idcont').style.display='none'" class="bezaro">Bezárás</button>
+			<span class="psw">Elfelejtetted a <a href="#">jelszavadat?</a></span> 
+		</div>
+	</form>
+</div>
+
+
+<script>
+	var modal=document.getElementById('idcont');
+	window.onclick=function(event){
+		if(event.target==modal){
+			modal.style.display="none"
+		}
+	}
+	var jelszo=document.getElementById("jelszomezo")
+	function lathatojelszo(){
+	if(jelszo.type==="password"){
+		jelszo.type="text";
+	} else{
+		jelszo.type="password";
+	}
+}
+</script>
+
+	<div id="header" class="header">
+			<a id="logo" href="/">
+			<img src="heni.jpg" alt="dramaihenilogo" id="henilogo"></a>
+			<a href="javascript:void(0)" class="closebtnforheader" onclick="closeheader()" style="text-decoration: none;color: white">&times;</a><br><br><br>
+		<div class="menupontok">
+			
+			<a href="heniacsicsak.html">Heni a csicsak</a>
+			<a href="zsofiacsicsak.html">Zsófi a csicsak</a>
+			<a href="naplok.html">Napló</a>
+			<a href="photoslide.html">Képes cumó</a>
+			<a href="mindkettoaz.html">Mindkettő csicsak?</a>
+			
+		</div>
+	</div>
+	<div class="headerforpage">
+	<div class="mainforheader" id="main4h">
+		<span style="font-size:30px;cursor:pointer;color:white" onclick="openheader()">&#9776;</span>
+	</div>
+	</div>
+	
+	
+<!--
+	<div id="randomcuccok">
+	<p><strong>valami</strong><br><em>valami</em><br><sub>2<sub><br><del>valami</del><br>valami</p>
+	<p><q>quote this</q><br><blockquote cite="https://www.example.hu/example.html"</blockquote></p>
+	<p><bdo dir="rtl">yes</bdo>
+	<p>The <abbr title="World Health Organisation">WHO</abbr> sucks</p>
+	<a href="hhtps://www.example.com" style="color:red" target="_blanket">gud 4 u</a>
+	<table>
+		<tr>
+		<caption>fuck</caption>
+			<th>Fuck</th>
+			<th>this</th>
+		</tr>
+		<tr>
+			<td>fuck</td>
+			<td>this</td>
+	</table>
+	<ul>
+		<li>yeah</li>
+		<li>boy</li>
+	</ul>
+	<ol>
+		<li>yeah</li>
+		<li>boy</li>
+	</ol>
+	<ol style="list-style-type:square;">
+		<li>yeah</li>
+		<li>boy</li>
+	</ol>
+	<dl>
+		<dt>geci</dt>
+		<dd>sok gyerek</dd>
+	</dl>
+	<dl>
+		<dt>loci</dt>
+		<dd>buzi</dd>
+	</dl>
+	<iframe src="https://www.heniegycsicsak.com"></iframe>
+	<form action="/action_page.php">
+		<label for="fname">First name:</label><br>
+		<input type="text" id="fname" name="fname"><br><br>
+		<input type="submit" value="Submit">
+	</form>
+	<form action="/action_page.php">
+	<select name="fuck"></select>
+		<option style="height:20px","width:50px" value="me"></option>
+		<option style="height:20px","width:50px" value="you"></option>
+	</form>
+	<form action="/action_page.php">
+		<textarea name="ide ne thx"></textarea>
+	</form>
+	<form action="/action_page.php">
+		<input type="text" placeholder="Fuck you this does nothing">
+	</form>
+	-->
+	<div class="headerforpage">
+		<div class="search-container" style="vertical-align: top">
+			<input type="text" id="htecs" class="kereso" placeholder="Keress rá valamire...">
+			<button  onclick="keresohenicsicsak()"><i class="fa fa-search"></i></button><br>
+			<p id="pforsc" style= "display:none;font-size:larger;color: coral;"><strong></strong></p>
+		</div>
+	</div>
+	<script>
+		var hecs, hcs;
+		hecs=document.getElementById("htecs").value;
+		function keresohenicsicsak(){
+			if(hecs=="Heni"){
+				hcs="Csicsak";
+			}
+			else{
+				hcs="idk";
+			}
+			document.getElementById("pforsc").innerHTML=hcs;
+			document.getElementById("pforsc").style.display="inline";
+			
+		}
+	</script>
+	<script>
+		function openheader(){
+			document.getElementById("header").style.width="251px";
+			document.body.style.marginLeft="251px";
+			document.getElementById("main4h").style.display="none";
+		}
+		function closeheader(){
+			document.getElementById("header").style.width="0";
+			document.body.style.marginLeft="0";
+			document.getElementById("main4h").style.display="inline";
+		}
+	</script>
+	<section>
+		<img class="mySlides1" src="heniesen4.jpg"
+		style="width:100%">
+		<img class="mySlides1" src="heninez.jpg"
+		style="width:100%">
+		<img class="mySlides1" src="heniesen3.jpg"
+		style="width:100%">
+	 </section>
+	 <script>
+		// Automatic Slideshow - change image every 3 seconds
+		var myIndex = 0;
+		carousel();
+		
+		function carousel() {
+		  var i;
+		  var x = document.getElementsByClassName("mySlides1");
+		  for (i = 0; i < x.length; i++) {
+			 x[i].style.display = "none";
+		  }
+		  myIndex++;
+		  if (myIndex > x.length) {myIndex = 1}
+		  x[myIndex-1].style.display = "block";
+		  setTimeout(carousel, 3000);
+		}
+		</script>
+	  
+	<br><br>
+	<br><br><div id="main">
+		<h1 title="csicsak">Kerekes Henrietta</h1><br><br>
+		<p>Ez az oldal <span class="oldalneve" title="csicsak">Kerekes Henriettáról</span> fog szólni,</p>
+		<p>melyen kiteregetem <span class="oldalneve"title="csicsak">Kerekes Henrietta </span>gyönyörű</p>
+		<p>fényképeit, ezzel is megpróbálva éreztetni vele, </p><br>
+		<p>hogy az iránta való <b><italics>Szeretetemnél</italics></b> már csak egy nagyobb dolog van...</p>
+	</div>
+	<br><br><br><br>
+	<div class="cikkesresz">
+		<article class="article1">
+			<img src="kicsiheni.jpg" alt="kicsiheni" width="200px" height="350px">
+			<p>Ez egy kisebb kori kép <span class="oldalneve" title="csicsak">Heniről</span>, amit <span class="oldalneve" title="csicsak">Heni</span> nagyon nem szeret, úgyhogy természetesen itt van.</p>
+		</article>
+		<article class="article2">
+			<img src="mergesheni.jpg" alt="mergesheni" width="200px" height="350px">
+			<p><span class="oldalneve" title="csicsak">Heni</span> ezen a képen nem tudom pontosan milyen fejet vág, de cukker szóval itthagyom.</p>
+		</article>
+		<article class="article3">
+			<img src="befonotthaj.jpg" alt="befonotthaj" width="200px" height="350px">
+			<p><span class="oldalneve" title="csicsak">Heni</span> ezt nemrég küldte és ritkán van ilyen haja, ezért mindenképp meg kell őrizni.</p>
+		</article>
+	</div>
+	<div class="cikkesresz" style="margin-top: 0;">
+		<article class="article1">
+			<img src="henirandom.jpg" alt="randomheni" width="200px" height="350px">
+			<p><span class="oldalneve" title="csicsak">Heni</span> itt valamit érez, nemtom mit, de szemüvegben cuki, szóval tessék-lássék.</p>
+		</article>
+		<article class="article2">
+			<img src="heniszomi.jpg" alt="szomiheni" width="200px" height="350px">
+			<p><span class="oldalneve" title="csicsak">Heni</span> szegény szomorú, valószínűleg épp videochatelt velem. Valaki vidítsa fel.</p>
+		</article>
+		<article class="article3">
+			<img src="henihappy.jpg" alt="happyheni" width="200px" height="350px">
+			<p><span class="oldalneve" title="csicsak">Heni</span> itt boldog, annak ellenére, hogy még mindig az én barátnőm. Csodák igenis léteznek!!</p>
+		</article>
+	</div>
+	
+<!--
+<div id="content">
+	<div id="szovegvalto">
+	<h1 id="haha" style="color:red"><strong>Hello Heni!</strong></h1>
+	<button type="button" onclick='document.getElementById("haha").innerHTML="Csicsak"'>Kattints rám!</button>
+	<button type="button" onclick='document.getElementById("haha").innerHTML="Hello Heni"'>Aztán rám!</button>
+	</div>
+	<br><br><br>
+	<div id="kepes">
+	<button onclick='document.getElementById("kepek").src="heni.jpg"'>Drámai Heni</button>
+	<img id="kepek" src="kris.jpg" alt="kris" width="300" height="400">
+	<button onclick='document.getElementById("kepek").src="kris.jpg"'>Szexi Kristóf</button><br><br><br>
+	</div>
+	<script id="heniegycsicsak">window.alert("Heni egy csicsak");</script
+	<script>
+	function henicsicsak(){
+		return window.alert("Heni egy csicsak");
+	}	
+	</script>
+	<script>henicsicsak()</script>
+	<button type="button" onclick='alert("Heni egy csicsak")'>Kattinthatsz rám is;)</button>
+	
+	<div onmouseover="this.style.backgroundColor='red'">DIVem</div>
+	<script>
+	var txt="We are \"Vikings\"";
+	alert(txt);
+	</script>
+	 find a position of a letter in a txt w indexOf("theletter")
+	replace a word to another in a txt w replace("word", "word to replace w)
+	make a text in uppercase w txt.toUpperCase()
+	get an element of a list w nameoflist[numberofelementinlist]
+	get a number of elements of a list with alert(nameoflist.length)
+	remove the last element of a list w nameoflist.pop()
+	to add an element to a list use nameoflist.push("theelementyouwanttoadd")
+	remove an element/elements from a list with nameoflist.splice("number of element")
+	organise alphabetically a list w nameoflist.sort()
+	<div id="datum">
+	<script>
+	var date= new Date()
+	</script>
+	</div>
+	<button onclick="alert(date)" width="80px" height="120px">Ide kattints a dátumért</button><br><br>
+	 get only the year from the new Date() w nameofvar.getFullYear()
+	set the year to a year w nameofvar.setFullYear(year)
+	create a random number w Math.random()
+	get the greatest number from a list w Math.max(list w numbers)
+	Math.round()
+	Math.sqrt()
+	
+
+	
+	<form action="/action_page.php">
+		<label id="aoran">Alma vagy ananász?</label><br>
+		<input type="text" id="txtaoran" name="txtaoran" placeholder="Alma vagy ananász?" value=""></input><br><br>
+		<input type="submit" value="Submit"></input>
+		<script>
+			if(getElementById("txtaoran").value==Alma){
+				alert("Ezaz, király vagy");
+			} else{
+				alert("Csicsak vagy");
+				}
+
+	<div id="almas">
+	<label style="color:red"><strong>Alma vagy Ananász?<strong></label><br>
+	 <input type="text" id="melyikavan" placeholder="Alma vagy Ananász?"><br><br>
+	 <p id="valasz" title="Heni egy csicsak"></p>
+	 <button onclick="almavananasz()">Bead</button><br>
+	 <script> 
+	 function almavananasz(){
+		var alvagyan, valasz;
+		alvagyan=document.getElementById("melyikavan").value
+		if (alvagyan=="Alma"){
+			valasz="Yeeey, király vagy!";
+			}
+		else if (alvagyan=="Ananász"){
+			valasz="Fúúúj csicsak vagy";
+			}
+		else{
+			valasz="Ananászt vagy almát kell beírj";
+			}
+		document.getElementById("valasz").innerHTML=valasz;
+		}
+	</script>
+	</div>
+	
+	<script>var i;
+	for(i=0; i<10; i++){
+		console.log(i);
+		}
+	for (x of list){
+		console.log(x);
+		}
+	var j=0
+	while (j<10){
+		console.log(i);
+		i+=2;
+		}
+	</script>
+	
+	<div id="nevesfuggveny">
+		<label><strong>Kérlek add meg a teljes neved<label><br>
+		<input id="firstn" placeholder="Vezetéknév">
+		<input id="lastn" placeholder="Keresztnév">
+		<input id="anothern" placeholder="Harmadik név" style="display:none"><br>
+		<p id="teljesnev"></p>
+		<button onclick="megjelen()">Nyomj meg, ha van harmadik neved</button><br>
+		<button onclick="nevvisszaad()">Kérem a nevem!</button>
+<script>
+function megjelen(){
+	document.getElementById("anothern").style.display="inline";
+	}
+function nevvisszaad(){
+	var firstn=document.getElementById("firstn").value;
+	var lastn=document.getElementById("lastn").value;
+	var anothern=document.getElementById("anothern").value;
+	if(firstn=="Kerekes" || lastn=="Henrietta"){
+		document.getElementById("teljesnev").innerHTML="Bahaha egy csicsak vaagy:)";
+		}
+	else{document.getElementById("teljesnev").innerHTML='Az ön teljes neve:'+[firstn,lastn,anothern].join(" ");
+	}
+	}
+
+</script>
+</div>
+<br><br><br>
+<input type="button" class="trybutton" value="Nyomj meg, mert buli">
+<input type="button" class="trybutton other" value="Nyomj meg engem is">
+</div>	
+
+<div class="slideshow-container">
+
+	<div class="mySlides fade">
+	  <div class="numbertext">1 / 3</div>
+	  <img class="kep"src="heni.jpg" style="width:100%">
+	  <div class="text">Drámai Szerelmem</div>
+	</div>
+	
+	<div class="mySlides fade">
+	  <div class="numbertext">2 / 3</div>
+	  <img class="kep" src="urgay.jpg" style="width:100%">
+	  <div class="text">You are gay by Fifike</div>
+	</div>
+	
+	<div class="mySlides fade">
+	  <div class="numbertext">3 / 3</div>
+	  <img class="kep" src="fuckott.jpg" style="width:100%">
+	  <div class="text">Fuck ott puszi Lelle</div>
+	</div>
+	
+	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+	<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	
+	</div>
+	<br>
+	
+	<div style="text-align:center">
+	  <span class="dot" onclick="currentSlide(1)"></span> 
+	  <span class="dot" onclick="currentSlide(2)"></span> 
+	  <span class="dot" onclick="currentSlide(3)"></span> 
+	</div>
+	<script>
+		var slideIndex = 1;
+		showSlides(slideIndex);
+		
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+		
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+		
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("mySlides");
+		  var dots = document.getElementsByClassName("dot");
+		  if (n > slides.length) {slideIndex = 1}    
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+			  slides[i].style.display = "none";  
+		  }
+		  for (i = 0; i < dots.length; i++) {
+			  dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";  
+		  dots[slideIndex-1].className += " active";
+		}
+		</script>
+	-->
+	<footer>
+		<p>Ezt az oldalt a <span class="oldalneve" style="font-size: 25px">WeLoveHeni</span> támogatta</p> 
+		<p>Copyright: <strong>Pályi Kristóf</strong>, professzionális webdesigner</p>
+		<i class="fa fa-btc"></i> <p>Donét-link: </p><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Kattints ide, hogy adományozhass</a>
+		<p><b><italics>Támogatóink</italics></b></p><i class="fa fa-edge"></i><i class="fa fa-facebook-official"></i><i class="fa fa-reddit"></i><i class="fa fa-youtube"></i>
+		<a href="kfg_keksz.html">Karinthy demo</a>
+	</footer>
+</body>
+</html>

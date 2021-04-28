@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+    <title>Napló 1</title>
+    <style>
+        body{
+            margin:0;
+            background-image: url("bgimgpapir.jfif");
+        }
+        input{
+            width:355px;
+            height:80px;
+            background-image: url("bgirhato.jfif");
+        }
+        .megir{
+            width:80px;
+            height:50px;
+            background-image: url("bgnaplogomb.jfif");
+            color:white;
+            padding:10px;
+            font-weight: lighter;
+            margin:0;
+            top:805px;
+        }
+        .torol{
+            background-image: url("bgnaplogomb.jfif");
+            color:white;
+            padding:10px;
+            font-weight: lighter;
+            margin:0;
+            top:805px;
+            position: relative;
+            float: right;
+            top:0;
+        }
+        .torolutso{
+            background-image: url("bgnaplogomb.jfif");
+            color:white;
+            padding:10px;
+            font-weight: lighter;
+            margin:0;
+            top:805px;
+            display: inline-block;
+        }
+        label{
+            margin-left:400px;
+            font-weight: bolder;
+            font-size: larger;
+        }
+        #uzenofal{
+            padding: 80px 50px 80px 50px;
+            background-image: url("bgimgpapir.jfif");
+            font-size: 20px;
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+
+        }
+        .cim p{
+            font-size: 35px;
+            font-weight: bolder;
+            text-align:center ;
+            background-image: url("bgimgpapir.jfif");
+            padding: 50px;
+            margin: 0;
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+        }
+        footer{
+            position: relative;
+            text-align: center;
+            bottom:0;
+            margin-top:200px;
+            padding:20px 50px 20px 50px;
+            background-image: url("bgbookcover.jpg");
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            color: whitesmoke;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="cim"><p>Kedves Naplóm!</p></div>
+    <div id="uzenofal"></div><br>
+    <label>Mire gondolsz most?</label>
+    <input type="text" id="uzeno" class="uzeno" placeholder="Ide írd a gondolatokat...">
+    <button class="megir" id="megir" onclick="uzen()" type="submit">Megírom</button>
+    <button class="torol" onclick="naplotorles()">Napló kezdése/törlése</button>
+    <button class="torolutso" onclick="utsotorles()">Utolsó bejegyzés törlése</button>
+    <script>
+        var tartalom=JSON.parse(localStorage.getItem("raktar"));
+        
+        function uzen(){
+        var uzenet=document.getElementById("uzeno").value;
+        var date= new Date();
+        var hour=addZero(date.getHours());
+        var min=addZero( date.getMinutes());
+        var sec=addZero(date.getSeconds());
+        var ido=[hour+':'+min+':'+sec+':'];
+        var fulluzenet=[ido, uzenet].join(" ");
+        document.getElementById("uzenofal").innerHTML+="<br>";
+        document.getElementById("uzenofal").innerHTML+=fulluzenet;
+        betesz(tartalom, '<br>'+fulluzenet);
+        localStorage.setItem('raktar', JSON.stringify(tartalom));
+        document.getElementById('uzeno').value="";
+        }
+        window.onload=document.getElementById("uzenofal").innerHTML=JSON.parse(localStorage.getItem("raktar")).join(""); 
+        function addZero(i){
+            if (i<10){
+                i='0'+i;
+            }
+            return i
+        }
+        function removeComma(i){
+            i=i.join("");
+            return i
+        }
+        function naplotorles(){
+        localStorage.clear();
+        tartalom=[];
+        betesz(tartalom,  "<strong>A naplóm kezdete..</strong>");
+        localStorage.setItem('raktar', JSON.stringify(tartalom));
+        history.go(0);
+        }
+        function betesz(arrname, item){
+            arrname.push(item);
+            return arrname
+        }
+        function utsotorles(){
+            tartalom.pop();
+            localStorage.setItem('raktar', JSON.stringify(tartalom));
+            history.go(0);
+        }
+        var input = document.getElementById("uzeno");
+
+        // Execute a function when the user releases a key on the keyboard
+        input.addEventListener("keyup", function(event) {
+         // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) {
+         // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        document.getElementById("megir").click();
+  }
+})
+    </script>
+    <footer>
+        <p><italics>WeLoveHeni</italics></p>
+    </footer>
+</body>
+</html>

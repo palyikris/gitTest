@@ -1,0 +1,20 @@
+AuthUserFile /var/www/customers/vh-40885/web/home/Heni/HeniFanPage/.htpasswd
+AuthType Basic
+AuthName ".htpasswd protection"
+<Files ~ "^\.htaccess">
+  Order allow,deny
+  Deny from all
+</Files>
+
+<Files ~ "^\.htpasswd">
+  Order allow,deny
+  Deny from all
+</Files>
+
+<Files "lottozo.html">
+  Require valid-user
+</Files>
+
+<Files "naplo.html">
+  Require valid-user
+</Files>
