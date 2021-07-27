@@ -353,6 +353,13 @@ p{
     .maincontent{
         font-size: 14px;
     }
+    .topnav a{
+        font-size: 5px;
+    }
+    .topnav{
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 .bejelform{
     top: 100px;
