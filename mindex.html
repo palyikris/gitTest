@@ -13,17 +13,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="chat_assistant"><button onclick="open_chat()" ondblclick="remove_chat()"><i class="fa fa-comments" id="chat_assistant"></i></button></div>
+    <div class="chat_assistant"><button onclick="open_chat()"><i class="fa fa-comments" id="chat_assistant"></i></button></div>
     <div class="chat_interface" id="chat_interface_id">
         <div class="chat_monitor">
             <span class="chat_interface_close" id="chat_interface_close_id" onclick="chat_close()"><i class="fa fa-remove"></i></span>
             <table id="chat_monitor_table">
                 <th>
-                    
+
                 </th>
                 <tr>
                     <td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td>
-                    <td class="msg_left">Helló, miben segíthetek? Vigyázzon, egyszerre csak egyet tud kérdezni tőlem! Ha többet szeretne, zárja be az ablakot, és nyissa meg újra. Jöhetnek a kérdések!</td>
+                    <td class="msg_left">Helló, miben segíthetek? Vigyázzon, egyszerre csak egyet tud kérdezni tőlem! Ha többet szeretne, kattintson a plusz jelre! Jöhetnek a kérdések!</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -31,7 +31,7 @@
                 </tr>
             </table>
             <div class="chat_input">
-                <input type="text" name="msg" class="input" id="chat_input_input" placeholder="Ide írja kérdését..."><button type="button" onclick="insert()" id="chat_input_btn"><i class="fa fa-paper-plane"></i></button>
+                <input type="text" name="msg" class="input" id="chat_input_input" placeholder="Ide írja kérdését..."><button type="button" onclick="insert()" id="chat_input_btn"><i class="fa fa-paper-plane"></i></button><button type="button" onclick="remove_chat()" id="chat_input_btn1"><i class="fa fa-plus"></i></button>
             </div>
         </div>
         
@@ -45,13 +45,14 @@
             <a href="#">negyedik fül</a>
             <a href="#">ötödik fül</a>
         </div>-->
-        <div class="topnav_options">
+        <div class="topnav_icon" id="topnav_icon_id"><i class="fa fa-bars"></i></div>
+        <div class="topnav_options" id="topnav_options_id">
         <a href="mindex.html">főoldal</i></a>
-        <a href="#">első fül</a>
-        <a href="#">második fül</a>
-        <a href="#">harmadik fül</a>
-        <a href="#">negyedik fül</a>
-        <a href="#">ötödik fül</a>
+        <a href="#" class="topnav_option">első fül</a>
+        <a href="#" class="topnav_option">második fül</a>
+        <a href="#" class="topnav_option">harmadik fül</a>
+        <a href="#" class="topnav_option">negyedik fül</a>
+        <a href="#" class="topnav_option">ötödik fül</a>
         </div>
         <div class="txt_nextto_pic" id="txt_nextto_pic_id">Szeretné villámgyorsan elsajátítani az értékesítés fortélyait?<br><br>A legjobb helyre jött!</div>
     </div>
@@ -91,6 +92,17 @@
         </div>
     </footer>
     <script>
+        document.getElementById("topnav_icon_id").addEventListener("click", function() {
+            if(document.getElementById("topnav_options_id").style.transform==="scale(1)"){
+                document.getElementById("topnav_options_id").style.transform="scale(0)"
+                document.getElementById("topnav_options_id").style.width="0"
+            }
+            else{
+            document.getElementById("topnav_options_id").style.transform="scale(1)"
+            document.getElementById("topnav_options_id").style.width="100%"
+        }
+        });
+
         function insert(){
             var msg=document.getElementById("chat_input_input").value
             document.getElementById("chat_monitor_table").innerHTML+="<tr><td></td><td></td><td></td><td></td><td></td><td class='chat_right' id='chat_right_id'>"+msg+"</td></tr>"
@@ -98,6 +110,10 @@
             var answer=document.getElementById("chat_right_id").innerHTML;
             var answer1=answer.toLowerCase();
             var answer11= answer1.replace(/ /g, "");
+            document.getElementById("chat_input_btn1").style.border="2px solid red"
+            document.getElementById("chat_input_btn1").style.width="20%"
+            document.getElementById("chat_input_input").style.display="none"
+            document.getElementById("chat_input_btn").style.display="none"
             if(answer11.indexOf("kerül") >= 0 && answer11.indexOf("mennyi")>=0){
                 document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>A szolgáltatásaink árait megtekintheti ezen a linken: www.lmv.hu/szolgaltatasok</td><td><td></td><td></td></td><td'></td></tr>"
             }
@@ -128,6 +144,12 @@
             else if(answer11.indexOf("csinál")>=0 && answer11.indexOf("lmv")>=0){
                 document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Mi itt az LMV-nél igyekszünk segíteni ügyfeleinknek minél hamarabb elérni céljaikat.</td><td></td><td'></td><td></td><td></td><td></td><td></td></tr>"
             }
+            else if(answer11.indexOf("csinál")>=0 && answer11.indexOf("itt")>=0){
+                document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Nos, itt lehet kurzusokat felvenni, vagy éppen időpontot megbeszélni Laki Marcellel, vagy akár kérdezgethet is tőlem.</td><td></td><td'></td><td></td><td></td><td></td><td></td></tr>"
+            }
+            else if(answer11.indexOf("mit")>=0 && answer11.indexOf("kérdez")>=0){
+                document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Amit csak szeretne az oldallal, a céggel, a kurzusokkal, vagy Laki Marcellel kapcsolatban.</td><td></td><td'></td><td></td><td></td><td></td><td></td></tr>"
+            }
             else if(answer11.indexOf("hol")>=0 && answer11.indexOf("kurzus")>=0){
                 document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>A kurzusainkat lejjebb görgetve a KURZUSAINK feliratú gomb megnyomásával tekintheti meg, vagy a további linken: www.lmv.hu/kurzusok</td><td></td><td></td><td></td><td></td></tr>"
             }
@@ -136,12 +158,17 @@
             }
             else if(answer11.indexOf("gyakori")>=0 && answer11.indexOf("kérdés")>=0){
             document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Sokan kérdezik, hogy: <br>Mi az az lmv?<br>Mit csinálunk?<br>Mennyibe kerül egy kurzus? Zárja be az ablakot, nyissa meg, és kérdezzen rá, amelyikre/amire szeretne!</td><td></td><td></td><td></td><td'></td></tr>"
-
+            }
+            else if(answer11.indexOf("jelentkez")>=0){
+                document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Nem kell sehova se jelentkezni. Vegye megy egyik kurzusunkat, vagy konzultáljon Laki Marcellal, és kezdhet is!</td>"
+            }
+            else if(answer11.indexOf("anyádseszeret")>=0){
+                document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>De a tied igen</td>"
             }
             else if(answer11.indexOf("mi")>=0 && answer11.indexOf("oldal")>=0){
                 document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Ez az oldal segít az embereknek megismerni az LMV-t, és annak a termékeit. Lesse meg a kurzusokat, vagy konzultáljon Laki Marcellel.</td><td></td><td'></td><td></td><td></td></tr>"
             }
-            else if(answer11.indexOf("mennyi")>=0 && answer11.indexOf("fogad")>=0 || answer11.indexOf("mikor")>=0 && answer11.indexOf("fogad")>=0){
+            else if(answer11.indexOf("mennyi")>=0 && answer11.indexOf("fogad")>=0 || answer11.indexOf("mikor")>=0 && answer11.indexOf("fogad")>=0 || answer11.indexOf("mikor")>=0 && answer11.indexOf("kezd")>=0){
                 document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Ehhez egyeztetnie kell Laki Marcellel, és amint megegyeznek, már kezdhet is!</td><td></td><td></td><td></td><td'></td></tr>"
             }
             else if(answer11.indexOf("hogy")>=0 && answer11.indexOf("értékesít")>=0 ){
@@ -150,19 +177,21 @@
             }
             else if(answer11.indexOf("logó")>=0){
             document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>A logó a vállalkozás mintájára készült. Egyszerű, ötletes és lényegretörő. A slogan magáért beszél.</td><td></td><td'></td><td></td><td></td></tr>"
-
             }
             else if(answer11.indexOf("ki")>=0 && answer11.indexOf("marcel")>=0){
                 document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Laki Marcell az alapítója és a vezetője az LMV-nek.</td><td></td><td'></td><td></td><td></td></tr>"
+            }
+            else if(answer11.indexOf("holvagy")>=0){
+                document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Én ezen az oldalon létezek csak, nincs lakhelyem."
             }
             else if(answer11.indexOf("lmv")>=0){
                 document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Az LMV jelentése: Laki Marcell Vagyok. Az LMV egy nagyon sikeres magánvállalkozás, amely rengeteg embernek segített értékesíteni termékeit. Fizessen elő egy kurzusunkra, hogy önis csatlakozhasson ebbe a remek közösségbe.</td><td></td><td></td><td></td><td'></td></tr>"
             }
             else{
-                document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Sajnálom, nem tudtam értelmezni a kérdést. Zárja be az ablakot, nyissa meg, és próbálja újra, vagy keresse fel Laki Marcellt!</td><td></td><td'></td><td></td><td></td></tr>"
+                document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Sajnálom, nem tudtam értelmezni a kérdést. Nyomjon rá a plusz jelre, vagy keresse fel Laki Marcellt!</td><td></td><td'></td><td></td><td></td></tr>"
 
             }
-            document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Reméljük tudtunk segíteni! Ha a válaszok nem voltak kielégítőek, zárja be az ablakot, nyissa meg, és próbálja másképp megfogalmazni kérdését. Viszontlátásra!</td><td></td><td'></td><td></td><td></td></tr>"
+            document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Reméljük tudtunk segíteni! Ha a válaszok nem voltak kielégítőek, nyomja meg a plusz jelet, és próbálja másképp megfogalmazni kérdését. Viszontlátásra!</td><td></td><td'></td><td></td><td></td></tr>"
 
         }
         var input= document.getElementById('chat_input_input');
@@ -178,16 +207,24 @@
         function open_chat(){
             document.getElementById("chat_interface_id").style.transform="scale(1)"
             document.getElementById("txt_nextto_pic_id").style.transform="scale(0)"
+            document.getElementById("chat_input_btn1").style.border="2px solid #4a4f4c"
+            document.getElementById("chat_input_btn1").style.width="26.48px"
+            document.getElementById("chat_input_input").style.display="inline"
+            document.getElementById("chat_input_btn").style.display="inline"
         }
         function chat_close(){
             document.getElementById("chat_interface_id").style.transform="scale(0)"
             document.getElementById("chat_monitor_table").innerHTML=""
-            document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Helló, miben segíthetek? Vigyázzon, egyszerre csak egyet tud kérdezni tőlem! Ha többet szeretne, zárja be az ablakot, és nyissa meg újra. Jöhetnek a kérdések!</td><td></td><td></td><td></td><td'></td></tr>"
+            document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Helló, miben segíthetek? Vigyázzon, egyszerre csak egyet tud kérdezni tőlem! Ha többet szeretne, kattintson a plusz jelre! Jöhetnek a kérdések!</td><td></td><td></td><td></td><td'></td></tr>"
             document.getElementById("txt_nextto_pic_id").style.transform="scale(1)"
         }
         function remove_chat(){
             document.getElementById("chat_monitor_table").innerHTML=""
-            document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Helló, miben segíthetek?</td><td></td><td'></td></tr>"
+            document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Helló, miben segíthetek? Vigyázzon, egyszerre csak egyet tud kérdezni tőlem! Ha többet szeretne, kattintson a plusz jelre! Jöhetnek a kérdések!</td><td></td><td'></td><td></td><td></td><td></td></tr>"
+            document.getElementById("chat_input_btn1").style.border="2px solid #4a4f4c"
+            document.getElementById("chat_input_btn1").style.width="26.48px"
+            document.getElementById("chat_input_input").style.display="inline"
+            document.getElementById("chat_input_btn").style.display="inline"
         }
     </script>
 </body>
