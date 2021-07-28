@@ -275,4 +275,118 @@ footer{
         flex-direction: column;
 
     }
+    .chat_monitor table td{
+        font-size: 9px;
+    }
+    .chat_interface_close{
+        margin-left: 80%;
+        font-size: 15px;
+    }
+    #chat_assistant{
+        font-size: 20px;
+    }
+}
+#chat_assistant{
+    font-size: 30px;
+    color: white;
+    background-color: #4a4f4c;
+    border-radius: 20%;
+    padding: 10px 15px;
+    float: right;
+    margin-right: 60px;
+    transition: all 0.8s;
+}
+.chat_assistant{
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    top: 80%;
+    padding-left: 20px;
+    padding-right: 40px;
+}
+#chat_assistant:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+#chat_interface_close_id{
+    font-size: 22px;
+    font-weight: bolder;
+    margin: 5% 0 20px 95%;
+    color: #4a4f4c;
+    transition: all 0.4s;
+}
+#chat_interface_close_id:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
+.chat_interface{
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    transform: scale(0);
+    margin: 0 0 0 20px;
+    transition: all 0.8s;
+}
+.chat_monitor{
+    background-color: white;
+    width: 45%;
+    padding: 0 0 0 0;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    overflow-y: scroll;
+    height: 50%;
+    box-shadow: 0 2px 4px 0 gray;
+}
+.chat_monitor table{
+    margin-right: 0;
+    width: 100%;
+    overflow-y: scroll;
+}
+.chat_monitor table td{
+    width: 30%;
+    text-align: center;
+    padding: 5px
+}
+.msg_left{
+    background-color: lightgray;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    border: 2px solid transparent;
+    border-radius: 5px 20px 20px 5px;
+}
+.chat_input{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 150px;
+}
+.chat_input input{
+    border-bottom: 2px solid #4a4f4c;
+    border-left: 2px solid #4a4f4c;
+    border-right: none;
+    border-top: none;
+    margin-right: 2px;
+}
+.chat_input button{
+    background-color: transparent;
+    border: 2px solid #4a4f4c;
+    color: #4a4f4c;
+}
+.chat_right{
+    background-color: lightgray;
+    color: black;
+    font-size: 18px;
+    font-weight: 300;
+    border: 2px solid transparent;
+    border-radius: 20px 5px 5px 20px;
+}
+.chat_assistant button{
+    background-color: transparent;
+    border: none;
 }
