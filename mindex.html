@@ -138,6 +138,9 @@
             else if(answer11.indexOf("melyik")>=0 && answer11.indexOf("kurzus")>=0){
                 document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Kiemelt kurzusaink és az összes kurzus is megtekinthető a lapon lejjebb görgetve, de ha nem biztos melyik a megfelelő, keresse fel Laki Marcellt! Elérhetőségek a lap alján.</td><td></td><td></td><td></td><td'></td></tr>"
             }
+            else if(answer11.indexOf("mi")&& answer11.indexOf("kurzus")){
+                document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>A kurzusokat lejje</td><td></td><td></td><td></td><td'></td></tr>"
+            }
             else if(answer11.indexOf("ajánl")>=0){
                 document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Azért ajánlják emberek az LMV-t, mert gyors, egyszerű és nagyon hasznos. Válassza ki Ön is a megfelelő kurzust és akár ma kezdhet is!</td><td></td><td></td><td></td><td'></td></tr>"
             }
@@ -147,7 +150,7 @@
             else if(answer11.indexOf("csinál")>=0 && answer11.indexOf("itt")>=0){
                 document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Nos, itt lehet kurzusokat felvenni, vagy éppen időpontot megbeszélni Laki Marcellel, vagy akár kérdezgethet is tőlem.</td><td></td><td'></td><td></td><td></td><td></td><td></td></tr>"
             }
-            else if(answer11.indexOf("mit")>=0 && answer11.indexOf("kérdez")>=0){
+            else if(answer11.indexOf("mi")>=0 && answer11.indexOf("kérdez")>=0){
                 document.getElementById("chat_monitor_table").innerHTML+="<tr><td class='td_logo'><img src='lmv.jpg' alt='azenlogom' class='chat_logo'></td><td class='msg_left'>Amit csak szeretne az oldallal, a céggel, a kurzusokkal, vagy Laki Marcellel kapcsolatban.</td><td></td><td'></td><td></td><td></td><td></td><td></td></tr>"
             }
             else if(answer11.indexOf("hol")>=0 && answer11.indexOf("kurzus")>=0){
