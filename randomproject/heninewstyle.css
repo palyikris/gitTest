@@ -1,0 +1,224 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Palette Mosaic', cursive;
+    background-color: black;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+#rocketPic{
+   width: 10%;
+   left: 5%;
+   position: absolute;
+   display: none;
+}
+.headerText{
+    font-size: 50px;
+    background: #5B3ECF;
+    background: -webkit-linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
+    background: -moz-linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
+    background: linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    position: absolute;
+    white-space: nowrap;
+    z-index: 10;
+    top: 250px;
+    right: 20px;
+}
+.header{
+    margin-top: 20%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.topnav{
+    z-index: 10;
+    top: 0;
+    height: 50px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content:flex-start;
+    align-items: center;
+    position: fixed;
+}
+.topnav a{
+    padding: 5px 40px;
+    border-radius: 10px;
+    background: #5B3ECF;
+    background: -webkit-linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
+    background: -moz-linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
+    background: linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.8s;
+}
+.topnav a:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    animation-name: shaking;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+}
+@keyframes shaking {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+.maintxt{
+    font-size: 15px;
+    background: #5B3ECF;
+    background: -webkit-linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
+    background: -moz-linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
+    background: linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 80%;
+    border-left: 2px solid #5B3ECF;
+    margin-left: 20%;
+    padding-left: 5%;
+    margin-top: 35%;
+    animation-name: megyeget;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+}
+@keyframes megyeget {
+    0% {margin-left: -500px;}
+    20% {margin-left: 0px;}
+    40% {margin-left: 500px;}
+    60% {margin-left: 1000px;}
+    80% {margin-left: 1500px;}
+    100% {margin-left: 2000px;}
+    
+}
+.maintxt h1{
+    font-size: 22px;
+}
+#secondHeaderText{
+    left:0;
+    width: auto;
+}
+.whyQuestions{
+    width: 100%;
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.question{
+    font-size: 50px;
+    background: #5B3ECF;
+    background: -webkit-linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
+    background: -moz-linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
+    background: linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 40%;
+    transition: all 0.8s;
+}
+.spaceBg{
+    position: fixed;
+    z-index: -2;
+    top: 0;
+}
+.photoAlbum{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    padding-top: 5%;
+}
+.photoItem{
+    width: 50%;
+    padding: 0;
+    margin: 0;
+}
+.photoTxt{
+    color: white;
+    background: #5B3ECF;
+    background: -webkit-linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
+    background: -moz-linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
+    background: linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.photo{
+    position: absolute;
+    z-index: 5;
+    border-radius: 10px;
+    margin: 2% 0 0 22%;
+}
+.photo:hover{
+    transform: scale(4);
+    transition: all 0.8s;
+}
+.photoHenirol{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.nkDiv{
+    position: sticky;
+    z-index: 10;
+}
+.piTxt{
+    font-size: 40px;
+    background: #5B3ECF;
+    background: -webkit-linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
+    background: -moz-linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
+    background: linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 40%;
+    width: 100%;
+    text-align: center;
+}
+
+.photoInner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+footer{
+    font-size: 15px;
+    background: #5B3ECF;
+    background: -webkit-linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
+    background: -moz-linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
+    background: linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin: 40% 0 20% 0
+
+}
