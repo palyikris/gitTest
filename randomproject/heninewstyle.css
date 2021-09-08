@@ -135,6 +135,11 @@ body{
     -webkit-text-fill-color: transparent;
     margin-top: 40%;
     transition: all 0.8s;
+    animation-name: hovering;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform: rotateZ(60deg);
 }
 .spaceBg{
     position: fixed;
@@ -186,9 +191,11 @@ body{
     align-items: center;
     flex-direction: column;
 }
-.nkDiv{
-    position: sticky;
-    z-index: 10;
+.nk{
+    position: -webkit-sticky;
+  position: fixed;
+  top: 000px;
+  display: none;
 }
 .piTxt{
     font-size: 40px;
@@ -201,6 +208,10 @@ body{
     margin-top: 40%;
     width: 100%;
     text-align: center;
+    animation-name: hovering;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 .photoInner{
@@ -221,4 +232,27 @@ footer{
     text-align: center;
     margin: 40% 0 20% 0
 
+}
+@keyframes hovering {
+    0% {margin-top: 60%; margin-left: 0%; transform: rotateZ(0deg);}
+    5% {margin-top: 61%; margin-left: 2%; transform: rotateZ(5deg);}
+    10% {margin-top: 62%; margin-left: 0; transform: rotateZ(0deg);}
+    15% {margin-top: 63%; margin-left: 1%; transform: rotateZ(5deg);}
+    20% {margin-top: 64%; margin-left: 3%; transform: rotateZ(10deg);}
+    25% {margin-top: 65%; margin-left: 1%; transform: rotateZ(5deg);}
+    30% {margin-top: 64%; margin-left: 0%; transform: rotateZ(0deg);}
+    35% {margin-top: 63%; margin-left: 2%; transform: rotateZ(-5deg);}
+    40% {margin-top: 62%; margin-left: 1%; transform: rotateZ(-10deg);}
+    45% {margin-top: 61%; margin-left: 3%; transform: rotateZ(-5deg);}
+    50% {margin-top: 60%; margin-left: 5%; transform: rotateZ(0deg);}
+    55% {margin-top: 61%; margin-left: 7%; transform: rotateZ(5deg);}
+    60% {margin-top: 62%; margin-left: 8%; transform: rotateZ(10deg);}
+    65% {margin-top: 63%; margin-left: 6%; transform: rotateZ(5deg);}
+    70% {margin-top: 64%; margin-left: 7%; transform: rotateZ(0deg);}
+    75% {margin-top: 63%; margin-left: 5%; transform: rotateZ(5deg);}
+    80% {margin-top: 64%; margin-left: 3%; transform: rotateZ(0deg);}
+    85% {margin-top: 63%; margin-left: 4%; transform: rotateZ(5deg);}
+    90% {margin-top: 62%; margin-left: 2%; transform: rotateZ(10deg);}
+    95% {margin-top: 61%; margin-left: 1%; transform: rotateZ(5deg);}
+    100% {margin-top: 60%; margin-left: 0%; transform: rotateZ(0deg);}
 }
