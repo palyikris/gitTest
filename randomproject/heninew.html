@@ -10,23 +10,101 @@
     <link href="https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="heninewstyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../heni.jpg">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
 </head>
 <body>
-    <img src="nk.jpg" width="100%" class="nk" id="nkId">
-    <div class="headerText" id="headerTextId">Miért szeretjük Henit?</div>
+    <div class="title">Heni Fan Page</div>
+    <div class="topnavCloser" onclick="topnavClose()" id="topnavCloserId"><i class="fa fa-angle-double-left" id="topnavCloseI"></i></div>
     <div class="topnav">
-        <a class="option">első</a>
-        <a class="option">második</a>
-        <a class="option">harmadik</a>
-        <a class="option">negyedik</a>
-        <a class="option">ötödik</a>
+        <div class="topnavmenu">
+            <i class="fa fa-bars" id="topnavmenuBarId" onclick="topnav()"></i>
+        </div>
+    </div>
+    <div class="topnavOptions" id="topnavOptionsId">
+        <div class="options">
+        <div class="option">
+            <div class="optionBg"></div>
+            <a class="optionA_Id" href="#flexbox1st">Képek</a>
+            <span class="borderBottom"></span>
+        </div>
+        <div class="option">
+            <a class="optionA_Id" href="#flexbox1st">Naplók</a>
+            <span class="borderBottom"></span>
+        </div>
+        <div class="option">
+            <a class="optionA_Id" href="#flexbox1st">Vieótéka</a>
+            <span class="borderBottom"></span>
+        </div>
+        <div class="option">
+            <a class="optionA_Id" href="#flexbox1st">Kérdőív</a>
+            <span class="borderBottom"></span>
+        </div>
+        <div class="option">
+            <a class="optionA_Id" href="#flexbox1st">Támogatás</a>
+            <span class="borderBottom"></span>
+        </div>
+        <div class="option">
+            <a class="optionA_Id" href="#flexbox1st">Lottózó</a>
+            <span class="borderBottom"></span>
+        </div>
+        <div class="option">
+            <a class="optionA_Id" href="#flexbox1st">Régi fanpage</a>
+            <span class="borderBottom"></span>
+        </div>
+        <div class="option">
+            <a class="optionA_Id" href="#flexbox1st">Bejelentkezés</a>
+            <span class="borderBottom"></span>
+        </div>
 
+        </div>
+    </div>
+    <img src="nk.jpg" width="100%" class="nk" id="nkId">
+    <div class="front">
+        <div class="gallery">
+            <div id="description">
+                <p>Ez itt Henike</p>
+                <img src="arrowright.png" id="introImg1">
+            </div>
+            <div id="descriptionOther">
+                <p>Ez meg itt Kapi</p>
+                <img src="arrowright1.png" id="introImg2">
+            </div>
+            <img src="../henieskapi.jpg" id="introImg">
+        </div>
+        <div class="headerText-contain">
+            <div class="headerText" id="headerTextId">Üdvözöljük a Heni Fan Pagen!!</div>
+        </div>
     </div>
     <div class="header">
         <div class="headerPics">
         <img src="rocket.png" id="rocketPic">
         </div>
     </div>
+    <div class="circledivs" style="margin-left: 5%; top: 20%;">
+        <div class="circlediv">
+            Teljesen új designt kaptunk!
+        </div>
+    </div>
+    <div class="circledivs" style="justify-content: flex-end; top: 100%;">
+        <div class="circlediv">
+            Egy rakás új content és feature várható!
+        </div>
+    </div>
+    <div class="circledivs" style="justify-content: flex-end;">
+        <div class="circlediv" style="margin-top: 15%;">
+            Itt csak móka és kacagás vár!
+        </div>
+    </div>
+    <div class="circledivs" style="top:70%; margin-left: 1%;">
+        <div class="circlediv" style="margin-top: 10%;">
+            Lesd meg a többi contentünket is fent!
+        </div>
+    </div>
+    <!--
     <div class="whyQuestions">
         <p class="question" id="q1">Mert bájos?</p>
         <p class="question" id="q2">Mert olyan mosolygós?</p>
@@ -34,125 +112,7 @@
         <p class="question" id="q4">Mert olyan szép?
         <p class="question" id="q5">Itt mindenki eldöntheti magának</p>
         </p>
-    </div>
-    <div class="maintxt">
-        <p>
-            <h1 title="csicsak">Kerekes Henrietta</h1><br><br>
-		<p>Ez az oldal <span class="oldalneve" title="csicsak">Kerekes Henriettáról</span> fog szólni,</p>
-		<p>melyen kiteregetem <span class="oldalneve"title="csicsak">Kerekes Henrietta </span>gyönyörű</p>
-		<p>fényképeit, ezzel is megpróbálva éreztetni vele, </p><br>
-		<p>hogy az iránta való <b><italics>Szeretetemnél</italics></b> már csak egy nagyobb dolog van...</p>
-        </p>
-    </div>
-    <img class="spaceBg" src="space.png" width="100%">
-    <div class="photoAlbum">
-        <div class="photoItem">
-            <img class="photo" id="photo1" src="../befonotthaj.jpg" alt="ja" height="10%" width="5%">
-            <div class="photoHenirol">
-                <img class="spaceman" src="spaceman.png" width="90%">
-            </div>            <div class="photoTxt">
-                Henike befonta a haját és kifejezetten büszke rá.
-            </div>
-        </div>
-        <div class="photoItem">
-            <img class="photo" id="photo1" src="../befonotthaj.jpg" alt="ja" height="10%" width="5%">
-            <div class="photoHenirol">
-                <img class="spaceman" src="spaceman.png" width="90%">
-            </div>            <div class="photoTxt">
-                Henike befonta a haját és kifejezetten büszke rá.
-            </div>
-        </div>
-        <div class="photoItem">
-            <img class="photo" id="photo1" src="../befonotthaj.jpg" alt="ja" height="10%" width="5%">
-            <div class="photoHenirol">
-                <img class="spaceman" src="spaceman.png" width="90%">
-            </div>            <div class="photoTxt">
-                Henike befonta a haját és kifejezetten büszke rá.
-            </div>
-        </div>
-        <div class="photoItem">
-            <img class="photo" id="photo1" src="../befonotthaj.jpg" alt="ja" height="10%" width="5%">
-            <div class="photoHenirol">
-                <img class="spaceman" src="spaceman.png" width="90%">
-            </div>            <div class="photoTxt">
-                Henike befonta a haját és kifejezetten büszke rá.
-            </div>
-        </div>
-        <div class="photoItem">
-            <img class="photo" id="photo1" src="../befonotthaj.jpg" alt="ja" height="10%" width="5%">
-            <div class="photoHenirol">
-                <img class="spaceman" src="spaceman.png" width="90%">
-            </div>            <div class="photoTxt">
-                Henike befonta a haját és kifejezetten büszke rá.
-            </div>
-        </div><div class="photoItem">
-            <img class="photo" id="photo1" src="../befonotthaj.jpg" alt="ja" height="10%" width="5%">
-            <div class="photoHenirol">
-                <img class="spaceman" src="spaceman.png" width="90%">
-            </div>
-            <div class="photoTxt">
-                Henike befonta a haját és kifejezetten büszke rá.
-            </div>
-        </div>
-    </div>
-    <div class="photoInners">
-       <h1 class="piTxt" id="pt1" style="transition: all 0.8s;">Na sikerült rájönnöd, miért imádod Henit?</h1>
-       <h1 class="piTxt" id="pt2" style="transition: all 0.8s;">Tudjuk rengeteg a lehetőség.</h1>
-        <h1 class="piTxt" id="pt3" style="transition: all 0.8s;">Megpróbálunk segíteni még pár képpel!</h1>
-    </div>
-    <div class="photoAlbum" style="margin-top: 25%;"> 
-        <div class="photoItem">
-            <img class="photo" id="photo1" src="../befonotthaj.jpg" alt="ja" height="10%" width="5%">
-            <div class="photoHenirol">
-                <img class="spaceman" src="spaceman.png" width="90%">
-            </div>            <div class="photoTxt">
-                Henike befonta a haját és kifejezetten büszke rá.
-            </div>
-        </div>
-        <div class="photoItem">
-            <img class="photo" id="photo1" src="../befonotthaj.jpg" alt="ja" height="10%" width="5%">
-            <div class="photoHenirol">
-                <img class="spaceman" src="spaceman.png" width="90%">
-            </div>            <div class="photoTxt">
-                Henike befonta a haját és kifejezetten büszke rá.
-            </div>
-        </div>
-        <div class="photoItem">
-            <img class="photo" id="photo1" src="../befonotthaj.jpg" alt="ja" height="10%" width="5%">
-            <div class="photoHenirol">
-                <img class="spaceman" src="spaceman.png" width="90%">
-            </div>            <div class="photoTxt">
-                Henike befonta a haját és kifejezetten büszke rá.
-            </div>
-        </div>
-        <div class="photoItem">
-            <img class="photo" id="photo1" src="../befonotthaj.jpg" alt="ja" height="10%" width="5%">
-            <div class="photoHenirol">
-                <img class="spaceman" src="spaceman.png" width="90%">
-            </div>            <div class="photoTxt">
-                Henike befonta a haját és kifejezetten büszke rá.
-            </div>
-        </div>
-        <div class="photoItem">
-            <img class="photo" id="photo1" src="../befonotthaj.jpg" alt="ja" height="10%" width="5%">
-            <div class="photoHenirol">
-                <img class="spaceman" src="spaceman.png" width="90%">
-            </div>            <div class="photoTxt">
-                Henike befonta a haját és kifejezetten büszke rá.
-            </div>
-        </div><div class="photoItem">
-            <img class="photo" id="photo1" src="../befonotthaj.jpg" alt="ja" height="10%" width="5%">
-            <div class="photoHenirol">
-                <img class="spaceman" src="spaceman.png" width="90%">
-            </div>
-            <div class="photoTxt">
-                Henike befonta a haját és kifejezetten büszke rá.
-            </div>
-        </div>
-    </div>
-        <h1 class="piTxt" id="pt4" style="transition: all 0.8s;">Már tuti megvan, Te miért imádod Henit!</h1>
-        <h1 class="piTxt" id="pt5" style="transition: all 0.8s;">Nincs?????</h1>
-         <h1 class="piTxt" id="pt6" style="transition: all 0.8s;">Talán segít, ha meglátogatod a többi oldalt is!</h1>
+    </div>-->
      <footer>
         <p>Ezt az oldalt a <span style="font-size: 25px">WeLoveHeni</span> támogatta</p><br>
         <p>Copyright: <strong>Pályi Kristóf</strong>, professzionális webdesigner, zenész, videós, producer, direktor, színész, isten</p>
@@ -162,7 +122,7 @@
     </footer>
 </body>
 <script>
-    let rocket= document.getElementById("rocketPic");
+    /*let rocket= document.getElementById("rocketPic");
     let txt= document.getElementById("headerTextId");
     let second= document.getElementById("secondHeaderText");
     window.addEventListener('scroll', function(){
@@ -203,5 +163,36 @@
         document.getElementById("pt6").style.opacity=1;
        
     }, 3000);*/
+    function topnav(){
+        //document.getElementById("topnavOptionsId").style.display="flex";
+        //document.getElementById("topnavCloserId").style.display="flex";
+        document.getElementById("topnavOptionsId").style.width="100%";
+        document.getElementById("topnavOptionsId").style.transform="scale(1)";
+        //document.getElementById("topnavOptionsId").style.display="flex";
+        var bB = document.getElementsByClassName("borderBottom");
+        var option_a = document.getElementsByClassName("optionA_Id");
+        animation(bB);
+        animation(option_a);
+        function animation(a){
+            for(var i=0, len=a.length; i<len; i++){
+                a[i].style.animationPlayState="running"
+                }
+            }
+        document.getElementById("topnavCloseI").style.display="inline-block";
+    }
+    function topnavClose(){
+        //document.getElementById("topnavOptionsId").style.display="none";
+        //document.getElementById("topnavCloserId").style.display="none";
+        document.getElementById("topnavOptionsId").style.width="0%";
+        document.getElementById("topnavCloseI").style.display="none";
+    }
+    document.getElementById("introImg").addEventListener("mouseover", function(){
+        document.getElementById("description").style.opacity="1";
+        document.getElementById("descriptionOther").style.opacity="1";
+    })
+    document.getElementById("introImg").addEventListener("mouseout", function(){
+        document.getElementById("description").style.opacity="0";
+        document.getElementById("descriptionOther").style.opacity="0";
+    })
 </script>
 </html>

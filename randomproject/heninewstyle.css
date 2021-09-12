@@ -7,6 +7,18 @@ body{
     background-color: black;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    background-color: white;
+}
+.title{
+    margin: 0;
+    text-align: center;
+    font-size: 60px;
+    color: #629bdd;
+}
+.title:hover{
+    transition: all 0.6s;
+    background-color: #629bdd;
+    color: white;
 }
 #rocketPic{
    width: 10%;
@@ -14,20 +26,25 @@ body{
    position: absolute;
    display: none;
 }
-.headerText{
-    font-size: 50px;
-    background: #5B3ECF;
-    background: -webkit-linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
-    background: -moz-linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
-    background: linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-transform: uppercase;
+.topnavCloser{
+    position: fixed;
+    z-index: 3;
+    height: 50px;
+    width: 0%;
+    top: 50%;
+    right: 5%;
+    justify-content: flex-end;
+    align-items: center;
+    transition: width 1s;
+}
+.topnavCloser i{
+    font-size: 55px;
+    font-weight: 900;
+    color: white;
     position: absolute;
-    white-space: nowrap;
-    z-index: 10;
-    top: 250px;
-    right: 20px;
+    z-index: 3;
+    float: right;
+    display: none;    
 }
 .header{
     margin-top: 20%;
@@ -36,30 +53,157 @@ body{
     align-items: center;
 }
 .topnav{
-    z-index: 10;
+    width: 100%;
+    position: absolute;
+    left: 0;
     top: 0;
-    height: 50px;
+    z-index: 1;
+}
+.topnavmenu{
     display: flex;
-    flex-wrap: nowrap;
-    justify-content:flex-start;
+    justify-content: center;
     align-items: center;
     position: fixed;
+    top: 80%;
+    right: 2%;
 }
-.topnav a{
-    padding: 5px 40px;
+.topnavmenu i{
+    float: left;
+    margin: 0;
+    margin-left: 10px;
+    padding: 20px;
+    background-color: #629bdd;
+    color: white;
     border-radius: 10px;
-    background: #5B3ECF;
-    background: -webkit-linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
-    background: -moz-linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
-    background: linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-transform: uppercase;
-    font-size: 20px;
-    text-decoration: none;
-    transition: all 0.8s;
+    font-weight: bolder;
 }
-.topnav a:hover{
+.topnavmenu i:hover{
+    animation-name: shaking;
+    animation-iteration-count: 2;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    background-color: #629bdd;
+    color: white;
+}
+#introImg{
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0px 3px 3px 0px gray;
+}
+#introImg1{
+    width: 10%;    
+}
+#introImg2{
+    width: 10%;
+}
+#description{
+    position: absolute;
+    margin-bottom: 15%;
+    margin-left: 32%;
+    opacity: 0;
+    transition: opacity 0.8s;
+}
+#descriptionOther{
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 15%;
+    opacity: 0;
+    transition: opacity 0.8s;
+}
+.topnavOptions{
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    width: 0;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    padding: 0;
+    transform: scale(0);
+    transition: width 1s;
+}
+.options{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: #629bdd;
+}
+.options a{
+    padding: 20px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    background: #629bdd;
+    color: white;
+    transition: all 0.8s;
+    animation-name: inAndOutHover;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-play-state: paused;
+}
+
+.option{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+}
+.option span{
+    width: 0%;
+    height: 0px;
+    background-color: white;
+    animation-name: inAndOut;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    transition: transform 0.7s;
+    animation-play-state: paused;
+}
+.optionBg{
+    display: none;
+}
+option:hover{
+    
+}
+@keyframes inAndOutHover {
+    0% {margin-left: 0%;}
+    7% {margin-left: 2%;}
+    14% {margin-left: 4%;}
+    21% {margin-left: 6%;}
+    28% {margin-left: 4%;}
+    35% {margin-left: 2%;}
+    42% {margin-left: 0%;}
+    49% {margin-right: 0%;}
+    56% {margin-right: 2%;}
+    63% {margin-right: 4%;}
+    70% {margin-right: 6%;}
+    79% {margin-right: 4%;}
+    90% {margin-right: 2%;}
+    100% {margin-right: 0%;}
+}
+@keyframes inAndOut {
+    9% {width: 0%; height: 2px;}
+    18% {width: 20%; height: 2px;}
+    27% {width: 40%; height: 2px;}
+    36% {width: 60%; height: 2px;}
+    45% {width: 80%; height: 2px;}
+    54% {width: 100%; height: 2px;}
+    63% {width: 80%; height: 2px;}
+    72% {width: 60%; height: 2px;}
+    81% {width: 40%; height: 2px;}
+    90% {width: 20%; height: 2px;}
+    100% {width: 0%; height: 0px;}
+}
+/*.topnav a:hover{
     transform: scale(1.1);
     cursor: pointer;
     animation-name: shaking;
@@ -67,7 +211,7 @@ body{
     animation-timing-function: ease-in-out;
     animation-delay: 0s;
     animation-iteration-count: infinite;
-}
+}*/
 @keyframes shaking {
     0% { transform: translate(1px, 1px) rotate(0deg); }
   10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -125,6 +269,74 @@ body{
     flex-wrap: wrap;
     flex-direction: column;
 }
+.circledivs{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 0;
+    margin: 0;
+}
+.circlediv{
+    background-color: #629bdd;
+    text-align: center;
+    padding: 20px;
+    border-radius: 1000px;
+    width: 10%;
+}
+.front{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    padding-top: 10%;
+}
+.gallery{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.headerText-contain{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10%;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.headerText {
+    position: relative;
+    margin: 0;
+    text-align: center;
+    width: 10em; height: 4em;
+    border-radius: .25em;
+    transform: rotate(-4deg) rotateY(15deg);
+    background: #629bdd;
+    text-align: center;
+    font-size: 40px;
+    padding: 3%
+  }
+  .headerText:before, .headerText:after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+  }
+  .headerText:after {
+    top: 0; right: 0; bottom: 0; left: 0;
+    border-radius: inherit;
+    transform: rotate(2deg) translate(.35em, -.15em) scale(1.02);
+    background: #f4fbfe;
+  }
+  .headerText:before {
+    border: solid 0 transparent;
+    border-right: solid 3.5em #f4fbfe;
+    border-bottom: solid .25em #629bdd;
+    bottom: .25em; left: 1.25em;
+    width: 0; height: 1em;
+    transform: rotate(45deg) skewX(75deg);
+  }
 .question{
     font-size: 50px;
     background: #5B3ECF;
@@ -133,13 +345,13 @@ body{
     background: linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-top: 40%;
+    /*margin-top: 40%;
     transition: all 0.8s;
-    animation-name: hovering;
+    /*animation-name: hovering;
     animation-duration: 60s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    transform: rotateZ(60deg);
+    transform: rotateZ(60deg);*/
 }
 .spaceBg{
     position: fixed;
@@ -208,10 +420,12 @@ body{
     margin-top: 40%;
     width: 100%;
     text-align: center;
+    /*
     animation-name: hovering;
     animation-duration: 60s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    */
 }
 
 .photoInner{
