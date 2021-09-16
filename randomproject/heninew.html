@@ -17,6 +17,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="iconBeforeId">Csicsak</div>
+    <div class="icon" id="iconId">
+        <img src="../heni.jpg">
+    </div>
     <div class="title">Heni Fan Page</div>
     <div class="topnavCloser" onclick="topnavClose()" id="topnavCloserId"><i class="fa fa-angle-double-left" id="topnavCloseI"></i></div>
     <div class="topnav">
@@ -193,6 +197,12 @@
     document.getElementById("introImg").addEventListener("mouseout", function(){
         document.getElementById("description").style.opacity="0";
         document.getElementById("descriptionOther").style.opacity="0";
+    })
+    document.getElementById("iconId").addEventListener("mouseover", function(){
+        document.getElementById("iconBeforeId").style.opacity="0.6";
+    })
+    document.getElementById("iconId").addEventListener("mouseout", function(){
+        document.getElementById("iconBeforeId").style.opacity="0";
     })
 </script>
 </html>
