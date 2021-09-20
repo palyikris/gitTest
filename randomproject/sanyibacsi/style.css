@@ -10,28 +10,30 @@ html{
 .container{
     width: 100%;
     height: 100%;
-    background-color: black;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 2%;
 }
 .calendar{
     width: 45rem;
     height: 52rem;
-    background-color: gray;
-    box-shadow: 0.5rem 3rem black;
+    box-shadow: 0 1px 4px 0 lightgray;
+    border-radius: 20px;
+    margin-left: 8%;
 }
 .month{
     width: 100%;
     height: 12rem;
-    background-color: greenyellow;
+    background-color: #02c2f2;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
     text-align: center;
-    text-shadow: 0.3rem .5rem black;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 4px 1px 0 0;
 }
 .month pre{
     font-size: 2.5rem;
@@ -53,6 +55,8 @@ html{
     padding: 0 0.4rem;
     display: flex;
     align-items: center;
+    color: #02c2f2;
+    font-weight: bolder;
 }
 .weekDays div{
     font-size: 1.5rem;
@@ -62,7 +66,7 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-shadow: 0.3rem .5rem black;
+    
 }
 .days{
     width: 100%;
@@ -78,17 +82,63 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-shadow: 0.3rem .5rem black;
     transition: all 0.6s;
+    color: #02c2f2;
+    border-radius: 5px;
 }
 .prevDate, .nextDate{
-    opacity: 0.5;
+    opacity: 0.4;
 }
 .today{
-    background-color: cornflowerblue;
+    font-weight: bolder;
+    border: 1px solid #02c2f2;
 }
 .days div:hover:not(.today){
-    background-color: darkblue;
-    border: .2rem solid lightblue;
-
+    background-color: #02c2f2;
+    color: white;
+}
+.chosenStudent{
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.studentData{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    font-size: 1.4rem;
+    color: #02c2f2;
+    border: 2px solid #02c2f2;
+    margin: 0 5% 5% 0;
+}
+.timeLeft{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    font-size: 1.4rem;
+    color: #02c2f2;
+    margin: 20% 5% 5% 0;
+}
+.timeLeft p{
+    font-size: 3rem;
+    font-weight: 400;
+}
+.date tr td{
+    text-align: center;
+}
+.buttonWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;
+}
+.chosenStudentCloser{
+    background-color: #02c2f2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 700;
 }
