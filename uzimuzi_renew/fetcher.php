@@ -1,17 +1,22 @@
 <?php
-    $link = mysqli_connect("localhost", "root", "", "uzi_test");
-    $sql = "SELECT ido,sender,uzi FROM kris ORDER BY ido asc";
+    $link = mysqli_connect("localhost", "root", "", "test");
+    $sql = "SELECT * FROM kristófheni";
     $result = mysqli_query($link,$sql);
-    $hour=date("h:i:s");
-    if($result->num_rows > 0){
-	    while($row = mysqli_fetch_assoc($result)){
-            $classToday = new stdClass();
-            $classToday->msg = $row["msg"];
-            $classToday->timeHour = $row["timeHour"];
-            $classToday->timeMinute = $row["timeMinute"];
-            $classToday->sender = $row["sender"];
-            $classToday->sentTo = $row["sentTo"];
-            $classToday->token = $row["token"];
+    $msgArray= array();
+        if($result->num_rows > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $msg = new stdClass();
+                $msg->id = $row["id"];
+                $msg->msg = $row["msg"];
+                $msg->sender = $row["sender"];
+                $msg->sentTo = $row["sentTo"];
+                $msg->timeHour = $row["timeHour"];
+                $msg->timeMinute = $row["timeMinute"];
+                $msg->dateMonAndYear = $row["dateMonAndYear"];
+                $msg->token = $row["token"];
+                array_push($msgArray, $msg);
+            }
         }
-    }
+        $object = json_encode($msgArray);
+        echo $object;
 ?>

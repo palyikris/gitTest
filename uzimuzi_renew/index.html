@@ -5,14 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Üzimüzi</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <div class="randomDiv">
-        <table class="msgTable" id="msgTableId">
-            
-        </table>
-        <input type="text" id="msgInput">
-        <button id="msgButton" onclick="sendMsg()">ÜZEN</button>
+    <div class="title">
+        <h1>ÜZIMÜZI</h1>
     </div>
+    <div class="wrapper">
+        <div class="randomDiv">
+            <div class="scroll">
+            <table class="msgTable" id="msgTableId">
+                <tr>
+                    <td class="msgLeft">Hello</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="msgRight">Cső</td>
+                </tr>
+                <tr>
+                    <td class="msgLeft">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                        Vero fugit unde veritatis consequuntur numquam fuga quod voluptatibus asperiores, 
+                        sed culpa magnam. Distinctio magnam nulla accusantium iusto fugit provident in corrupti.</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="msgRight">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                        Nesciunt modi est numquam inventore voluptas explicabo optio asperiores porro 
+                        quibusdam laboriosam delectus enim, deleniti vel unde rem! Porro laboriosam fuga harum!</td>
+                </tr>
+                <tr>
+                    <td class="msgLeft">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                        Vero fugit unde veritatis consequuntur numquam fuga quod voluptatibus asperiores, 
+                        sed culpa magnam. Distinctio magnam nulla accusantium iusto fugit provident in corrupti.</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            </div>
+            <div class="msgSender">
+                <input type="text" id="msgTable" placeholder="Ide írd az üzeneted...">
+                <button type="button" id="msgButton" onclick="sendMsg()">OK</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="inserter.js">
+        
+    </script>
 </body>
 </html>
