@@ -9,13 +9,13 @@
 
 </head>
 <body>
-    <div class="title">
+    <div class="title" id="titleId">
         <h1>ÜZIMÜZI</h1>
     </div>
     <div class="wrapper">
-        <div class="randomDiv">
+        <div class="randomDiv" ondblclick="zoom()" id="randomDivId">
             <div class="scroll">
-                <div class="msgTable" id="msgTableId">
+            <div class="msgTable" id="msgTableId">
                 <!--<tr>
                     <td class="msgLeft">Hello</td>
                     <td></td>
@@ -57,17 +57,18 @@
                     <td></td>
                     <td></td>
                 </tr>-->
+        
             </div>
         </div>
         <div class="msgSender">
-            <form action="inserterkristof.php" method="POST">
+            <form action="inserterheni.php" method="POST">
                 <input type="text" id="msgTableInput" name="msg" placeholder="Ide írd az üzeneted...">
                 <button type="submit" id="msgButton">OK</button>
             </form>
         </div>
     </div>
 </div>
-<script src="index.js">
+<script src="indexheni.js">
 
 </script>
 </body>
