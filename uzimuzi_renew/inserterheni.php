@@ -26,5 +26,5 @@ $link = mysqli_connect("localhost", "root", "", "test");
 $sql = "INSERT into kristófheni (msg, sender, sentTo, timeHour, timeMinute, dateMonAndYear, token) values ('$msg','$sender','$sentTo','$timeHour','$timeMinute','$dateMonAndYear','$token')";
 $result = mysqli_query($link, $sql);
 mysqli_close($link);
-header("Location: indexheni.html");
+header("Location: indexheni.html#randomDivId");
 ?>

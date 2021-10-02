@@ -1,5 +1,5 @@
-var greatestI = null;
-window.onload = function(){
+var greatestI = 0;
+/*window.onload = function(){
 const xmlhttp = new XMLHttpRequest();
 xmlhttp.onload = function() {
 const currentMsg = JSON.parse(this.responseText);
@@ -19,27 +19,27 @@ const currentMsg = JSON.parse(this.responseText);
 }
 xmlhttp.open("GET", "fetcher.php");
 xmlhttp.send();
-}
+}*/
 setInterval(function(){
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onload = function() {
         const currentMsg = JSON.parse(this.responseText);
         for (let i = 0; i<currentMsg.length; i++){
-            if(currentMsg[i].id>greatestI){
+            if(parseInt(currentMsg[i].id)>parseInt(greatestI)){
                 greatestI = currentMsg[i].id;
+                var msgI = i;
                 if(currentMsg[i].sender==="heni"){
-                    getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv'>"+currentMsg[i].msg+"</div></div>";
+                    document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv'>"+currentMsg[msgI].msg+"</div></div>";
                 }
                 else{
-                    document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv'>"+currentMsg[i].msg+"</div></div>";
+                    document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv'>"+currentMsg[msgI].msg+"</div></div>";
                 }
             }
-            console.log(currentMsg[i].msg);
         }
     }
     xmlhttp.open("GET", "fetcher.php");
     xmlhttp.send();
-}, 2000);
+}, 1000);
 document.getElementById("msgTableInput").addEventListener("keyup", function(event) {
     // Number 13 is the "Enter" key on the keyboard
    if (event.keyCode === 13) {

@@ -13,7 +13,7 @@
         <h1>ÜZIMÜZI</h1>
     </div>
     <div class="wrapper">
-        <div class="randomDiv">
+        <div class="randomDiv" id="randomDivId" ondblclick="zoom()"> 
             <div class="scroll">
                 <div class="msgTable" id="msgTableId">
                 <!--<tr>
@@ -59,7 +59,7 @@
                 </tr>-->
             </div>
         </div>
-        <div class="msgSender">
+        <div class="msgSender" id="msgSenderId">
             <form action="inserterkristof.php" method="POST">
                 <input type="text" id="msgTableInput" name="msg" placeholder="Ide írd az üzeneted...">
                 <button type="submit" id="msgButton">OK</button>

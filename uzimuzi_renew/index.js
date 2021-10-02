@@ -1,5 +1,5 @@
-var greatestI = null;
-window.onload = function(){
+var greatestI = 0;
+/*window.onload = function(){
 const xmlhttp = new XMLHttpRequest();
 xmlhttp.onload = function() {
 const currentMsg = JSON.parse(this.responseText);
@@ -19,29 +19,27 @@ const currentMsg = JSON.parse(this.responseText);
 }
 xmlhttp.open("GET", "fetcher.php");
 xmlhttp.send();
-}
+}*/
 setInterval(function(){
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onload = function() {
         const currentMsg = JSON.parse(this.responseText);
         for (let i = 0; i<currentMsg.length; i++){
-            console.log(currentMsg[i].id)
-            console.log(greatestI)
-            console.log(currentMsg[i].id>greatestI)
-            if(currentMsg[i].id>greatestI){
+            if(parseInt(currentMsg[i].id)>parseInt(greatestI)){
                 greatestI = currentMsg[i].id;
+                var msgI = i;
                 if(currentMsg[i].sender==="kristof"){
-                    getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv'>"+currentMsg[i].msg+"</div></div>";
+                    document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv'>"+currentMsg[msgI].msg+"</div></div>";
                 }
                 else{
-                    document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv'>"+currentMsg[i].msg+"</div></div>";
+                    document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv'>"+currentMsg[msgI].msg+"</div></div>";
                 }
             }
         }
     }
     xmlhttp.open("GET", "fetcher.php");
     xmlhttp.send();
-}, 2000);
+}, 1000);
 document.getElementById("msgTableInput").addEventListener("keyup", function(event) {
     // Number 13 is the "Enter" key on the keyboard
    if (event.keyCode === 13) {
@@ -51,6 +49,14 @@ document.getElementById("msgTableInput").addEventListener("keyup", function(even
    document.getElementById("msgButton").click();
 }
 })
+function zoom(){
+    document.getElementById("randomDivId").style.position="fixed";
+    document.getElementById("randomDivId").style.zIndex="1";
+    document.getElementById("randomDivId").style.width="100%";
+    document.getElementById("randomDivId").style.top="0";
+    document.getElementById("randomDivId").style.height="100%";
+
+}
 /*function sendMsg(){
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "inserter.php");
