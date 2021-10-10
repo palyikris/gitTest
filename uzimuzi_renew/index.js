@@ -47,11 +47,24 @@ setInterval(function(){
                 greatestI = msgs[i].id;
                 var msgI = i;
                 if(msgs[msgI].sender==="kristof"){
-                    document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv'>"+msgs[msgI].msg+"</div></div>";
+                    if(msgs[msgI].timeHour===msgs[msgI-1].timeHour && msgs[msgI-1].timeMinute-msgs[msgI].timeMinute>=10){
+                        const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                        document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"' style='margin-top:15px'>"+msgs[msgI].msg+"</div></div>";
+                    }
+                    else{
+                        const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                        document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                    }
                 }
                 else{
-                    document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv'>"+msgs[msgI].msg+"</div></div>";
-                    document.title="Új üzenet";
+                    if(msgs[msgI].timeHour===msgs[msgI-1].timeHour && msgs[msgI-1].timeMinute-msgs[msgI].timeMinute>=10){
+                        const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                        document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv' title='"+currTime+"' style='margin-top:15px'>"+msgs[msgI].msg+"</div></div>";
+                    }
+                    else{
+                        const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                        document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                    }
                 }
             }
             else{
@@ -144,11 +157,24 @@ function mm(){
                 greatestI = msgs[i].id;
                 var msgI = i;
                 if(msgs[msgI].sender==="kristof"){
-                    document.getElementById("msgTableId").innerHTML+="<div class='msgRight' style='float:top'><div class='msgDiv'>"+msgs[msgI].msg+"</div></div>";
+                    if(msgs[msgI].timeHour===msgs[msgI-1].timeHour && msgs[msgI-1].timeMinute-msgs[msgI].timeMinute>=10){
+                        const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                        document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"' style='margin-top:15px'>"+msgs[msgI].msg+"</div></div>";
+                    }
+                    else{
+                        const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                        document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                    }                
                 }
                 else{
-                    document.getElementById("msgTableId").innerHTML+="<div class='msgLeft' style='float:top'><div class='msgDiv'>"+msgs[msgI].msg+"</div></div>";
-                    document.title="Új üzenet";
+                    if(msgs[msgI].timeHour===msgs[msgI-1].timeHour && msgs[msgI-1].timeMinute-msgs[msgI].timeMinute>=10){
+                        const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                        document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv' title='"+currTime+"' style='margin-top:15px'>"+msgs[msgI].msg+"</div></div>";
+                    }
+                    else{
+                        const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                        document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                    }
                 }
             }
             else{

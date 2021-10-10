@@ -1,5 +1,5 @@
 <?php
-    $link = mysqli_connect("localhost", "uzimuzi", "krilona2004", "uzimuzi", "3306")
+    $link = mysqli_connect("localhost", "root", "", "test");
     $sql = "SELECT * FROM kristófheni ORDER BY id DESC LIMIT 10";
     $result = mysqli_query($link,$sql);
     $msgArray= array();
