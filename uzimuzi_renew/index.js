@@ -9,7 +9,7 @@ const currentMsg = JSON.parse(this.responseText);
             greatestI = currentMsg[i].id;
             console.log(greatestI);
         }
-        if(currentMsg[i].sender==="kristof"){
+        if(currentMsg[i].sender==="heni"){
             document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv'>"+currentMsg[i].msg+"</div></div>";
         }
         else{
@@ -21,11 +21,17 @@ xmlhttp.open("GET", "fetcher.php");
 xmlhttp.send();
 }*/
 setInterval(function(){
+    const msgs = [];
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onload = function() {
         const currentMsg = JSON.parse(this.responseText);
-        for (let i = 0; i<currentMsg.length; i++){
-            if(parseInt(currentMsg[i].id)>parseInt(greatestI)){
+        for (let i = currentMsg.length-1; i>=0; i--){
+            msgs.push(currentMsg[i]);
+
+            /*for (let j = 0; i<msgs.length; i++){
+                
+            }
+            /*if(parseInt(currentMsg[i].id)>parseInt(greatestI)){
                 greatestI = currentMsg[i].id;
                 var msgI = i;
                 if(currentMsg[i].sender==="kristof"){
@@ -34,6 +40,22 @@ setInterval(function(){
                 else{
                     document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv'>"+currentMsg[msgI].msg+"</div></div>";
                 }
+            }*/
+        }
+        for(let i = 0; i<msgs.length; i++){
+            if(parseInt(msgs[i].id)>parseInt(greatestI)){
+                greatestI = msgs[i].id;
+                var msgI = i;
+                if(msgs[msgI].sender==="kristof"){
+                    document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv'>"+msgs[msgI].msg+"</div></div>";
+                }
+                else{
+                    document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv'>"+msgs[msgI].msg+"</div></div>";
+                    document.title="Új üzenet";
+                }
+            }
+            else{
+                document.title="Üzimüzi";
             }
         }
     }
@@ -89,3 +111,52 @@ function zoom(){
     xhr.send(sentObj);
 
 }*/
+function mm(){
+    document.getElementById("msgTableId").innerHTML="";
+    greatestI = 0;
+    const msgs = [];
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+        const currentMsg = JSON.parse(this.responseText);
+        for (let i = currentMsg.length-1; i>=0; i--){
+            msgs.push(currentMsg[i]);
+
+            /*for (let j = 0; i<msgs.length; i++){
+                
+            }
+            /*if(parseInt(currentMsg[i].id)>parseInt(greatestI)){
+                greatestI = currentMsg[i].id;
+                var msgI = i;
+                if(currentMsg[i].sender==="kristof"){
+                    document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv'>"+currentMsg[msgI].msg+"</div></div>";
+                }
+                else{
+                    document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv'>"+currentMsg[msgI].msg+"</div></div>";
+                }
+            }*/
+        }
+        for(let i = 0; i<msgs.length; i++){
+            //console.log(msgs);
+            console.log(parseInt(msgs[i].id))
+            console.log(parseInt(greatestI))
+            console.log(parseInt(msgs[i].id)>parseInt(greatestI))
+            if(parseInt(msgs[i].id)>parseInt(greatestI)){
+                greatestI = msgs[i].id;
+                var msgI = i;
+                if(msgs[msgI].sender==="kristof"){
+                    document.getElementById("msgTableId").innerHTML+="<div class='msgRight' style='float:top'><div class='msgDiv'>"+msgs[msgI].msg+"</div></div>";
+                }
+                else{
+                    document.getElementById("msgTableId").innerHTML+="<div class='msgLeft' style='float:top'><div class='msgDiv'>"+msgs[msgI].msg+"</div></div>";
+                    document.title="Új üzenet";
+                }
+            }
+            else{
+                document.title="Üzimüzi";
+            }
+        }
+    }
+    xmlhttp.open("GET", "fetcher1.php");
+    xmlhttp.send();
+    document.getElementById("msgTableId").scrollTop = document.getElementById("msgTableId").scrollHeight;
+}

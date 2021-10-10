@@ -1,6 +1,6 @@
 <?php
     $link = mysqli_connect("localhost", "uzimuzi", "krilona2004", "uzimuzi", "3306")
-    $sql = "SELECT * FROM kristófheni ORDER BY id DESC LIMIT 10";
+    $sql = "SELECT * FROM kristófheni ORDER BY id DESC";
     $result = mysqli_query($link,$sql);
     $msgArray= array();
         if($result->num_rows > 0){

@@ -128,3 +128,13 @@ h1{
     align-items: center;
     padding: 5rem 0;
 }
+.mmWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.moreMsg{
+    border: none;
+    text-align: center;
+}
