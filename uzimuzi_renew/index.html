@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Üzimüzi</title>
     <link rel="stylesheet" href="style.css">
-
+    <link rel="icon" href="../heni.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="title">
@@ -63,15 +64,27 @@
             </div>
         </div>
         <div class="msgSender" id="msgSenderId">
-            <form action="inserterkristof.php" method="POST">
+            <!--form action="inserterkristof.php" method="POST">-->
                 <input type="text" id="msgTableInput" name="msg" placeholder="Ide írd az üzeneted...">
-                <button type="submit" id="msgButton">OK</button>
-            </form>
+                <button type="button" id="msgButton" onclick="insert()">OK</button>
+            <!--</form>-->
         </div>
     </div>
 </div>
 <script src="index.js">
 
 </script>
+    <div class="underContent">
+        <div class="text">
+            <p>Tudta, hogy az Üzimüzit lassan többet használják mint a <strong>Facebookot</strong> ? Mert így van!<br>Jöjjön és tudja meg Ön is, hogy micsoda kincseket rejt 
+            ez a varázslatos világ!</p>
+        </div>
+    </div>
+    <footer>
+        <p>Ezt az oldalt a <span class="oldalneve" style="font-size: 25px">WeLoveHeni</span> támogatta</p><br>
+        <p>Copyright: <strong>Pályi Kristóf</strong>, professzionális webdesigner, zenész, videós, producer, direktor, színész, isten</p>
+        <i class="fa fa-btc"></i> <p>Donét-link: </p><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Kattints ide, hogy adományozhass</a>
+        <p><b><italics>Támogatóink</italics></b></p><br><div class="favs"><i style="margin: 0 10px 0 10px" class="fa fa-edge"></i><i style="margin: 0 10px 0 10px" class="fa fa-facebook-official"></i><i style="margin: 0 10px 0 10px" class="fa fa-reddit"></i><i style="margin: 0 10px 0 10px" class="fa fa-youtube"></i></div>
+    </footer>
 </body>
 </html>

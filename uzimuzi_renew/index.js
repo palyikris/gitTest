@@ -43,28 +43,32 @@ setInterval(function(){
             }*/
         }
         for(let i = 0; i<msgs.length; i++){
+            //console.log(msgs);
+            console.log(parseInt(msgs[i].id))
+            console.log(parseInt(greatestI))
+            console.log(parseInt(msgs[i].id)>parseInt(greatestI))
             if(parseInt(msgs[i].id)>parseInt(greatestI)){
                 greatestI = msgs[i].id;
                 var msgI = i;
                 if(msgs[msgI].sender==="kristof"){
-                    if(msgs[msgI].timeHour===msgs[msgI-1].timeHour && msgs[msgI-1].timeMinute-msgs[msgI].timeMinute>=10){
-                        const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
-                        document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"' style='margin-top:15px'>"+msgs[msgI].msg+"</div></div>";
-                    }
-                    else{
-                        const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
-                        document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
-                    }
+                    //if(msgs[msgI].timeHour===msgs[msgI-1].timeHour && msgs[msgI-1].timeMinute-msgs[msgI].timeMinute>=10){
+                        //const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                        document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv'>"+msgs[msgI].msg+"</div></div>";
+                    //}
+                    //else{
+                        //const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                        //document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                    //}                
                 }
                 else{
-                    if(msgs[msgI].timeHour===msgs[msgI-1].timeHour && msgs[msgI-1].timeMinute-msgs[msgI].timeMinute>=10){
-                        const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
-                        document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv' title='"+currTime+"' style='margin-top:15px'>"+msgs[msgI].msg+"</div></div>";
-                    }
-                    else{
-                        const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
-                        document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
-                    }
+                    //if(msgs[msgI].timeHour===msgs[msgI-1].timeHour && msgs[msgI-1].timeMinute-msgs[msgI].timeMinute>=10){
+                        //const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                        //document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv' title='"+currTime+"' style='margin-top:15px'>"+msgs[msgI].msg+"</div></div>";
+                    //}
+                    //else{
+                        //const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                        document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv'>"+msgs[msgI].msg+"</div></div>";
+                    //}
                 }
             }
             else{
@@ -74,7 +78,8 @@ setInterval(function(){
     }
     xmlhttp.open("GET", "fetcher.php");
     xmlhttp.send();
-}, 1000);
+}, 500);
+
 document.getElementById("msgTableInput").addEventListener("keyup", function(event) {
     // Number 13 is the "Enter" key on the keyboard
    if (event.keyCode === 13) {
@@ -84,13 +89,29 @@ document.getElementById("msgTableInput").addEventListener("keyup", function(even
    document.getElementById("msgButton").click();
 }
 })
-function zoom(){
+document.getElementById("msgTableInput").addEventListener("keyup", function(event){
+if(event.keyCode === 27){
     document.getElementById("randomDivId").style.position="fixed";
     document.getElementById("randomDivId").style.zIndex="1";
     document.getElementById("randomDivId").style.width="100%";
     document.getElementById("randomDivId").style.top="0";
     document.getElementById("randomDivId").style.height="100%";
-
+}
+})
+function zoom(){
+    if(document.getElementById("randomDivId").style.display==="flex"){
+        document.getElementById("randomDivId").style.position="fixed";
+        document.getElementById("randomDivId").style.zIndex="1";
+        document.getElementById("randomDivId").style.width="100%";
+        document.getElementById("randomDivId").style.top="0";
+        document.getElementById("randomDivId").style.height="100%";
+    }
+    else{
+        document.getElementById("randomDivId").style.position="flex";
+        document.getElementById("randomDivId").style.zIndex="0";
+        document.getElementById("randomDivId").style.width="80%";
+        document.getElementById("randomDivId").style.height="auto";
+    }
 }
 /*function sendMsg(){
     var xhr = new XMLHttpRequest();
@@ -157,24 +178,24 @@ function mm(){
                 greatestI = msgs[i].id;
                 var msgI = i;
                 if(msgs[msgI].sender==="kristof"){
-                    if(msgs[msgI].timeHour===msgs[msgI-1].timeHour && msgs[msgI-1].timeMinute-msgs[msgI].timeMinute>=10){
-                        const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
-                        document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"' style='margin-top:15px'>"+msgs[msgI].msg+"</div></div>";
-                    }
-                    else{
-                        const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
-                        document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
-                    }                
+                    //if(msgs[msgI].timeHour===msgs[msgI-1].timeHour && msgs[msgI-1].timeMinute-msgs[msgI].timeMinute>=10){
+                        //const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                        document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv'>"+msgs[msgI].msg+"</div></div>";
+                    //}
+                    //else{
+                        //const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                        //document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                    //}                
                 }
                 else{
-                    if(msgs[msgI].timeHour===msgs[msgI-1].timeHour && msgs[msgI-1].timeMinute-msgs[msgI].timeMinute>=10){
-                        const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
-                        document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv' title='"+currTime+"' style='margin-top:15px'>"+msgs[msgI].msg+"</div></div>";
-                    }
-                    else{
-                        const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
-                        document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
-                    }
+                    //if(msgs[msgI].timeHour===msgs[msgI-1].timeHour && msgs[msgI-1].timeMinute-msgs[msgI].timeMinute>=10){
+                        //const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                        //document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv' title='"+currTime+"' style='margin-top:15px'>"+msgs[msgI].msg+"</div></div>";
+                    //}
+                    //else{
+                        //const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                        document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv'>"+msgs[msgI].msg+"</div></div>";
+                    //}
                 }
             }
             else{
@@ -185,4 +206,16 @@ function mm(){
     xmlhttp.open("GET", "fetcher1.php");
     xmlhttp.send();
     document.getElementById("msgTableId").scrollTop = document.getElementById("msgTableId").scrollHeight;
+}
+function insert(){
+    const input = document.getElementById("msgTableInput").value;
+    const params = "msg="+input;
+    console.log(input);
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+    }
+    xmlhttp.open('POST', 'inserterkristof.php');
+    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xmlhttp.send(params);
+    document.getElementById("msgTableInput").value="";
 }

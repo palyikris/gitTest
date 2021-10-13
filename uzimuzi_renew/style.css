@@ -117,16 +117,20 @@ button{
     padding-bottom: 1rem;
 }
 h1{
-    font-size: 10rem;
+    font-size: 300%;
     font-weight: 800;
-    color: #02c2f2;
-
+    color: white;
+    max-width: fit-content;
+    background-color: #02c2f2;
+    border-radius: 10px;
+    padding: 2rem 4rem;
 }
 .title{
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5rem 0;
+    margin-bottom: 3rem;
 }
 .mmWrapper{
     display: flex;
@@ -137,4 +141,38 @@ h1{
 .moreMsg{
     border: none;
     text-align: center;
+}
+@media only screen and (max-width:768px){
+    .h1{
+        font-size: 3rem;
+    }
+}
+.underContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    width: calc(100%-10px);
+}
+.text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #02c2f2;
+    padding: 3rem;
+}
+.text p{
+    color: #02c2f2;
+    margin-top: 1rem;
+}
+footer{
+    text-align: center;
+    color: white;
+    background-color: #02c2f2;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 0;
 }

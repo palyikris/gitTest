@@ -65,7 +65,8 @@ setInterval(function(){
     }
     xmlhttp.open("GET", "fetcher.php");
     xmlhttp.send();
-}, 1000);
+}, 500);
+
 document.getElementById("msgTableInput").addEventListener("keyup", function(event) {
     // Number 13 is the "Enter" key on the keyboard
    if (event.keyCode === 13) {
@@ -147,7 +148,7 @@ function mm(){
             if(parseInt(msgs[i].id)>parseInt(greatestI)){
                 greatestI = msgs[i].id;
                 var msgI = i;
-                if(msgs[msgI].sender==="kristof"){
+                if(msgs[msgI].sender==="heni"){
                     document.getElementById("msgTableId").innerHTML+="<div class='msgRight' style='float:top'><div class='msgDiv'>"+msgs[msgI].msg+"</div></div>";
                 }
                 else{
@@ -163,4 +164,16 @@ function mm(){
     xmlhttp.open("GET", "fetcher1.php");
     xmlhttp.send();
     document.getElementById("msgTableId").scrollTop = document.getElementById("msgTableId").scrollHeight;
+}
+function insert(){
+    const input = document.getElementById("msgTableInput").value;
+    const params = "msg="+input;
+    console.log(input);
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+    }
+    xmlhttp.open('POST', 'inserterheni.php');
+    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xmlhttp.send(params);
+    document.getElementById("msgTableInput").value="";
 }
