@@ -3,20 +3,32 @@
     padding: 0;
 }
 body{
-    font-family: 'Palette Mosaic', cursive;
-    background-color: black;
+    font-family: 'Indie Flower', cursive;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    background-color: white;
+    background-color: #faeae8;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: large;
+    font-weight: 600;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 .icon{
     position: absolute;
     z-index: 7;
-    top: 10px;
+    top: 30px;
     left: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 #iconBeforeId{
     top: 10px;
@@ -49,8 +61,8 @@ body{
 .title{
     margin: 0;
     text-align: center;
-    font-size: 60px;
-    color: #629bdd;
+    font-size: 80px;
+    color: #02c2f2;
 }
 #rocketPic{
    width: 10%;
@@ -104,7 +116,7 @@ body{
     margin: 0;
     margin-left: 10px;
     padding: 20px;
-    background-color: #629bdd;
+    background-color: #02c2f2;
     color: white;
     border-radius: 10px;
     font-weight: bolder;
@@ -115,33 +127,37 @@ body{
     animation-duration: 3s;
     animation-timing-function: linear;
     animation-fill-mode: both;
-    background-color: #629bdd;
+    background-color: #02c2f2;
     color: white;
 }
-#introImg{
-    width: 50%;
+.introImg{
+    width: 45%;
     border-radius: 10px;
     box-shadow: 0px 3px 3px 0px gray;
 }
 #introImg1{
-    width: 10%;    
+    width: 10%;
+    display: none;    
 }
 #introImg2{
     width: 10%;
+    display: none;
 }
 #description{
     position: absolute;
     margin-bottom: 15%;
-    margin-left: 32%;
+    margin-left: 3%;
     opacity: 0;
     transition: opacity 0.8s;
+    color: #02c2f2;
 }
 #descriptionOther{
     position: absolute;
     margin-top: 20%;
-    margin-left: 15%;
+    margin-left: 12%;
     opacity: 0;
     transition: opacity 0.8s;
+    color: #02c2f2;
 }
 .topnavOptions{
     position: fixed;
@@ -163,7 +179,7 @@ body{
     align-items: center;
     height: 100%;
     width: 100%;
-    background: #629bdd;
+    background: #02c2f2;
 }
 .options a{
     padding: 20px 0;
@@ -171,7 +187,7 @@ body{
     text-transform: uppercase;
     width: 100%;
     text-align: center;
-    background: #629bdd;
+    background: #02c2f2;
     color: white;
     transition: all 0.8s;
     animation-name: inAndOutHover;
@@ -311,7 +327,7 @@ option:hover{
     z-index: -1;
 }
 .circlediv{
-    background-color: #629bdd;
+    background-color: #02c2f2;
     text-align: center;
     padding: 20px;
     border-radius: 1000px;
@@ -322,14 +338,17 @@ option:hover{
     justify-content: space-around;
     align-items: center;
     flex-wrap: nowrap;
-    flex-direction: row;
+    flex-direction: column;
     padding-top: 10%;
+    margin-bottom: 8rem;
 }
 .gallery{
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
+    width: 100%;
+    flex-direction: column;
 }
 .headerText-contain{
     display: flex;
@@ -343,12 +362,12 @@ option:hover{
     position: relative;
     margin: 0;
     text-align: center;
-    width: 10em; height: 4em;
+    width: 15em; height: 4em;
     border-radius: .25em;
     transform: rotate(-4deg) rotateY(15deg);
-    background: #629bdd;
+    background: #02c2f2;
     text-align: center;
-    font-size: 40px;
+    font-size: 45px;
     padding: 3%
   }
   .headerText:before, .headerText:after {
@@ -365,7 +384,7 @@ option:hover{
   .headerText:before {
     border: solid 0 transparent;
     border-right: solid 3.5em #f4fbfe;
-    border-bottom: solid .25em #629bdd;
+    border-bottom: solid .25em #02c2f2;
     bottom: .25em; left: 1.25em;
     width: 0; height: 1em;
     transform: rotate(45deg) skewX(75deg);
@@ -469,15 +488,13 @@ option:hover{
     flex-direction: column;
 }
 footer{
-    font-size: 15px;
-    background: #5B3ECF;
-    background: -webkit-linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
-    background: -moz-linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
-    background: linear-gradient(to right, #5B3ECF 0%, #CF3ABB 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 22px;
+    background-color: #02c2f2;
     text-align: center;
-    margin: 40% 0 20% 0
+    color: white;
+    margin: 0;
+    width: 100%;
+    padding: 3rem 0;
 
 }
 @keyframes hovering {
@@ -503,3 +520,314 @@ footer{
     95% {margin-top: 61%; margin-left: 1%; transform: rotateZ(5deg);}
     100% {margin-top: 60%; margin-left: 0%; transform: rotateZ(0deg);}
 }
+.imgWrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    padding-right: 5rem;
+    background-color: #faf5f5;
+    padding: 5rem 0;
+}
+.textGallery p, .arrowText p{
+    color: #02c2f2;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.didYouKnow p{
+    text-align: center;
+    background-color: #02c2f2;
+    color: white;
+    padding: 5rem;
+    border-radius: 30% 70% 29% 71% / 35% 29% 71% 65% ;
+    transition: all 0.8s;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.didYouKnow p:hover{
+    border-radius: 60% 40% 82% 18% / 46% 55% 45% 54%  ;
+    color: #02c2f2;
+    background-color: transparent;
+}
+.didYouKnow{
+    
+    top: 30rem;
+    padding: 3rem;
+}
+#dyk1{
+    top: 72rem;
+}
+.paws i{
+    font-size: 15px;
+    color: #02c2f2;
+}
+.paws{
+    width: 2rem;
+    transform: rotateZ(45deg);
+    padding-left: 10rem;
+}
+.pawLeft{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.pawRight{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.imgGlimpse{
+    background: url("henisztar.jpg");
+    width: 20rem;
+    height: 10rem;
+    background-position:top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 5rem;
+    border-radius: 20% 80% 16% 84% / 31% 37% 63% 69% ;
+    animation-name: blobbing;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    transition: all 0.8s;
+}
+@keyframes blobbing {
+    0%{border-radius: 20% 80% 16% 84% / 31% 37% 63% 69% ;}
+    20%{border-radius: 53% 20% 16% 44% / 41% 21% 10% 69% ;}
+    40%{border-radius: 20% 80% 49% 51% / 93% 16% 84% 7%  ;}
+    60%{border-radius: 63% 37% 49% 51% / 15% 36% 64% 85%  ;}
+    80%{border-radius: 63% 37% 80% 20% / 79% 36% 64% 21% ;}
+    100%{border-radius: 20% 80% 16% 84% / 31% 37% 63% 69%  ;}
+}
+#des1, #des2{
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.6s;
+}
+#des1{
+    margin-bottom: 45%;
+    margin-left: 22%;
+}
+#des2{
+    margin-bottom: 27%;
+    margin-left: 24%;
+}
+.arrowText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem 0;
+}
+.arrowText i{
+    color: #02c2f2;
+    font-size: 8rem;
+}
+*{
+    cursor: default;
+}
+*{
+    max-width: 100%;
+}
+#we{
+    transition: all 0.7s;
+}
+#we:hover{
+    transform: scale(1.2);
+}
+@media only screen and(max-width: 720px){
+    #nihilizeMobile{
+        display: none;
+    }
+    #nihilizeMobile1{
+        display: none;
+    }
+    #nihilizeMobile2{
+        display: none;
+    }
+    #nihilizeMobile3{
+        display: none;
+    }
+}
+.loginWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+    flex-direction: column;
+}
+.loginSurface{
+    background-color: #02c2f2;
+    color: white;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 10rem;
+    border-radius: 30% 70% 21% 79% / 54% 19% 81% 46% ;
+    animation-name: blobbing;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    transition: all 0.8s;
+}
+.loginSurface:hover{
+    animation-play-state: paused;
+}
+.loginInputs form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.loginInput{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loginInput label{
+    margin-right: 1rem;
+    font-size: larger;
+}
+input{
+    border: 1.5px solid white;
+    background-color: transparent;
+}
+.loginLabel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logininput{
+    padding: 0.5rem;
+}
+.loginInput button{
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    border-radius: 5px;
+    padding: .5rem 4rem;
+    font-weight: 700; 
+    transition: 0.4s;
+}
+.loginInput button:hover{
+    background-color: white;
+    color: #02c2f2;
+}
+.loginInput input, .loginInput button{
+    cursor: pointer;
+}
+.loginTitle{
+    font-size: 4rem;
+    color: #02c2f2;
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+}
+#dyk2 p{
+    border-radius: 73% 27% 70% 30% / 22% 62% 38% 78% ;
+}
+#dyk2 p:hover{
+    border-radius: 60% 40% 82% 18% / 46% 55% 45% 54%  ;
+    color: #02c2f2;
+    background-color: transparent;
+}
+#dyk3 p{
+    border-radius: 30% 70% 70% 30% / 39% 62% 38% 61% ;
+}
+#dyk3 p:hover{
+    border-radius: 60% 40% 82% 18% / 46% 55% 45% 54%  ;
+    color: #02c2f2;
+    background-color: transparent;
+}
+@media only screen and (max-width: 500px){
+    .loginSurface{
+        width: 40%;
+        padding: 2rem 6rem;
+    }
+    .loginInput{
+        flex-direction: column;
+        text-align: center;
+    }
+    .loginTitle{
+        font-size: 2rem;
+    }
+    .loginLabel{
+        font-size: 12px;
+    }
+    .loginInput label{
+        font-size: 12px;
+    }
+    #nihilizeMobile{
+        display: none;
+    }
+    #nihilizeMobile1{
+        display: none;
+    }
+    #nihilizeMobile2{
+        display: none;
+    }
+    #nihilizeMobile3{
+        display: none;
+    }
+    .headerText{
+        font-size: 1rem;
+    }
+    .textGallery{
+        width: 70%;
+        margin-left: 0;
+    }
+    .imgWrapper, .gallery{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .didYouKnow p{
+        font-size: 12px;
+        text-align: center;
+        width: 50%;
+    }
+    .arrowText i{
+        font-size: 20px;
+    }
+    .arrowText p{
+        font-size: 12px;
+        text-align: center;
+    }
+    #dyk1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    footer p{
+        font-size: 12px;
+    }
+    .title{
+        margin-bottom: 3rem;
+    }
+}
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px whitesmoke; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #02c2f2; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(8,219,142,0.5); 
+  }

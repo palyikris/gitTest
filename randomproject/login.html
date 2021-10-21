@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="heninewstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../heni.jpg">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Qahiri&family=Rampart+One&family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
+    <title>Üzimüzi Bejelentkezés</title>
+</head>
+<body>
+    <div class="loginWrapper">
+        <div class="loginTitle">
+            Bejelentkezés
+        </div>
+        <div class="loginSurface">
+            <div class="loginIcon">
+
+            </div>
+            <div class="loginInputs">
+                <form class="loginForm" action="sender.php" method="post">
+                    <div class="loginInput">
+                        <div class="loginLabel"><label>Felhasználónév: </label></div>
+                        <input type="text" name="uName" placeholder="Ide írd a felhasználóneved..." class="logininput" required>
+                    </div>
+                    <div class="loginInput">
+                        <div class="loginLabel"><label>Jelszó: </label></div>
+                        <input type="password" name="pwd" placeholder="Ide írd a jelszavad..." class="logininput" required id="pwd"><br>
+                    </div>
+                    <div class="loginInput"> 
+                        <input type="checkbox" id="wannaSeePwd" onclick="typeChange()"> 
+                        <label style="margin-left: 1rem;">Szeretném látni a jelszót!</label>
+                    </div>
+                    <div class="loginInput">
+                        <button type="submit">OK</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function typeChange(){
+        if(document.getElementById("wannaSeePwd").checked == 1){
+            document.getElementById("pwd").type="text";
+        }
+        else{
+            document.getElementById("pwd").type="password";
+        }
+    }
+</script>
+</html>
