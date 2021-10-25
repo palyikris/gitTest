@@ -45,7 +45,7 @@
             <span class="borderBottom"></span>
         </div>
         <div class="option">
-            <a class="optionA_Id" href="videok.html">Vieótéka</a>
+            <a class="optionA_Id" href="videok.html">Videótéka</a>
             <span class="borderBottom"></span>
         </div>
         <div class="option">
@@ -242,6 +242,38 @@
 </div>
 </body>
 <script>
+    setInterval(() => {
+        const divs = document.querySelectorAll(".gallery, .textGallery, .imgGlimpse, footer");
+        for(let i = 0; i<divs.length; i++){
+            divs[i].style.opacity="0";
+            divs[i].style.marginTop="15px"
+            console.log(isInViewport(divs[0]));
+            if(isInViewport(divs[0] == true)){
+                divs[0].style.opacity="1";
+                divs[0].style.marginTop="0px"
+            }
+        }
+        function isInViewport (el) {
+
+
+
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /* or $(window).height() */
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
+            );
+        }
+        /*for(let j = 0; j<divs.length; j++){
+            console.log(divs[j]);
+            if(isInViewport(divs[j]===true)){
+                divs[j].style.opacity="1";
+                divs[j].style.marginTop="0px"
+            }
+        }*/
+        console.log(isInViewport(divs[0]));
+    }, 1000);
     /*let rocket= document.getElementById("rocketPic");
     let txt= document.getElementById("headerTextId");
     let second= document.getElementById("secondHeaderText");
