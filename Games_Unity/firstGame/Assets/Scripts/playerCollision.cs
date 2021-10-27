@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class playerCollision : MonoBehaviour
 {
-    public PlayerMovement movement;
-    private void OnCollisionEnter(Collision collision)
+    public Move movement;
+    void OnCollisionEnter(Collision collision)
     {
         //Debug.Log(collision.collider.name);
         if(collision.collider.tag == "Obstacle")
         {
-
+            movement.enabled = false;
         }
     }
 }
