@@ -242,21 +242,14 @@
 </div>
 </body>
 <script>
+
     setInterval(() => {
-        const divs = document.querySelectorAll(".gallery, .textGallery, .imgGlimpse, footer");
+        const divs = document.querySelectorAll(".imgWrapper * *, footer *");
+        console.log(divs);
         for(let i = 0; i<divs.length; i++){
             divs[i].style.opacity="0";
-            divs[i].style.marginTop="15px"
-            console.log(isInViewport(divs[0]));
-            if(isInViewport(divs[0] == true)){
-                divs[0].style.opacity="1";
-                divs[0].style.marginTop="0px"
-            }
         }
         function isInViewport (el) {
-
-
-
             var rect = el.getBoundingClientRect();
             return (
                 rect.top >= 0 &&
@@ -265,6 +258,18 @@
                 rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
             );
         }
+        for(let i = 0; i < divs.length; i++){
+            if(isInViewport(divs[i]) === true){
+                divs[i].style.opacity="1";
+                divs[i+3].style.opacity="1";
+                divs[i+1].style.opacity="1";
+                divs[i+2].style.opacity="1";
+                divs[i+4].style.opacity="1";
+                divs[i+5].style.opacity="1";
+
+            }
+            //console.log(isInViewport(divs[i]));
+        }
         /*for(let j = 0; j<divs.length; j++){
             console.log(divs[j]);
             if(isInViewport(divs[j]===true)){
@@ -272,7 +277,6 @@
                 divs[j].style.marginTop="0px"
             }
         }*/
-        console.log(isInViewport(divs[0]));
     }, 1000);
     /*let rocket= document.getElementById("rocketPic");
     let txt= document.getElementById("headerTextId");
