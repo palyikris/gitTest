@@ -34,7 +34,7 @@ setInterval(function(){
             /*if(parseInt(currentMsg[i].id)>parseInt(greatestI)){
                 greatestI = currentMsg[i].id;
                 var msgI = i;
-                if(currentMsg[i].sender==="kristof"){
+                if(currentMsg[i].sender==="heni"){
                     document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv'>"+currentMsg[msgI].msg+"</div></div>";
                 }
                 else{
@@ -43,20 +43,224 @@ setInterval(function(){
             }*/
         }
         for(let i = 0; i<msgs.length; i++){
-            console.log(msgs[i].id);
+            //console.log(msgs);
             if(parseInt(msgs[i].id)>parseInt(greatestI)){
-                console.log(parseInt(msgs[i].id)>parseInt(greatestI))
                 greatestI = msgs[i].id;
-                console.log(greatestI);
                 var msgI = i;
-                if(msgs[msgI].sender==="heni"){
-                    document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv'>"+msgs[msgI].msg+"</div></div>";
+                /*console.log(document.getElementById("scrollId").scrollHeight - Math.abs(document.getElementById("scrollId").scrollTop) === document.getElementById("scrollId").clientHeight);
+                console.log(document.getElementById("scrollId").scrollHeight);
+                console.log(document.getElementById("scrollId").scrollTop);
+                console.log(document.getElementById("scrollId").clientHeight);
+                console.log(document.getElementById("scrollId").scrollHeight - document.getElementById("scrollId").clientHeight)*/
+                if(document.getElementById("scrollId").scrollHeight - Math.round(document.getElementById("scrollId").scrollTop) === document.getElementById("scrollId").clientHeight){ //if user is at the bottom of message displayer
+                    if(msgs[msgI].sender==="heni"){
+                        if(msgI === 0){
+                            console.log(prevTimeHour === thisTimeHour && thisTimeMinute - prevTimeMinute >= 5, msgs[msgI].msg, prevTimeMinute, thisTimeMinute);
+                            let thisTimeHour = msgs[msgI].timeHour;
+                            let thisTimeMinute = msgs[msgI].timeMinute;
+                            let prevTimeHour = msgs[msgI].timeHour;
+                            let prevTimeMinute = msgs[msgI].timeMinute;
+                            if(prevTimeHour === thisTimeHour && thisTimeMinute - prevTimeMinute >= 5){
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgRight' style='margin-top:10px;'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                                console.log("ja");
+                            }
+                            else if(prevTimeHour != thisTimeHour){
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='timeDisplayer'>"+thisTimeHour+":"+thisTimeMinute+", "+msgs[msgI].dateMonAndYear+"</div>"
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                            }
+                            else{
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                            }
+                        }
+                        else{
+                            let thisTimeHour = msgs[msgI].timeHour;
+                            let thisTimeMinute = msgs[msgI].timeMinute;
+                            let prevTimeHour = msgs[msgI-1].timeHour
+                            let prevTimeMinute = msgs[msgI-1].timeMinute;
+                            console.log(prevTimeHour === thisTimeHour && thisTimeMinute - prevTimeMinute >= 5, msgs[msgI].msg, prevTimeHour, thisTimeHour, prevTimeMinute, thisTimeMinute, prevTimeMinute-thisTimeMinute, msgs[msgI].id);
+                            if(prevTimeHour === thisTimeHour && thisTimeMinute - prevTimeMinute >= 5){
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgRight' style='margin-top:10px;'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                                console.log("ja");
+                            }
+                            else if(prevTimeHour != thisTimeHour){
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='timeDisplayer'>"+thisTimeHour+":"+thisTimeMinute+", "+msgs[msgI].dateMonAndYear+"</div>"
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                            }
+                            else{
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                            }
+                        }
+                        
+                        //else{
+                            //const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                            //document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                        //}                
+                    }
+                    else{
+                        if(msgI === 0){
+                            let thisTimeHour = msgs[msgI].timeHour;
+                            let thisTimeMinute = msgs[msgI].timeMinute;
+                            let prevTimeHour = msgs[msgI].timeHour;
+                            let prevTimeMinute = msgs[msgI].timeMinute;
+                            
+                            if(prevTimeHour === thisTimeHour && thisTimeMinute - prevTimeMinute >= 5){
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgLeft' style='margin-top:10px;'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                                console.log("ja");
+                            }
+                            else if(prevTimeHour != thisTimeHour){
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='timeDisplayer'>"+thisTimeHour+":"+thisTimeMinute+", "+msgs[msgI].dateMonAndYear+"</div>"
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                            }
+                            else{
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                            }
+                        }
+                        else{
+                            let thisTimeHour = msgs[msgI].timeHour;
+                            let thisTimeMinute = msgs[msgI].timeMinute;
+                            let prevTimeHour = msgs[msgI-1].timeHour
+                            let prevTimeMinute = msgs[msgI-1].timeMinute;
+                            
+                            if(prevTimeHour === thisTimeHour && thisTimeMinute - prevTimeMinute >= 5){
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgLeft' style='margin-top:10px;'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                                console.log("ja");
+                            }
+                            else if(prevTimeHour != thisTimeHour){
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='timeDisplayer'>"+thisTimeHour+":"+thisTimeMinute+", "+msgs[msgI].dateMonAndYear+"</div>"
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                            }
+                            else{
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                            }
+                        }
+                        
+                        //else{
+                            //const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                            //document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                        //}       
+                        document.title="Új üzenet";                   
+                    }
+                    //console.log(document.getElementById("scrollId").scrollTop = document.getElementById("scrollId").clientHeight)
+                    document.getElementById("scrollId").scrollTop = document.getElementById("scrollId").scrollHeight - document.getElementById("scrollId").clientHeight;
+                    document.getElementById("scrollId").scrollTop = Math.round(document.getElementById("scrollId").scrollTop);
                 }
                 else{
-                    document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv'>"+msgs[msgI].msg+"</div></div>";
-                    document.title="Új üzenet";
+                    if(msgs[msgI].sender==="heni"){
+                        if(msgI === 0){
+                            let thisTimeHour = msgs[msgI].timeHour;
+                            let thisTimeMinute = msgs[msgI].timeMinute;
+                            let prevTimeHour = msgs[msgI].timeHour;
+                            let prevTimeMinute = msgs[msgI].timeMinute;
+                            
+                            if(prevTimeHour === thisTimeHour && thisTimeMinute - prevTimeMinute >= 5){
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgRight' style='margin-top:10px;'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                                console.log("ja");
+                            }
+                            
+                            else if(prevTimeHour != thisTimeHour){
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='timeDisplayer'>"+thisTimeHour+":"+thisTimeMinute+", "+msgs[msgI].dateMonAndYear+"</div>"
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                            }
+                            else{
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                            }
+                        }
+                        else{
+                            let thisTimeHour = msgs[msgI].timeHour;
+                            let thisTimeMinute = msgs[msgI].timeMinute;
+                            let prevTimeHour = msgs[msgI-1].timeHour
+                            let prevTimeMinute = msgs[msgI-1].timeMinute;
+                            
+                            if(prevTimeHour === thisTimeHour && thisTimeMinute - prevTimeMinute >= 5){
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgRight' style='margin-top:10px;'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                                console.log("ja");
+                            }
+                            else if(prevTimeHour != thisTimeHour){
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='timeDisplayer'>"+thisTimeHour+":"+thisTimeMinute+", "+msgs[msgI].dateMonAndYear+"</div>"
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                            }
+                            else{
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                            }
+                        }
+                        
+                        //else{
+                            //const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                            //document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                        //}                
+                    }
+                    else{
+                        if(msgI === 0){
+                            let thisTimeHour = msgs[msgI].timeHour;
+                            let thisTimeMinute = msgs[msgI].timeMinute;
+                            let prevTimeHour = msgs[msgI].timeHour;
+                            let prevTimeMinute = msgs[msgI].timeMinute;
+                            
+                            if(prevTimeHour === thisTimeHour && thisTimeMinute - prevTimeMinute >= 5){
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgLeft' style='margin-top:10px;'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                                console.log("ja");
+                            }
+                            else if(prevTimeHour != thisTimeHour){
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='timeDisplayer'>"+thisTimeHour+":"+thisTimeMinute+", "+msgs[msgI].dateMonAndYear+"</div>"
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                            }
+                            else{
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                            }
+                        }
+                        else{
+                            let thisTimeHour = msgs[msgI].timeHour;
+                            let thisTimeMinute = msgs[msgI].timeMinute;
+                            let prevTimeHour = msgs[msgI-1].timeHour
+                            let prevTimeMinute = msgs[msgI-1].timeMinute;
+                            
+                            if(prevTimeHour === thisTimeHour && thisTimeMinute - prevTimeMinute >= 5){
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgLeft' style='margin-top:10px;'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                                console.log("ja");
+                            }
+                            else if(prevTimeHour != thisTimeHour){
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='timeDisplayer'>"+thisTimeHour+":"+thisTimeMinute+", "+msgs[msgI].dateMonAndYear+"</div>"
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                            }
+                            else{
+                                let currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                                document.getElementById("msgTableId").innerHTML+="<div class='msgLeft'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                            }
+                        }
+                        
+                        //else{
+                            //const currTime = msgs[msgI].timeHour+":"+msgs[msgI].timeMinute;
+                            //document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv' title='"+currTime+"'>"+msgs[msgI].msg+"</div></div>";
+                        //}     
+                        document.title="Új üzenet";                     
+                    }
+                    //console.log(document.getElementById("scrollId").scrollTop = document.getElementById("scrollId").clientHeight)
+                    document.getElementById("scrollId").scrollTop = document.getElementById("scrollId").scrollHeight - document.getElementById("scrollId").clientHeight;
+                    document.getElementById("scrollId").scrollTop = Math.round(document.getElementById("scrollId").scrollTop);
                 }
-                
             }
             else{
                 document.title="Üzimüzi";
@@ -65,7 +269,7 @@ setInterval(function(){
     }
     xmlhttp.open("GET", "fetcher.php");
     xmlhttp.send();
-}, 500);
+}, 1000);
 
 document.getElementById("msgTableInput").addEventListener("keyup", function(event) {
     // Number 13 is the "Enter" key on the keyboard
@@ -104,7 +308,7 @@ function zoom(){
     const year = date.getFullYear();
     const token = "111";
     const sentObj = {
-        "sender" : "kristof",
+        "sender" : "heni",
         "sentTo" : "heni",
         "msg" : sentMsg,
         "hour" : hour,
@@ -132,7 +336,7 @@ function mm(){
             /*if(parseInt(currentMsg[i].id)>parseInt(greatestI)){
                 greatestI = currentMsg[i].id;
                 var msgI = i;
-                if(currentMsg[i].sender==="kristof"){
+                if(currentMsg[i].sender==="heni"){
                     document.getElementById("msgTableId").innerHTML+="<div class='msgRight'><div class='msgDiv'>"+currentMsg[msgI].msg+"</div></div>";
                 }
                 else{

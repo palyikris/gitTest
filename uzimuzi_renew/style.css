@@ -60,6 +60,7 @@
     padding: 0.5rem;
     border-radius: 5px 20px 20px 5px;
     padding-right: 25px;
+    max-width: 40%;
 }
 .msgRight .msgDiv{
     background-color: #02c2f2;
@@ -176,4 +177,10 @@ footer{
     align-items: center;
     flex-direction: column;
     padding: 2rem 0;
+}
+.timeDisplayer{
+    color: #02c2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
