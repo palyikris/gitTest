@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637707912834839599
-    m_Hash: 2710457655
+      ticks: 637709637866841596
+    m_Hash: 3493698477
   m_LockFileStatus:
     m_FilePath: C:/Users/palyi/Desktop/gitTest/Games_Unity/firstGame/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637707913013722572
-    m_Hash: 112366303
+      ticks: 637709637866854043
+    m_Hash: 924373911
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
