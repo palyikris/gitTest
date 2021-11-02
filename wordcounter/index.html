@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HFP Word Counter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <link rel="icon" href="../heni.jpg">
+</head>
+<body>
+    <main>
+    <div class="titleWrapper" data-aos="fade-in">
+        <div class="title">HENI FAN PAGE <br>Word Counter</div>
+    </div>
+    <div class="topnav" data-aos="fade-right">
+        <div class="firstOption"><div href="" class="topnavOption" id="firstOfTopnav">Szeretnék:</div></div>
+        <div class="otherOptions">
+            <div class="topnavOption" onclick="checkNeeds(this)">Motivációt</div>
+            <div class="topnavOption" onclick="checkNeeds(this)">Segítséget</div>
+            <div class="topnavOption" onclick="checkNeeds(this)">Beszólást</div>
+            <div class="topnavOption" onclick="checkNeeds(this)">Ötleteket</div>
+        </div>
+    </div>
+    <div class="wordCounterWrapper" data-aos="fade-left">
+        <div class="wordCounter">
+            <div class="nOfWords" id="nOfWords">Illeszd be az esszéd, hogy meg tudjam számolni te autista fasz!</div>
+        </div>
+        <div class="setWordLimit">
+            <input type="text" id="limitInput" placeholder="Adj egy szólimitet...">
+             <button type="button" id="limitButton" onclick="setWordLimit()">ok</button>
+        </div>
+    </div>
+    <div class="textHolderWrapper" data-aos="fade-right">
+        <div class="textHolder">
+            <textarea id="textHolderInput" onclick="wlCheck()"></textarea>
+            <button type="button" id="textHolderButton" onclick="wordCount()">OK</button>
+        </div>
+    </div>
+    </main>
+    <script src="index.js"></script>
+
+</body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+      offset:200,
+      duration:1000
+  });
+</script>
+</html>
