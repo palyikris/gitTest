@@ -154,8 +154,13 @@ const intervalCancelNotification = setInterval(() => {
     console.log(wordLimit)
     console.log(nOfWords>wordLimit)
     if(nOfWords>wordLimit){
-        console.log("aha");
-        document.getElementById("nOfWords").innerHTML+="<span id='notificationSpan' style='color:red;text-transform:uppercase;text-align:center;'><br>Most már megállhatsz, ha szeretnél, megvan a limit!</span>"
-        clearInterval(intervalCancelNotification)
+        if(wordLimit === "" || wordLimit === 0){
+            
+        }
+        else{
+            console.log("aha");
+            document.getElementById("nOfWords").innerHTML+="<span id='notificationSpan' style='color:red;text-transform:uppercase;text-align:center;'><br>Most már megállhatsz, ha szeretnél, megvan a limit!</span>"
+            clearInterval(intervalCancelNotification)
+        }
     } 
 }, 1000);

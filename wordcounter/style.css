@@ -176,3 +176,28 @@ a{
     background-color: transparent;
     color: #66ced1;
 }
+@media only screen and (max-width: 480px){
+    .wordCounterWrapper{
+        width: 65%;
+        margin-left: 0;
+        margin-right: 0;
+        flex-direction: column;
+    }
+    *{
+        max-width: 100%;
+    }
+    .topnav .otherOptions div{
+        font-size: 9px;
+    }
+    .wordCounter{
+        font-size: 15px;
+    }
+    .setWordLimit{
+        margin-top: 2rem;
+    }
+    .textHolderWrapper{
+        margin: 0;
+        width: 100%;
+        padding: 0;
+    }
+}
