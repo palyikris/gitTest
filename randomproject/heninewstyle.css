@@ -643,23 +643,6 @@ footer{
 #we:hover{
     transform: scale(1.2);
 }
-@media only screen and(max-width: 720px){
-    #nihilizeMobile{
-        display: none;
-    }
-    #nihilizeMobile1{
-        display: none;
-    }
-    #nihilizeMobile2{
-        display: none;
-    }
-    #nihilizeMobile3{
-        display: none;
-    }
-    #topnavmenuBarId{
-        margin-left: 0;
-    }
-}
 .loginWrapper{
     display: flex;
     align-items: center;
@@ -771,35 +754,36 @@ input{
     .loginInput label{
         font-size: 12px;
     }
-    #nihilizeMobile{
-        display: none;
-    }
-    #nihilizeMobile1{
-        display: none;
-    }
-    #nihilizeMobile2{
-        display: none;
-    }
-    #nihilizeMobile3{
-        display: none;
-    }
     .headerText{
         font-size: 1rem;
     }
     .textGallery{
         width: 70%;
         margin-left: 0;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
     }
     .imgWrapper, .gallery{
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        margin: 0;
+        flex-direction: column;
+        padding: 0;
     }
+    .imgWrapper{
+        padding: 2rem 0;
+    }
+   .arrowText i{
+       display: none;
+   }
     .didYouKnow p{
         font-size: 12px;
         text-align: center;
         width: 50%;
+        padding: 3rem;
     }
     .arrowText i{
         font-size: 20px;
