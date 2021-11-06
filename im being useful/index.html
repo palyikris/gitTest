@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Qahiri&family=Rampart+One&family=Roboto+Mono:wght@200&family=Zen+Antique&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="topPart" id="topPart">
+        <div class="inputWrapper" id="inputWrapper">
+            <div class="option">
+                <button id="toolsVisible" onclick="toolsVisible()">Eszközök megjelenítése</button>
+            </div>
+            <div class="option">
+                <button id="darkMode" onclick="darkMode()">Dark mode</button>
+            </div>
+            <div class="option">
+                <button id="makeComment" onclick="makeComment()">Komment készítése</button>
+            </div>
+            <div class="option">
+                <button id="something" onclick="something()">Valami</button>
+            </div>
+            <div class="option">
+                <button id="imBored" onclick="imBored()">Unatkozom</button>
+            </div>
+        </div>
+        <div class="toolsReadyWrapper" id="toolsReadyWrapper">
+            <div class="invisible" id="toolsReady">
+                <button class="toolsNotReady" id="toolsNotReady" onclick="toolsnotReady()"><i class="fa fa-arrow-left"></i></button>
+                <div class="tool" id="fontWeight">
+                    <button onclick="adjustFontWeight()">fontsúly</button>
+                    <input type="text" id="fontWeightInput">
+                </div>
+                <div class="tool" id="fontSize">
+                    <button onclick="adjustFontSize()">betűméret</button>
+                    <input type="text" id="fontSizeInput">
+                </div>
+                <div class="tool" id="textAlign">
+                    <button onclick="adjustTextAlign()">elhelyezés</button>
+                    <div class="toolOptions">
+                        <div class="toolOption">Balra</div>
+                        <div class="toolOption">Jobbra</div>
+                        <div class="toolOption">Közép</div>
+                        <div class="toolOption">Sorkizárt</div>
+                    </div>
+                </div>
+                <div class="tool" id="italics">
+                    <button onclick="adjustIntalics()">dőlt</button>
+                </div>
+                <div class="tool" id="textColor">
+                    <button onclick="adjustTextColor()">szín</button>
+                    <input type="color" id="textColorInput">
+                </div>
+                <div class="tool" id="backgroundColor">
+                    <button onclick="adjustBackgroundColor()">háttér</button>
+                    <input type="color" id="backgroundColorInput">
+                </div>
+                <div class="tool" id="insertImg">
+                    <button onclick="adjustInsertImg()">képbeszúrás</button>
+                    <input type="file" id="insertImgInput">
+                </div>
+                <div class="tool" id="fontFamily">
+                    <button onclick="adjustFontFamily()">betűtípus</button>
+                    <input type="text" id="fontFamilyInput">
+                </div>
+                <div class="tool" id="moreTools">
+                    <button onclick="moreTools()" id="moreToolsButton">Többi...</button>
+                </div>
+            </div>
+            <div class="invisible" id="toolsReadyOther">
+                <div class="tool" id="margins">
+                    <button onclick="adjustMargins()">Margók</button>
+                    <div class="toolOptionsOther">
+                        <input type="text" class="toolOptionOther" id="marginLeft" placeholder="Bal margó..">
+                        <input type="text" class="toolOptionOther" id="marginRight" placeholder="Jobb margó..">
+                        <input type="text" class="toolOptionOther" id="marginTop" placeholder="Felső margó..">
+                        <input type="text" class="toolOptionOther" id="marginBottom" placeholder="Alsó margó..">
+                    </div>
+                </div>
+                <div class="tool" id="createList">
+                    <button type="button" id="createListButton" onclick="createList()">Lista készítése</button>
+                    <div class="toolOptionsOther2">
+                        <label for="" id="createListLabel">Lista típusa:</label>
+                        <input type="text" id="createListInput">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mainWrapper" id="mainWrapper">
+        <div class="main" contenteditable="true"> 
+
+        </div>
+        <div class="addMain">
+            <button class="addMainButton" onclick="addMain()">+</button>
+        </div>
+    </div>
+    <div class="invisible" id="dmReady">
+
+    </div>
+    <div class="invisible" id="commentReady">
+
+    </div>
+    <div class="invisible" id="somethingReady">
+
+    </div>
+    <div class="invisible" id="boredomReady"></div>
+    <script src="index.js">
+
+    </script>
+</body>
+</html>
