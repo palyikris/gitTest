@@ -21,10 +21,7 @@
                 <button id="darkMode" onclick="darkMode()">Dark mode</button>
             </div>
             <div class="option">
-                <button id="makeComment" onclick="makeComment()">Komment készítése</button>
-            </div>
-            <div class="option">
-                <button id="something" onclick="something()">Valami</button>
+                <button id="wordCounter" onclick="countWords()">Szószámláló</button>
             </div>
             <div class="option">
                 <button id="imBored" onclick="imBored()">Unatkozom</button>
@@ -92,11 +89,10 @@
                 </div>
             </div>
         </div>
+        <div class="nOfWords" id="nOfWords" ondblclick="noCountWords()"></div>
     </div>
     <div class="mainWrapper" id="mainWrapper">
-        <div class="main" contenteditable="true"> 
-
-        </div>
+        <textarea name="" id="main" class="main"></textarea>
         <div class="addMain">
             <button class="addMainButton" onclick="addMain()">+</button>
         </div>
