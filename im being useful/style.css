@@ -20,7 +20,7 @@ body{
 .main{
     max-height: 100%;
     height: 100%;
-    width: 70%;
+    width: 60%;
     background-color: white;
     box-shadow: 1px 1px lightgrey;
     border-radius: 2px;
@@ -43,7 +43,7 @@ body{
     align-items: center;
     padding-top: 2.5rem;
 }
-.addMainButton{
+.saveContent{
     padding: 1rem 5rem;
     font-size: 18px;
     color: #02c2f2;
@@ -53,8 +53,10 @@ body{
     border-radius: 10px;
     transition: all 0.7s;
     cursor: pointer;
+    margin-top: 5rem;
+    text-transform: uppercase;
 }
-.addMainButton:hover{
+.saveContent:hover{
     background-color: #02c2f2;
     color: white;
 }
@@ -208,4 +210,40 @@ body{
     border: 2px solid #02c2f2;
     border-radius: 10px;
     margin: 2rem 8rem;
+}
+.imBoredDiv{
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1.8px solid #02c2f2;
+    padding: 2rem 4rem;
+    margin: 3rem 10rem;
+    border-radius: 10px;
+}
+.imBoredDiv i{
+    color: #02c2f2;
+    font-size: 5vw;
+    cursor: pointer;
+}
+.showGames{
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1.6px solid #02c2f2;
+    border-radius: 10px;
+    padding: 3.5rem 6rem;
+    margin: 3rem 8rem;
+}
+.game{
+    color: white;
+    background-color: #02c2f2;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.3vw;
+    padding: .5vw 4vw;
+    border-radius: 7px;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+    cursor: pointer;
 }

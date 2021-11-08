@@ -90,11 +90,22 @@
             </div>
         </div>
         <div class="nOfWords" id="nOfWords" ondblclick="noCountWords()"></div>
+        <div class="imBoredDiv" id="imBoredDiv" ondblclick="imCurious()">
+            <a href="www.youtube.com" target="_blanket"><i class="fa fa-youtube-play"></i></a>
+            <i class="fa fa-gamepad" onclick="showGames()"></i>
+        </div>
+        <div class="showGames" id="showGames" ondblclick="hideGames()">
+            <button class="game" id="" onclick="snakeGame()">snakeGame</button>
+            <button class="game" id="" onclick="tetris()">tetris</button>
+            <button class="game" id="" onclick="trexGame()">t-rex game</button>
+            <button class="game" id="" onclick="">másvalami</button>
+        </div>
     </div>
     <div class="mainWrapper" id="mainWrapper">
         <textarea name="" id="main" class="main"></textarea>
-        <div class="addMain">
-            <button class="addMainButton" onclick="addMain()">+</button>
+        <div class="saveContentWrapper" id="saveContentWrapper">
+            <button class="saveContent" id="saveContent" onclick="saveContent()">Mentés</button>
+            <div class="savedBool" id="savedBool"></div>
         </div>
     </div>
     <div class="invisible" id="dmReady">

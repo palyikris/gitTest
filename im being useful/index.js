@@ -71,9 +71,7 @@ setInterval(() => {
             nOfChars++;
         }
     }
-    console.log(nOfChars)
     input = input.split(" ");
-    console.log(input);
     for(let i = 0; i < input.length; i++){
         nOfWords++;
     }
@@ -89,4 +87,46 @@ function noCountWords(){
     document.getElementById("inputWrapper").style.display="flex";
     document.getElementById("toolsReadyWrapper").style.display="none";
     document.getElementById("nOfWords").style.display="none";
+}
+function imBored(){
+    document.getElementById("inputWrapper").style.display="none";
+    document.getElementById("toolsReadyWrapper").style.display="none";
+    document.getElementById("nOfWords").style.display="none";
+    document.getElementById("imBoredDiv").style.display="flex";
+}
+function showGames(){
+    document.getElementById("showGames").style.display="flex";
+    document.getElementById("inputWrapper").style.display="none";
+    document.getElementById("toolsReadyWrapper").style.display="none";
+    document.getElementById("nOfWords").style.display="none";
+    document.getElementById("imBoredDiv").style.display="none";
+}
+function hideGames(){
+    document.getElementById("showGames").style.display="none";
+    document.getElementById("inputWrapper").style.display="none";
+    document.getElementById("toolsReadyWrapper").style.display="none";
+    document.getElementById("nOfWords").style.display="none";
+    document.getElementById("imBoredDiv").style.display="flex";
+}
+function imCurious(){
+    document.getElementById("showGames").style.display="none";
+    document.getElementById("inputWrapper").style.display="flex";
+    document.getElementById("toolsReadyWrapper").style.display="none";
+    document.getElementById("nOfWords").style.display="none";
+    document.getElementById("imBoredDiv").style.display="none";
+}
+
+function saveContent(){
+    const note = document.getElementById("main").id;
+    const noteContent = document.getElementById("main").value;
+    console.log(note, noteContent)
+    const param = "id="+note;
+    const paramOther = "content="+noteContent;
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+    }
+    xmlhttp.open('POST', 'index.php');
+    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xmlhttp.send(param, paramOther);
+    document.getElementById("savedBool").innerHTML="Mentve..."
 }
