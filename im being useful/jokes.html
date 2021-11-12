@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MókaVonat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Qahiri&family=Rampart+One&family=Roboto+Mono:wght@200&family=Zen+Antique&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../heni.jpg">
+</head>
+<body>
+    <div class="introWrapper">
+        <div class="intro" id="intro">
+            <div class="introDesc" id="introDesc">
+                <p>Szálljunk fel a mókavonatra!</p>
+            </div>
+        </div>
+    </div>
+    <div class="jokeWrapper">
+        <div class="jokeCounter">
+            <div class="inputJoke">
+                <label for="" class="jokeLabel" id="jokeLabel">Nyomj rám ha hallottál egy kis mókát!</label>
+                <button class="jokeButton" id="jokeButton" onclick="plusJoke()">+</button>
+                <label class="jokeLabel">Hamarosan az app is elérhető!</label>
+            </div>
+        </div>
+    </div>
+    <div class="jokeChart">
+        <div class="todaysJokes" id="todaysJokes"></div>
+        <div id="chartDiv"></div>
+        <div id="chartDiv1"></div>
+    </div>
+</body>
+<script src="https://code.jscharting.com/2.9.0/jscharting.js"></script>
+<script src="chart.js">
+</script>
+<script>
+function plusJoke(){
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+    }
+    xmlhttp.open('POST', 'insertJoke.php');
+    xmlhttp.send();
+}
+setInterval(() => {
+    const xmlhttp = new XMLHttpRequest();
+        xmlhttp.onload = function() {
+            let jokes = JSON.parse(this.responseText);
+            if(jokes.length === 0){
+                document.getElementById("todaysJokes").innerHTML="A mai nap még nem volt mókázás.";
+            }
+            else{
+                let currentJokes = []
+                for(let i = 0; i<jokes.length; i++){
+                    let d = new Date()
+                    let day = d.getDate()
+                    let month = d.getMonth()+1
+                    let year = d.getFullYear()
+                    let date = day+"/"+month+"/"+year
+                    if(jokes[i].dateOf === date){
+                        currentJokes.push(jokes[i])
+                    }
+                }
+                if(currentJokes.length === 0){
+                    document.getElementById("todaysJokes").innerHTML="A mai nap még nem volt mókázás";
+                }
+                else{
+                    document.getElementById("todaysJokes").innerHTML=currentJokes.length+" móka hangzott el a mai nap";
+                }
+            }
+
+        }
+    xmlhttp.open("GET", "jokes.php");
+    xmlhttp.send();
+}, 1500);
+</script>
+</html>

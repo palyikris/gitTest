@@ -1,4 +1,47 @@
-
+window.onload = (event) => {
+    const initialInvisible = document.querySelectorAll(".topPart, .mainWrapper");
+    console.log(initialInvisible)
+        for(let i = 0;i < initialInvisible.length; i++){
+            initialInvisible[i].style.display="none";
+        }
+}
+let subject, userName, password;
+function submitLogin(){
+    subject = document.getElementById("subjectInput").value;
+    userName = document.getElementById("userNameInput").value;
+    password = document.getElementById("passwordInput").value;
+    if(userName === "Kristóf" && password === "6969"){
+        subject = document.getElementById("subjectInput").value;
+        userName = document.getElementById("userNameInput").value;
+        password = document.getElementById("passwordInput").value;
+        const xmlhttp = new XMLHttpRequest();
+        xmlhttp.onload = function() {
+            console.log("huh")
+            const notes = JSON.parse(this.responseText);
+            if(notes.length === 0){
+                
+            }
+            else{
+                console.log(notes)
+                document.getElementById("main").innerHTML=notes[0].noteContent;
+            }
+        }
+        console.log(subject)
+        let param = "subject="+subject;
+        xmlhttp.open("POST", "notes.php");
+        xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xmlhttp.send(param);
+    }
+    document.getElementById("loginWrapper").style.display="none";
+    const initialInvisible = document.querySelectorAll(".topPart, .mainWrapper");
+        for(let i = 0;i < initialInvisible.length; i++){
+            initialInvisible[i].style.display="";
+        }
+    document.title=capitalizeFirstLetter(subject)+" jegyzet"
+}
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 function toolsVisible(){
     document.getElementById('toolsReadyWrapper').style.display="flex";
     document.getElementById('toolsReady').style.display="flex";
@@ -117,16 +160,98 @@ function imCurious(){
 }
 
 function saveContent(){
-    const note = document.getElementById("main").id;
-    const noteContent = document.getElementById("main").value;
-    console.log(note, noteContent)
-    const param = "id="+note;
-    const paramOther = "content="+noteContent;
+    const note = document.getElementById("main").value;
+    console.log(note);
+    const subjectToSend = subject;
+    let param = "content="+note+"&subject="+subjectToSend;
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onload = function() {
     }
     xmlhttp.open('POST', 'index.php');
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xmlhttp.send(param, paramOther);
-    document.getElementById("savedBool").innerHTML="Mentve..."
+    xmlhttp.send(param);
+    document.getElementById("savedBool").innerHTML = "Mentve..."
 }
+var selectedText = '';
+setInterval(() => {
+    // window.getSelection
+    if (window.getSelection) {
+        selectedText = window.getSelection();
+    }
+    // document.getSelection
+    else if (document.getSelection) {
+        selectedText = document.getSelection();
+    }
+    // document.selection
+    else if (document.selection) {
+        selectedText = 
+        document.selection.createRange().text;
+    } else return;
+    console.log(selectedText)
+}, 2000);
+function adjustFontWeight(){
+    const input = document.getElementById("fontWeightInput").value;
+}
+setInterval(() => {
+    let left = document.getElementById("block").style.left;
+}, 1000);
+const character = document.getElementById("character");
+const block = document.getElementById("block");
+function jump(){
+    if(character.classList == "animate"){return}
+    character.classList.add("animate");
+    setTimeout(function(){
+        character.classList.remove("animate");
+    },400);
+}
+document.addEventListener('keydown', (event) => {
+    jump();
+  }, false);
+let checkDead = setInterval(() => {
+    let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left")); 
+    let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+    
+    if(blockLeft <40 && blockLeft > 0 && characterTop >=360){
+        document.getElementById("uLost").innerHTML = "Fel a csőrrel, és próbáld újra!"
+        block.style.animationName="none";
+        block.style.opacity="0";
+        console.log(blockLeft < 20, blockLeft)
+        console.log(blockLeft > 0, blockLeft)
+        console.log(characterTop >=320, characterTop)
+    }
+}, 20);
+function again(){
+    document.getElementById("uLost").innerHTML = "KACSAAAAAAAA!!!"
+    block.style.animationName="block";
+    block.style.opacity="1";
+}
+function trexGame(){
+    console.log("ja");
+    document.getElementById("trexGameWrapper").style.display="flex";
+    document.getElementById("trexGameWrapper").style.position="absolute";
+    document.getElementById("trexGameWrapper").style.top="0";
+    document.getElementById("trexGameWrapper").style.zIndex="10";
+    document.getElementById("trexGameWrapper").style.width="100%";
+    document.getElementById("trexGameWrapper").style.height="100%";
+    document.getElementById("mainWrapper").style.display="none";
+    document.getElementById("topPart").style.display="none";
+
+}
+function trexGameClose(){
+    document.getElementById("trexGameWrapper").style.display="none";
+    document.getElementById("trexGameWrapper").style.position="absolute";
+    document.getElementById("trexGameWrapper").style.zIndex="10";
+    document.getElementById("trexGameWrapper").style.width="100%";
+    document.getElementById("trexGameWrapper").style.height="100%";
+    document.getElementById("mainWrapper").style.display="flex";
+    document.getElementById("topPart").style.display="";
+}
+function passwordVisible(){
+    if(document.getElementById("seeOrNot").checked == 1){
+        document.getElementById("passwordInput").type="text";
+    }
+    else{
+        document.getElementById("passwordInput").type="password";
+    }
+}
+

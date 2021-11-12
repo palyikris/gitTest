@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Qahiri&family=Rampart+One&family=Roboto+Mono:wght@200&family=Zen+Antique&family=Zen+Kurenaido&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../heni.jpg">
 </head>
 <body>
     <div class="topPart" id="topPart">
@@ -91,8 +92,10 @@
         </div>
         <div class="nOfWords" id="nOfWords" ondblclick="noCountWords()"></div>
         <div class="imBoredDiv" id="imBoredDiv" ondblclick="imCurious()">
-            <a href="www.youtube.com" target="_blanket"><i class="fa fa-youtube-play"></i></a>
+            <a href="https://www.youtube.com/" target="_blanket"><i class="fa fa-youtube-play"></i></a>
             <i class="fa fa-gamepad" onclick="showGames()"></i>
+            <a href="../login.html"><i class="fa fa-comment"></i></a>
+            <button><i class="fa fa-film" onclick="watchNetflix()"></i></button>
         </div>
         <div class="showGames" id="showGames" ondblclick="hideGames()">
             <button class="game" id="" onclick="snakeGame()">snakeGame</button>
@@ -108,6 +111,18 @@
             <div class="savedBool" id="savedBool"></div>
         </div>
     </div>
+    <div id="trexGameWrapper" ondblclick="trexGameClose()">
+        <div id="trexGame">
+            <div id="character"></div>
+            <div id="block"></div>
+            <div class="gameVenue">
+            </div>
+            <div class="freshStart">
+                <div class="uLost" id="uLost">KACSAAAAAAAA!!!</div>
+                <button class="again" onclick="again()">ÚJRA</button>
+            </div>
+        </div>
+    </div>
     <div class="invisible" id="dmReady">
 
     </div>
@@ -121,5 +136,25 @@
     <script src="index.js">
 
     </script>
+    <div class="loginWrapper" id="loginWrapper">
+        <div class="loginSurface">
+            <div class="subjectName">
+                <label for="">Tantárgy neve</label>
+                <input type="text" id="subjectInput" placeholder="Tantárgy...">
+            </div>
+            <div class="userName">
+                <label for="">Felhasználónév</label>
+                <input type="text" id="userNameInput" placeholder="Felhasználónév...">
+            </div>
+            <div class="password">
+                <label for="">Jelszó</label>
+                <input type="password" id="passwordInput" placeholder="Jelszó...">
+                <input type="checkbox" id="seeOrNot" onclick="passwordVisible()">
+            </div>
+            <div class="submit">
+                <button type="submit" onclick="submitLogin()">OK</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
