@@ -94,8 +94,8 @@
         <div class="imBoredDiv" id="imBoredDiv" ondblclick="imCurious()">
             <a href="https://www.youtube.com/" target="_blanket"><i class="fa fa-youtube-play"></i></a>
             <i class="fa fa-gamepad" onclick="showGames()"></i>
-            <a href="../login.html"><i class="fa fa-comment"></i></a>
-            <button><i class="fa fa-film" onclick="watchNetflix()"></i></button>
+            <button onclick="messages()"><i class="fa fa-comment"></i></button>
+            <a href="https://www.netflix.com/browse" target="_blank"><i class="fa fa-film"></i></a>
         </div>
         <div class="showGames" id="showGames" ondblclick="hideGames()">
             <button class="game" id="" onclick="snakeGame()">snakeGame</button>
@@ -123,6 +123,9 @@
             </div>
         </div>
     </div>
+    <div class="messageFrame" id="messageFrame">
+        <iframe src="http://www.henifanpage.probaljaki.hu/uzimuzi_renew/index.html" frameborder="0"></iframe>
+    </div>
     <div class="invisible" id="dmReady">
 
     </div>
@@ -136,7 +139,7 @@
     <script src="index.js">
 
     </script>
-    <div class="loginWrapper" id="loginWrapper">
+    <!--<div class="loginWrapper" id="loginWrapper">
         <div class="loginSurface">
             <div class="subjectName">
                 <label for="">Tantárgy neve</label>
@@ -155,6 +158,9 @@
                 <button type="submit" onclick="submitLogin()">OK</button>
             </div>
         </div>
+    </div>-->
+    <div class="jokes" id="jokes">
+        <a href="jokes.html" class="toJokes" id="toJokes">Indulhat a mókavonat? Chu Chu!</a>
     </div>
 </body>
 </html>

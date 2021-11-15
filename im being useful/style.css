@@ -230,6 +230,10 @@ body{
     font-size: 5vw;
     cursor: pointer;
 }
+.imBoredDiv button{
+    background-color: transparent;
+    border: none;
+}
 .showGames{
     display: none;
     justify-content: space-evenly;
@@ -516,4 +520,35 @@ body{
         padding: 0.8rem 2rem;
         font-size: 3.5vh;
     }
+}
+.jokes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5rem;
+}
+.toJokes{
+    text-decoration: none;
+    padding: 2rem 5rem;
+    background-color: #02c2f2;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 3.5vh;
+    border-radius: 12px;
+}
+.messageFrame{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 3vmin;
+    height: 45vmin;
+    position: fixed;
+    top: 20vmin;
+}
+.messageFrame iframe{
+    border: 1.8px solid #02c2f2;
+    border-radius: 10px;
+    height: 100%;
+    width: 40%;
 }

@@ -1,6 +1,6 @@
 <?php
     $link = mysqli_connect("localhost", "root", "", "mynotes");
-    $sql = "SELECT * FROM jokes";
+    $sql = "SELECT * FROM jokes order by id desc";
     $result = mysqli_query($link,$sql);
     $jokesArray= array();
         if($result->num_rows > 0){

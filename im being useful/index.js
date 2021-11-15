@@ -1,5 +1,5 @@
-window.onload = (event) => {
-    const initialInvisible = document.querySelectorAll(".topPart, .mainWrapper");
+/*window.onload = (event) => {
+    const initialInvisible = document.querySelectorAll(".topPart, .mainWrapper, .jokes");
     console.log(initialInvisible)
         for(let i = 0;i < initialInvisible.length; i++){
             initialInvisible[i].style.display="none";
@@ -33,7 +33,7 @@ function submitLogin(){
         xmlhttp.send(param);
     }
     document.getElementById("loginWrapper").style.display="none";
-    const initialInvisible = document.querySelectorAll(".topPart, .mainWrapper");
+    const initialInvisible = document.querySelectorAll(".topPart, .mainWrapper, .jokes");
         for(let i = 0;i < initialInvisible.length; i++){
             initialInvisible[i].style.display="";
         }
@@ -41,7 +41,7 @@ function submitLogin(){
 }
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
-  }
+  }*/
 function toolsVisible(){
     document.getElementById('toolsReadyWrapper').style.display="flex";
     document.getElementById('toolsReady').style.display="flex";
@@ -254,4 +254,6 @@ function passwordVisible(){
         document.getElementById("passwordInput").type="password";
     }
 }
-
+function messages(){
+    document.getElementById("messageFrame").style.display="";
+}
