@@ -27,6 +27,9 @@
             <div class="option">
                 <button id="imBored" onclick="imBored()">Unatkozom</button>
             </div>
+            <div class="option">
+                <button id="classes" class="classes" onclick="renderClasses()">Óráim</button>
+            </div>
         </div>
         <div class="toolsReadyWrapper" id="toolsReadyWrapper">
             <div class="invisible" id="toolsReady">
@@ -103,6 +106,14 @@
             <button class="game" id="" onclick="trexGame()">t-rex game</button>
             <button class="game" id="" onclick="">másvalami</button>
         </div>
+        <div class="classesDiv" id="classesDiv" ondblclick="closeClasses()">
+            <div id="prevClass"></div>
+            <div id="currClass"></div>
+            <div id="nextClass"></div>
+            <div id="todaysClasses">
+                
+            </div>
+        </div>
     </div>
     <div class="mainWrapper" id="mainWrapper">
         <textarea name="" id="main" class="main"></textarea>
@@ -139,7 +150,8 @@
     <script src="index.js">
 
     </script>
-    <!--<div class="loginWrapper" id="loginWrapper">
+    <!--
+    <div class="loginWrapper" id="loginWrapper">
         <div class="loginSurface">
             <div class="subjectName">
                 <label for="">Tantárgy neve</label>

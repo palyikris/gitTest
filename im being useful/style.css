@@ -27,10 +27,8 @@ body{
     padding: 6rem 5rem;
     border: none;
     overflow-y: scroll;
+    font-size: 15px;
     resize: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .main:focus{
@@ -545,10 +543,64 @@ body{
     height: 45vmin;
     position: fixed;
     top: 20vmin;
+    width: 100%;
+    display: none;
 }
 .messageFrame iframe{
     border: 1.8px solid #02c2f2;
     border-radius: 10px;
     height: 100%;
     width: 40%;
+    background-color: white;
+
+}
+.classesDiv{
+    display: none;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: baseline;
+    border: 1.2px solid #02c2f2;
+    border-radius: 5px;
+    padding: 3rem 5rem;
+    margin: 3rem 5rem 0 5rem;
+}
+.classesDiv div{
+    background-color: #02c2f2;
+    color: white;
+    font-size: 3vh;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+}
+#prevClass{
+    padding:.5rem 1rem;
+    width: 20vmin;
+}
+#currClass{
+    padding: 1.5rem 3rem;
+    background-color: transparent;
+    background-image: linear-gradient(90deg, #02c2f2, #02c2f2 100%,transparent 0);
+    width: 45vmin;
+    margin: 0 1rem;
+}
+#nextClass{
+    padding: .5rem 1rem;
+    width: 20vmin;
+}
+#noClass, #noClass1{
+    font-size: 3vh;
+    font-weight: bold;
+    color: #02c2f2;
+    background-color: transparent;
+}
+#todaysClasses{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 3vmin;
+}
+#todaysClasses div{
+    padding: 0.5rem 2rem;
+    text-transform:capitalize;
 }

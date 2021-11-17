@@ -1,6 +1,5 @@
 /*window.onload = (event) => {
     const initialInvisible = document.querySelectorAll(".topPart, .mainWrapper, .jokes");
-    console.log(initialInvisible)
         for(let i = 0;i < initialInvisible.length; i++){
             initialInvisible[i].style.display="none";
         }
@@ -10,23 +9,25 @@ function submitLogin(){
     subject = document.getElementById("subjectInput").value;
     userName = document.getElementById("userNameInput").value;
     password = document.getElementById("passwordInput").value;
+    console.log("Login successful!")
     if(userName === "Kristóf" && password === "6969"){
         subject = document.getElementById("subjectInput").value;
         userName = document.getElementById("userNameInput").value;
         password = document.getElementById("passwordInput").value;
+        console.log(subject)
         const xmlhttp = new XMLHttpRequest();
         xmlhttp.onload = function() {
-            console.log("huh")
             const notes = JSON.parse(this.responseText);
+            console.log(notes, notes.length === 0)
             if(notes.length === 0){
                 
             }
             else{
-                console.log(notes)
-                document.getElementById("main").innerHTML=notes[0].noteContent;
+                console.log(notes[0], notes[0].noteContent)
+                document.getElementById("main").value=notes[0].noteContent;
+                console.log(document.getElementById("main").innerHTML)
             }
         }
-        console.log(subject)
         let param = "subject="+subject;
         xmlhttp.open("POST", "notes.php");
         xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -38,10 +39,10 @@ function submitLogin(){
             initialInvisible[i].style.display="";
         }
     document.title=capitalizeFirstLetter(subject)+" jegyzet"
-}
+}*/
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
-  }*/
+  }
 function toolsVisible(){
     document.getElementById('toolsReadyWrapper').style.display="flex";
     document.getElementById('toolsReady').style.display="flex";
@@ -66,17 +67,12 @@ function toolsnotReady(){
     document.getElementById('inputWrapper').style.display='flex';
 }
 function darkMode(){
-    console.log(document.body.style.backgroundColor)
-    console.log(document.body.style.backgroundColor === "rgb(46, 44, 44)")
     if(document.body.style.backgroundColor === "rgb(46, 44, 44)"){
         document.body.style.backgroundColor="rgb(248, 244, 244)";
         document.getElementById("main").style.backgroundColor="white";
         const darkModeVars = document.querySelectorAll("button, label");
-        console.log(darkModeVars);
         for(let i = 0; i<darkModeVars.length; i++){
-            console.log(darkModeVars[i].className === "addMainButton")
             if(darkModeVars[i].className === "addMainButton"){
-                console.log(i)
                 darkModeVars[i].style.color="#02c2f2";
             }
             else{
@@ -89,10 +85,8 @@ function darkMode(){
         document.body.style.backgroundColor="#2e2c2c";
         document.getElementById("main").style.backgroundColor="#544f4f";
         const darkModeVars = document.querySelectorAll("button, label");
-        console.log(darkModeVars);
         for(let i = 0; i<darkModeVars.length; i++){
             if(darkModeVars[i].className === "addMainButton"){
-                console.log(i)
                 darkModeVars[i].style.color="#02c2f2";
             }
             else{
@@ -161,7 +155,6 @@ function imCurious(){
 
 function saveContent(){
     const note = document.getElementById("main").value;
-    console.log(note);
     const subjectToSend = subject;
     let param = "content="+note+"&subject="+subjectToSend;
     const xmlhttp = new XMLHttpRequest();
@@ -187,7 +180,6 @@ setInterval(() => {
         selectedText = 
         document.selection.createRange().text;
     } else return;
-    console.log(selectedText)
 }, 2000);
 function adjustFontWeight(){
     const input = document.getElementById("fontWeightInput").value;
@@ -215,9 +207,7 @@ let checkDead = setInterval(() => {
         document.getElementById("uLost").innerHTML = "Fel a csőrrel, és próbáld újra!"
         block.style.animationName="none";
         block.style.opacity="0";
-        console.log(blockLeft < 20, blockLeft)
-        console.log(blockLeft > 0, blockLeft)
-        console.log(characterTop >=320, characterTop)
+       
     }
 }, 20);
 function again(){
@@ -226,7 +216,6 @@ function again(){
     block.style.opacity="1";
 }
 function trexGame(){
-    console.log("ja");
     document.getElementById("trexGameWrapper").style.display="flex";
     document.getElementById("trexGameWrapper").style.position="absolute";
     document.getElementById("trexGameWrapper").style.top="0";
@@ -255,5 +244,350 @@ function passwordVisible(){
     }
 }
 function messages(){
-    document.getElementById("messageFrame").style.display="";
+    if(document.getElementById("messageFrame").style.display === "" || document.getElementById("messageFrame").style.display === "none"){
+        document.getElementById("messageFrame").style.display = "flex";
+    }
+    else{
+        document.getElementById("messageFrame").style.display = "none";
+    }
+}
+
+setInterval(() => {
+    let text = document.getElementById("main").value;
+    text = text.split(" ");
+    for(let i = 0; i < text.length; i++){
+        if(text[i].includes("<") === true){
+            if(text[i].includes("<b>") === true && text[i].includes("</b>") === true){
+                let textChanging = text[i].replace("<b>", "")
+                textChanging = textChanging.replace("</b>", "")
+                textChanging = "<span style='font-weight:'bold''>"+textChanging+"</span>"
+                text[i] = textChanging
+            }
+        }
+    }
+    
+    document.getElementById("main").value = text.join(" ")
+}, 1500);
+let weekdays = 
+
+    [
+        [
+            {
+                "id" : "1",
+                "start" : "07.30",
+                "end" : "08.00",
+                "subject" : "spanyol",
+                "classRoom" : "105"
+            },
+            {
+                "id" : "2",
+                "start" : "08.00",
+                "end" : "08.45",
+                "subject" : "osztályfőnöki",
+                "classRoom" : "111"
+            },
+            {
+                "id" : "3",
+                "start" : "09.00",
+                "end" : "09.45",
+                "subject" : "testnevelés",
+                "classRoom" : "Tesiterem"
+            },
+            {
+                "id" : "4",
+                "start" : "10.00",
+                "end" : "11.30",
+                "subject" : "angol",
+                "classRoom" : "209"
+            },
+            {
+                "id" : "5",
+                "start" : "12.00",
+                "end" : "12.45",
+                "subject" : "történelem",
+                "classRoom" : "111"
+            },
+            {
+                "id" : "6",
+                "start" : "13.00",
+                "end" : "13.45",
+                "subject" : "nyelvtan",
+                "classRoom" : "14"
+            },
+            {
+                "id" : "7",
+                "start" : "14.00",
+                "end" : "15.30",
+                "subject" : "Matematika",
+                "classRoom" : "111"
+            }
+
+        ],
+        [
+            {
+                "id" : "1",
+                "start" : "07.15",
+                "end" : "08.30",
+                "subject" : "angol",
+                "classRoom" : "207"
+            },
+            {
+                "id" : "2",
+                "start" : "09.00",
+                "end" : "09.45",
+                "subject" : "Matematika",
+                "classRoom" : "123"
+            },
+            {
+                "id" : "3",
+                "start" : "10.00",
+                "end" : "11.30",
+                "subject" : "spanyol",
+                "classRoom" : "118"
+            },
+            {
+                "id" : "4",
+                "start" : "12.00",
+                "end" : "12.45",
+                "subject" : "történelem",
+                "classRoom" : "111"
+            },
+            {
+                "id" : "5",
+                "start" : "13.00",
+                "end" : "13.45",
+                "subject" : "aciv",
+                "classRoom" : "225"
+            },
+            {
+                "id" : "6",
+                "start" : "15.00",
+                "end" : "16.30",
+                "subject" : "informatika",
+                "classRoom" : "Informatika terem"
+            }
+        ],
+        [
+            {
+                "id" : "1",
+                "start" : "07.15",
+                "end" : "08.45",
+                "subject" : "matematika",
+                "classRoom" : "116"
+            },
+            {
+                "id" : "2",
+                "start" : "09.00",
+                "end" : "09.45",
+                "subject" : "történelem",
+                "classRoom" : "106"
+            },
+            {
+                "id" : "3",
+                "start" : "10.00",
+                "end" : "10.45",
+                "subject" : "fizika",
+                "classRoom" : "39"
+            },
+            {
+                "id" : "4",
+                "start" : "11.00",
+                "end" : "12.30",
+                "subject" : "irodalom",
+                "classRoom" : "111"
+            },
+            {
+                "id" : "5",
+                "start" : "13.00",
+                "end" : "13.45",
+                "subject" : "aciv",
+                "classRoom" : "111"
+            }
+        ],
+        [
+            {
+                "id" : "1",
+                "start" : "07.15",
+                "end" : "08.45",
+                "subject" : "Rajz/Ének",
+                "classRoom" : "212/211"
+            },
+            {
+                "id" : "2",
+                "start" : "09.00",
+                "end" : "09.45",
+                "subject" : "fizika",
+                "classRoom" : "111"
+            },
+            {
+                "id" : "3",
+                "start" : "10.00",
+                "end" : "10.45",
+                "subject" : "testnevelés",
+                "classRoom" : "Tesi terem"
+            },
+            {
+                "id" : "4",
+                "start" : "11.00",
+                "end" : "11.45",
+                "subject" : "matematika",
+                "classRoom" : "42"
+            },
+            {
+                "id" : "5",
+                "start" : "12.00",
+                "end" : "12.45",
+                "subject" : "irodalom",
+                "classRoom" : "57"
+            },
+            {
+                "id" : "6",
+                "start" : "13.00",
+                "end" : "13.45",
+                "subject" : "biológia",
+                "classRoom" : "47"
+            },
+            {
+                "id" : "7",
+                "start" : "14.00",
+                "end" : "15.30",
+                "subject" : "spanyol",
+                "classRoom" : "118"
+            }
+
+        ],
+        [
+            {
+                "id" : "1",
+                "start" : "09.00",
+                "end" : "09.45",
+                "subject" : "történelem",
+                "classRoom" : "106"
+            },
+            {
+                "id" : "2",
+                "start" : "10.00",
+                "end" : "10.45",
+                "subject" : "testnevelés",
+                "classRoom" : "Tesi terem"
+            },
+            {
+                "id" : "3",
+                "start" : "11.00",
+                "end" : "11.45",
+                "subject" : "spanyol",
+                "classRoom" : "111"
+            },
+            {
+                "id" : "4",
+                "start" : "12.00",
+                "end" : "12.45",
+                "subject" : "biológia",
+                "classRoom" : "49"
+            },
+            {
+                "id" : "5",
+                "start" : "13.00",
+                "end" : "13.45",
+                "subject" : "etika",
+                "classRoom" : "111"
+            }
+        ]
+
+    ];
+function addZero(min){
+
+}
+function renderClasses(){
+    let day = new Date().getDay();
+    document.getElementById("inputWrapper").style.display="none";
+    document.getElementById("classesDiv").style.display="flex";
+    console.log(day>=1 && day<=5, day)
+    if(day>=1 && day<=5){
+        day = parseInt(day-1)
+        currDay = weekdays[day];
+        let hour = new Date().getHours()
+        let minute = new Date().getMinutes()
+        console.log(hour, minute)
+        for(let i = 0; i < currDay.length; i++){
+            let classesToday = []
+            classesToday.push(currDay[i])
+            console.log(currDay[i])
+            console.log(todaysClasses)
+            console.log(i, todaysClasses[i])
+            let thisClass = document.createElement("div");
+            thisClass.setAttribute("class", "thisClass")
+            thisClass.innerHTML = currDay[i].subject+" óra lesz. Kezdete: "+currDay[i].start+", vége: "+currDay[i].end+", terem: "+currDay[i].classRoom;
+            console.log(thisClass)
+            document.getElementById("todaysClasses").appendChild(thisClass);
+            let start = currDay[i].start;
+            start = start.split(".");
+            let end = currDay[i].end;
+            end = end.split(".");
+            console.log(start, end)
+            console.log(parseInt(start[0]) <= hour && parseInt(end[1]) < minute, start[0], end[0], hour, currDay[i].subject)
+            console.log(parseInt(end[0]) < hour || parseInt(end[0]) === hour && parseInt(end[1]) < hour, hour, minute, start[0], end[0], end[1])
+            if(parseInt(end[0]) < hour || parseInt(end[0]) === hour && parseInt(end[1]) < minute){
+                console.log("bam")
+                console.log(i === currDay.length-1, i, currDay.length-1)
+                    if(i === currDay.length-1){
+                        console.log("Ma már nincs több órád!");
+                        document.getElementById("classesDiv").innerHTML="<div id='noClass'>Ma már nincs több órád!</div>"
+                }
+            }
+            else{
+                console.log(parseInt(start[0]) === hour && parseInt(start[1]) <= minute && start[0] != end[0] || parseInt(start[0])+1 === hour && parseInt(end[0]) === hour && parseInt(end[1]) <= minute, i, currDay[i].subject, start[0])
+                console.log(parseInt(start[0])+1 === hour && parseInt(end[0]) === hour && parseInt(end[1]) <= minute, start[0], end[0], end[1], hour, minute)
+                console.log(parseInt(start[0])+1 === hour, start[0], hour, parseInt(end[0]) === hour, end[0], hour, parseInt(end[1]) >= minute, end[1], minute)
+                if(parseInt(start[0]) === hour && parseInt(start[1]) <= minute && start[0] != end[0] || parseInt(start[0])+1 === hour && parseInt(end[0]) === hour && parseInt(end[1]) >= minute){
+                    console.log("Jelenglegi óra: "+currDay[i].subject, currDay, i)
+                    document.getElementById("currClass").innerHTML = "Jelenlegi óra: "+currDay[i].subject.toUpperCase()
+                    console.log(start[0] != end[0])
+                    if(start[0] != end[0]){
+                        let growthByMin = 40 / 90
+                        if(start[0] === end[0]){
+                            let bgLoaded = growthByMin * minute
+                            console.log("huhu", bgLoaded)
+                            document.getElementById("currClass").style.backgroundImage = "linear-gradient(90deg, #02c2f2, #02c2f2 "+bgLoaded+"vmin,transparent 0)"
+                        }
+                        else{
+                            let bgLoaded = growthByMin * (60 + minute)
+                            console.log("hehe", bgLoaded)
+                            document.getElementById("currClass").style.backgroundImage = "linear-gradient(90deg, #02c2f2, #02c2f2 "+bgLoaded+"vmintransparent 0)"
+                        }
+                    }
+                    else{
+                        let growthByMin = 40 / 45
+                        let bgLoaded = growthByMin * minute
+                        console.log("haha", bgLoaded)
+                        document.getElementById("currClass").style.backgroundImage = "linear-gradient(90deg, #02c2f2, #02c2f2 "+bgLoaded+"vmin,transparent 0)"
+
+                    }
+                    if(i != 0){
+                        document.getElementById("prevClass").innerHTML = "Előző óra: "+currDay[i-1].subject.toUpperCase()+" volt, a "+currDay[i].classRoom+" teremben."
+                    }
+                    else{
+                        document.getElementById("prevClass").innerHTML = "Ez az első órád!"
+                    }
+                    if(i < currDay.length-1){
+                        document.getElementById("nextClass").innerHTML = "Következő óra: "+currDay[i+1].subject.toUpperCase()+", a "+currDay[i].classRoom+" teremben."
+                    }
+                    else{
+                        document.getElementById("nextClass").innerHTML = "Ezután mehetsz hazaaa!!!"
+                    }
+                }
+                else{
+                    document.getElementById("classesDiv").innerHTML = "<div id='noClass1'>Most épp nincs óra!</div>"
+                }
+            }
+        }
+    }
+    else{
+        document.getElementById("classesDiv").innerHTML = "Ma nincsen sulika. Lazíts!!"
+    }
+};
+function closeClasses(){
+    document.getElementById("inputWrapper").style.display="flex";
+    document.getElementById("classesDiv").style.display="none";
+    document.getElementById("todaysClasses").innerHTML="";
 }

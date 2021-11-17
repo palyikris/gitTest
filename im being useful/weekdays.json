@@ -1,0 +1,197 @@
+[
+    [
+        [
+            {
+                "id" : "1",
+                "start" : "07.30",
+                "end" : "08.00",
+                "subject" : "spanyol"
+            },
+            {
+                "id" : "2",
+                "start" : "08.00",
+                "end" : "08.45",
+                "subject" : "osztályfőnöki"
+            },
+            {
+                "id" : "3",
+                "start" : "09.00",
+                "end" : "09.45",
+                "subject" : "testnevelés"
+            },
+            {
+                "id" : "4",
+                "start" : "10.00",
+                "end" : "11.30",
+                "subject" : "angol"
+            },
+            {
+                "id" : "5",
+                "start" : "12.00",
+                "end" : "12.45",
+                "subject" : "töri"
+            },
+            {
+                "id" : "6",
+                "start" : "13.00",
+                "end" : "13.45",
+                "subject" : "nyelvtan"
+            },
+            {
+                "id" : "7",
+                "start" : "14.00",
+                "end" : "15.30",
+                "subject" : "Matematika"
+            }
+
+        ],
+        [
+            {
+                "id" : "1",
+                "start" : "07.15",
+                "end" : "08.30",
+                "subject" : "angol"
+            },
+            {
+                "id" : "2",
+                "start" : "09.00",
+                "end" : "09.45",
+                "subject" : "Matematika"
+            },
+            {
+                "id" : "3",
+                "start" : "10.00",
+                "end" : "11.30",
+                "subject" : "spanyol"
+            },
+            {
+                "id" : "4",
+                "start" : "12.00",
+                "end" : "12.45",
+                "subject" : "töri"
+            },
+            {
+                "id" : "5",
+                "start" : "13.00",
+                "end" : "13.45",
+                "subject" : "aciv"
+            },
+            {
+                "id" : "6",
+                "start" : "14.00",
+                "end" : "16.30",
+                "subject" : "infó"
+            }
+        ],
+        [
+            {
+                "id" : "1",
+                "start" : "07.15",
+                "end" : "08.45",
+                "subject" : "matematika"
+            },
+            {
+                "id" : "2",
+                "start" : "09.00",
+                "end" : "09.45",
+                "subject" : "történelem"
+            },
+            {
+                "id" : "3",
+                "start" : "10.00",
+                "end" : "10.45",
+                "subject" : "fizika"
+            },
+            {
+                "id" : "4",
+                "start" : "11.00",
+                "end" : "12.30",
+                "subject" : "irodalom"
+            },
+            {
+                "id" : "5",
+                "start" : "13.00",
+                "end" : "13.45",
+                "subject" : "aciv"
+            }
+        ],
+        [
+            {
+                "id" : "1",
+                "start" : "07.15",
+                "end" : "08.45",
+                "subject" : "Rajz/Ének"
+            },
+            {
+                "id" : "2",
+                "start" : "09.00",
+                "end" : "09.45",
+                "subject" : "fizika"
+            },
+            {
+                "id" : "3",
+                "start" : "10.00",
+                "end" : "10.45",
+                "subject" : "tesi"
+            },
+            {
+                "id" : "4",
+                "start" : "11.00",
+                "end" : "11.45",
+                "subject" : "matematika"
+            },
+            {
+                "id" : "5",
+                "start" : "12.00",
+                "end" : "12.45",
+                "subject" : "irodalom"
+            },
+            {
+                "id" : "6",
+                "start" : "13.00",
+                "end" : "13.45",
+                "subject" : "biosz"
+            },
+            {
+                "id" : "7",
+                "start" : "14.00",
+                "end" : "15.30",
+                "subject" : "spanyol"
+            }
+
+        ],
+        [
+            {
+                "id" : "1",
+                "start" : "09.00",
+                "end" : "09.45",
+                "subject" : "töri"
+            },
+            {
+                "id" : "2",
+                "start" : "10.00",
+                "end" : "10.45",
+                "subject" : "tesi"
+            },
+            {
+                "id" : "3",
+                "start" : "11.00",
+                "end" : "11.45",
+                "subject" : "spanyol"
+            },
+            {
+                "id" : "4",
+                "start" : "12.00",
+                "end" : "12.45",
+                "subject" : "biosz"
+            },
+            {
+                "id" : "5",
+                "start" : "13.00",
+                "end" : "13.45",
+                "subject" : "etika"
+            }
+        ]
+
+    ]
+]
