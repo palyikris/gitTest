@@ -291,7 +291,7 @@ let weekdays =
                 "start" : "09.00",
                 "end" : "09.45",
                 "subject" : "testnevelés",
-                "classRoom" : "Tesiterem"
+                "classRoom" : "Tesi"
             },
             {
                 "id" : "4",
@@ -312,7 +312,7 @@ let weekdays =
                 "start" : "13.00",
                 "end" : "13.45",
                 "subject" : "nyelvtan",
-                "classRoom" : "14"
+                "classRoom" : "111"
             },
             {
                 "id" : "7",
@@ -364,7 +364,7 @@ let weekdays =
                 "start" : "15.00",
                 "end" : "16.30",
                 "subject" : "informatika",
-                "classRoom" : "Informatika terem"
+                "classRoom" : "Informatika"
             }
         ],
         [
@@ -424,7 +424,7 @@ let weekdays =
                 "start" : "10.00",
                 "end" : "10.45",
                 "subject" : "testnevelés",
-                "classRoom" : "Tesi terem"
+                "classRoom" : "Tesi"
             },
             {
                 "id" : "4",
